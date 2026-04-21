@@ -44,7 +44,7 @@ export default function ChatWidget() {
     }
   };
 
-  const waNumber = "5511940000000";
+  const waNumber = "5514991269374";
   const waLink = `https://wa.me/${waNumber}?text=${encodeURIComponent("Olá, vim pelo site da Rocha & Barbosa e gostaria de saber mais.")}`;
 
   return (

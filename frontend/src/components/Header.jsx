@@ -2,17 +2,16 @@ import React, { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { Menu, X, ChevronRight } from "lucide-react";
 import { useAuth } from "../context/AuthContext";
+import logogold from "../assets/logogold.png";
 
-const links = [
-  { to: "/", label: "Home" },
-  { to: "/servicos", label: "Serviços" },
-  { to: "/diagnostico", label: "Diagnóstico" },
-  { to: "/blog", label: "Blog" },
-  { to: "/recursos", label: "Recursos" },
-  { to: "/sobre", label: "Sobre" },
-  { to: "/planos", label: "Planos" },
-  { to: "/contato", label: "Contato" },
-];
+  const links = [
+    { to: "/", label: "Início" },
+    { to: "/servicos", label: "Serviços" },
+    { to: "/conteudo", label: "Conteúdo" },
+    { to: "/sobre", label: "Sobre" },
+    { to: "/contato", label: "Contato" },
+    { to: "/recursos", label: "Materiais Técnicos" },
+  ];
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -28,21 +27,22 @@ export default function Header() {
   useEffect(() => setOpen(false), [pathname]);
 
   return (
-    <header
+     <header
       data-testid="site-header"
-      className={`fixed top-0 left-0 right-0 z-50 glass-header transition-all ${scrolled ? "scrolled" : ""}`}
+      className="fixed top-0 left-0 right-0 z-50 glass-header transition-all"
     >
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-12 h-[72px] flex items-center justify-between">
-        <Link to="/" data-testid="logo-home" className="flex items-center gap-3 text-white">
-          <div className="w-9 h-9 border border-[#D4AF37] flex items-center justify-center">
-            <span className="font-serif text-[#D4AF37] text-lg leading-none">R</span>
-          </div>
-          <div className="hidden sm:block leading-tight">
-            <div className="font-serif text-[15px] tracking-wide">Rocha & Barbosa</div>
-            <div className="text-[10px] uppercase tracking-[0.22em] text-[#E6C96A]">Assessoria Contábil</div>
-          </div>
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-12 h-[96px] flex items-center justify-between">
+        
+        {/* LOGO */}
+        <Link to="/" data-testid="logo-home" className="flex items-center py-2">
+          <img
+            src={logogold}
+            alt="Rocha & Barbosa"
+            className="h-20 w-auto"
+          />
+          <div className="font-serif text-[#D4AF37] text-[35px] tracking-[0.06em] leading-none">Rocha & Barbosa</div>
         </Link>
-
+      
         <nav className="hidden lg:flex items-center gap-8">
           {links.map((l) => (
             <NavLink
@@ -75,15 +75,12 @@ export default function Header() {
               Entrar
             </Link>
           )}
-          <Link to="/diagnostico" data-testid="nav-cta-diagnostic" className="hidden md:inline-flex btn-gold">
-            Solicitar Diagnóstico <ChevronRight size={16} strokeWidth={1.5} />
-          </Link>
           <button data-testid="nav-mobile-toggle" onClick={() => setOpen((o) => !o)} className="lg:hidden text-white">
             {open ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
       </div>
-
+      {/* ===== MOBILE NAVIGATION ===== */}
       {open && (
         <div className="lg:hidden bg-[#0A2A57] border-t border-[#D4AF37]/20">
           <div className="px-6 py-6 flex flex-col gap-5">
@@ -107,7 +104,6 @@ export default function Header() {
             ) : (
               <Link to="/login" className="text-white/85 text-[13px] uppercase tracking-[0.2em]">Entrar</Link>
             )}
-            <Link to="/diagnostico" className="btn-gold justify-center">Solicitar Diagnóstico</Link>
           </div>
         </div>
       )}
