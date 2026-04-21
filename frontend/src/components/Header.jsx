@@ -58,9 +58,9 @@ export default function Header() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-6 ml-6">
           {user ? (
-            <div className="hidden md:flex items-center gap-3">
+            <div className="hidden md:flex items-center gap-6">
               {user.role === "admin" && (
                 <Link to="/admin" data-testid="nav-admin" className="text-white/85 hover:text-[#D4AF37] text-[12px] uppercase tracking-[0.18em]">
                   Admin
