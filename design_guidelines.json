@@ -1,0 +1,147 @@
+{
+  "theme": "dark/light hybrid",
+  "archetype": "Swiss & High-Contrast (adapted for Corporate Luxury)",
+  "brand_identity": {
+    "name": "Rocha & Barbosa Assessoria Contábil",
+    "tone": "authority, precision, sophistication, stability, trust",
+    "description": "Premium corporate tax and fiscal consulting specializing in SPED, tax reform, and TOTVS Protheus."
+  },
+  "colors": {
+    "primary": {
+      "DEFAULT": "#0A2A57",
+      "light": "#1B6FC4",
+      "dark": "#0E4A8A",
+      "foreground": "#FFFFFF"
+    },
+    "accent": {
+      "DEFAULT": "#D4AF37",
+      "light": "#E6C96A",
+      "dark": "#A67C00",
+      "foreground": "#0A2A57"
+    },
+    "neutral": {
+      "50": "#FFFFFF",
+      "100": "#F2F2F2",
+      "400": "#B0B0B0",
+      "800": "#1C2025",
+      "900": "#0A0A0A"
+    },
+    "background": {
+      "light": "#FFFFFF",
+      "dark": "#0A2A57",
+      "alt": "#F2F2F2"
+    },
+    "rules": [
+      "No warm/earthy colors outside of the gold accents.",
+      "Strictly use deep blues for backgrounds and institutional sections.",
+      "Use metallic gold (#D4AF37) for thin accents, borders, icons, and primary CTAs.",
+      "Avoid purple, teal, or violet gradients completely.",
+      "Tint greys slightly with blue to match the corporate tone."
+    ]
+  },
+  "typography": {
+    "headings": {
+      "font_family": "Playfair Display, serif",
+      "weights": ["400", "600", "700"],
+      "usage": "Use for all H1, H2, and H3. Tracking should be tight (-0.02em). Do not use Inter or standard sans-serifs for headings."
+    },
+    "body": {
+      "font_family": "Montserrat, sans-serif",
+      "weights": ["300", "400", "500", "600"],
+      "usage": "Use for all paragraphs, forms, labels, and UI elements. High legibility."
+    },
+    "scales": {
+      "h1": "text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-none",
+      "h2": "text-2xl sm:text-3xl lg:text-4xl tracking-tight",
+      "h3": "text-xl sm:text-2xl",
+      "body": "text-base leading-relaxed",
+      "small": "text-sm uppercase tracking-[0.2em]"
+    }
+  },
+  "spacing_and_layout": {
+    "philosophy": "Generous Spacing Philosophy. Use large padding (py-24, py-32) for sections to create a premium, uncrowded feel.",
+    "grid_modes": {
+      "marketing": "Mode A: Asymmetrical grid (grid-cols-12) with wide gaps (gap-8 to gap-12). Use for About and Service highlights.",
+      "dashboard": "Mode B: Dense grid (grid-cols-3 or 4) with tight gaps (gap-4). Use for Dashboard admin and Plans."
+    },
+    "containers": "Containers must have internal padding (p-8) when utilizing borders to prevent text collision."
+  },
+  "surfaces_and_micro_themes": {
+    "header": "Crystal Glass variant: backdrop-blur-xl bg-[#0A2A57]/80 with a 1px delicate bottom border of border-[#D4AF37]/20.",
+    "cards_light": "Flat Solid: bg-white with 1px border-[#F2F2F2]. Hover state: -translate-y-1, shadow-[0_8px_32px_rgba(10,42,87,0.08)], border-[#D4AF37]/50.",
+    "cards_dark": "Technical Grid: bg-[#0E4A8A] with 1px border-[#D4AF37]/20. Hover state: border-[#D4AF37].",
+    "buttons": "Primary CTA: Solid Gold bg-[#D4AF37] text-[#0A2A57] font-semibold hover:bg-[#A67C00] transition-colors. Secondary: Outline border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37]/10."
+  },
+  "motion_and_interaction": {
+    "transitions": "Smooth and deliberate. transition-all duration-300 ease-in-out.",
+    "hover_states": "Cards lift slightly (-translate-y-1). Gold borders increase in opacity. Links show a gold underline that scales from left.",
+    "scroll": "Use Lenis for smooth momentum scrolling to add premium weight to the page.",
+    "entrance": "Fade up and in (opacity 0 to 1, translate-y-4 to 0) staggered for bento grid items."
+  },
+  "components": {
+    "navigation": "Sticky top bar. Logo on left (Playfair Display, white + gold). Links centered (Montserrat, text-sm, uppercase). CTA on right (Gold button).",
+    "hero": "Dark mode. Background image of premium corporate office with heavy #0A2A57/80 overlay. Left-aligned H1. Dual CTAs.",
+    "service_cards": "Bento layout. Light mode section (bg-[#F2F2F2]). Cards are white, tall, with gold icons and deep blue text.",
+    "diagnostic_form": "Multi-step wizard using Shadcn Forms. Minimalist inputs with border-b only (no full box) for a high-end editorial feel.",
+    "floating_chat": "Fixed bottom-right gold icon (AI Chat / WhatsApp). Hover expands to show 'Fale com um consultor'."
+  },
+  "pages": {
+    "home": {
+      "sections": [
+        "Hero: H1 'Sua empresa pode estar pagando mais imposto do que deveria — sem perceber.', Primary CTA 'Solicitar Diagnóstico', Secondary 'Conheça os Serviços'. Dark background.",
+        "Authority/Trust: Logos of systems (TOTVS Protheus) and three pillars (SPED, Reforma Tributária).",
+        "How We Work: 3 Blocks (Diagnóstico Fiscal, Recuperação de Créditos, Estruturação/Compliance). Minimalist cards.",
+        "Mission Statement: Large typography quote, dark blue background, gold quotes.",
+        "Recent Content: 3 latest blog posts in a clean grid.",
+        "Final CTA: Dark section, gold button."
+      ]
+    },
+    "servicos": {
+      "layout": "Grid-based deep dive into the 3 core services. Problem -> Impact -> Solution -> CTA structure for each card."
+    },
+    "diagnostico": {
+      "layout": "Two-column layout. Left: Value proposition of the diagnosis. Right: Multi-step lead capture form."
+    },
+    "blog": {
+      "layout": "Editorial style. Featured post spans 2 columns. Categories as minimalist pills (SPED, Reforma Tributária, Protheus, Créditos)."
+    },
+    "base_conhecimento": {
+      "layout": "Library style grid. Gated content indicated by a subtle lock icon and requires email capture."
+    },
+    "dashboard_admin": {
+      "layout": "Strict Mode B Grid. Sidebar navigation. Dense data tables for leads and diagnostic submissions. Minimal gold, mostly blue/grey."
+    }
+  },
+  "media": {
+    "instructions_to_main_agent": "Use ONLY these exact image URLs. Do NOT use placeholders. Apply overlays as specified to maintain the dark blue aesthetic and ensure text contrast.",
+    "image_urls": {
+      "hero_background": {
+        "url": "https://images.pexels.com/photos/7653461/pexels-photo-7653461.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "description": "Spacious contemporary office space. MUST apply bg-[#0A2A57]/80 overlay for deep blue tone.",
+        "category": "hero"
+      },
+      "services_section": {
+        "url": "https://images.pexels.com/photos/7433840/pexels-photo-7433840.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "description": "Business professionals discussing documents in a modern meeting room. Use in the 'How We Work' or 'About' preview section.",
+        "category": "content"
+      },
+      "data_analysis": {
+        "url": "https://images.pexels.com/photos/6120169/pexels-photo-6120169.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "description": "Graphs depicting data analysis on paper documents. Ideal for the 'Diagnóstico Fiscal' service card or page.",
+        "category": "content"
+      },
+      "office_corridor": {
+        "url": "https://images.pexels.com/photos/5511130/pexels-photo-5511130.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "description": "Spacious and modern office corridor. Good for About page background.",
+        "category": "background"
+      }
+    }
+  },
+  "testing": {
+    "attributes": "All interactive elements MUST include data-testid. Examples: data-testid='cta-diagnostico', data-testid='nav-servicos', data-testid='form-submit'."
+  },
+  "icons": {
+    "library": "lucide-react",
+    "style": "Use thin stroke widths (1.5 or 1) to maintain the premium, delicate gold aesthetic."
+  }
+}
