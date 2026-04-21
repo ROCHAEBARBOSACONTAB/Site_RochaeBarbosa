@@ -20,9 +20,9 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-b from-[#0A2A57]/80 via-[#0A2A57]/90 to-[#0A2A57]" />
         <div className="relative max-w-[1400px] mx-auto px-6 lg:px-12 pt-32 pb-28 lg:pt-44 lg:pb-36">
           <div className="max-w-3xl">
-            <div className="fade-up eyebrow text-[#E6C96A] mb-6">Consultoria Fiscal · Tributária · Corporativa</div>
+            <div className="fade-up eyebrow text-[#E6C96A] mb-6">Inteligência Fiscal · Estruturação Tributária · Execução Técnica</div>
             <h1 className="fade-up-2 font-serif text-4xl sm:text-5xl lg:text-6xl leading-[1.05] tracking-tight">
-              Sua empresa pode estar <span className="text-[#D4AF37]">pagando mais imposto</span> do que deveria — sem perceber.
+              Sua empresa pode estar <span className="text-[#D4AF37]">operando com erros fiscais silenciosos</span> — gerando prejuízos que não aparecem no seu resultado.
             </h1>
             <p className="fade-up-3 mt-8 text-white/80 text-lg max-w-2xl leading-relaxed">
               Atuação técnica em revisão fiscal, recuperação de créditos e compliance. Especialistas em ambientes complexos, incluindo empresas que operam com TOTVS Protheus.
@@ -31,7 +31,7 @@ export default function Home() {
               <Link to="/diagnostico" data-testid="hero-cta-diagnostic" className="btn-gold">
                 Solicitar Diagnóstico <ArrowRight size={16} strokeWidth={1.5}/>
               </Link>
-              <Link to="/servicos" data-testid="hero-cta-services" className="btn-outline-gold">Conheça os Serviços</Link>
+              <Link to="/servicos" data-testid="hero-cta-services" className="btn-outline-gold">Conhecer os Serviços</Link>
             </div>
           </div>
         </div>
