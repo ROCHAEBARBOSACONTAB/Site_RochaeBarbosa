@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, ShieldCheck, FileSearch, Layers, TrendingUp, Database, Cpu } from "lucide-react";
 import { api } from "../lib/api";
+import heroBg from "../assets/herobg.png";
 
 const HERO_IMG = "https://images.pexels.com/photos/7653461/pexels-photo-7653461.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940";
 const MEETING_IMG = "https://images.pexels.com/photos/7433840/pexels-photo-7433840.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940";
@@ -14,19 +15,25 @@ export default function Home() {
     <div data-testid="home-page">
       {/* HERO */}
       <section className="relative bg-[#0A2A57] text-white overflow-hidden noise">
-        <div className="absolute inset-0 opacity-30">
-          <img src={HERO_IMG} alt="" className="w-full h-full object-cover" />
+       <div className="absolute inset-0 opacity-26">
+        <img
+          src={heroBg} alt=""className="w-full h-full object-cover"/>
         </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0A2A57]/80 via-[#0A2A57]/90 to-[#0A2A57]" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(10,42,87,0.92)_0%,rgba(10,42,87,0.86)_30%,rgba(10,42,87,0.70)_55%,rgba(10,42,87,0.52)_75%,rgba(10,42,87,0.62)_100%)]" />
         <div className="relative max-w-[1400px] mx-auto px-6 lg:px-12 pt-32 pb-28 lg:pt-44 lg:pb-36">
           <div className="max-w-3xl">
-            <div className="fade-up eyebrow text-[#E6C96A] mb-6">Inteligência Fiscal · Estruturação Tributária · Execução Técnica</div>
-            <h1 className="fade-up-2 font-serif text-4xl sm:text-5xl lg:text-6xl leading-[1.05] tracking-tight">
-              Sua empresa pode estar <span className="text-[#D4AF37]">operando com erros fiscais silenciosos</span> — gerando prejuízos que não aparecem no seu resultado.
-            </h1>
-            <p className="fade-up-3 mt-8 text-white/80 text-lg max-w-2xl leading-relaxed">
-              Atuação técnica em revisão fiscal, recuperação de créditos e compliance. Especialistas em ambientes complexos, incluindo empresas que operam com TOTVS Protheus.
-            </p>
+            <div className="fade-up text-[14px] uppercase tracking-[0.26em] text-[#D4AF37] mb-7">
+              Inteligência Fiscal · Estruturação Tributária · Execução Técnica</div>
+           <h1 className="fade-up-2 font-serif text-[46px] sm:text-[58px] lg:text-[72px] leading-[1.03] tracking-[-0.015em] max-w-[820px]">
+            Falhas fiscais silenciosas podem estar afetando
+            <br />
+            <span className="text-[#D4AF37]">
+                sua operação
+            </span>
+          </h1>
+          <p className="mt-8 text-white/72 text-[18px] max-w-[720px] leading-[1.6]">
+            Identificamos falhas ocultas, corrigimos inconsistências e estruturamos sua operação fiscal com precisão técnica.
+          </p>
             <div className="fade-up-4 mt-10 flex flex-wrap gap-4">
               <Link to="/diagnostico" data-testid="hero-cta-diagnostic" className="btn-gold">
                 Solicitar Diagnóstico <ArrowRight size={16} strokeWidth={1.5}/>
