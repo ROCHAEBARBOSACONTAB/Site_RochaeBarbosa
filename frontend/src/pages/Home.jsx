@@ -125,83 +125,234 @@ export default function Home() {
       </section>
 
       {/* COMO ATUAMOS */}
-      <section className="bg-[#F5F3EE] py-24 border-t border-black/5">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-          <div className="grid lg:grid-cols-12 gap-12 items-start">
-            <div className="lg:col-span-5">
-              <div className="eyebrow mb-4">Como Atuamos</div>
-              <h2 className="font-serif text-3xl lg:text-5xl text-[#0A2A57] leading-[1.08]">
-                  Um método técnico para
-                  <span className="text-[#D4AF37]"> identificar, corrigir e estruturar</span>
-              </h2>
-             <p className="mt-6 text-[#444] text-[16px] leading-relaxed max-w-[520px]">
-              Não trabalhamos com tentativa e erro. Entramos na operação, localizamos os pontos críticos, corrigimos distorções e estruturamos a base fiscal para reduzir risco e recuperar valor.
-            </p>
-              <Link to="/servicos" className="inline-flex items-center gap-2 mt-8 link-gold text-sm uppercase tracking-[0.18em]">
-                Ver a metodologia completa <ArrowRight size={14} strokeWidth={1.5}/>
-              </Link>
-            </div>
-            <div className="lg:col-span-7 space-y-5">
-              {[
-                { icon: FileSearch, title: "1. Diagnóstico Fiscal", desc: "Mapeamos a operação, localizamos distorções, riscos e perdas invisíveis cruzando ERP, escrituração e obrigações." },
-                { icon: TrendingUp, title: "2. Recuperação de Créditos", desc: "Identificamos oportunidades concretas de recuperação com base técnica, rastreabilidade documental e segurança na execução." },
-                { icon: ShieldCheck, title: "3. Estruturação & Compliance", desc: "Corrigimos a base fiscal, fortalecemos a governança e deixamos a operação mais segura para seguir crescendo sem exposição." },
-              ].map((s, i) => (
-                <Link to="/servicos" key={i} className="premium-card p-8 block group transition-all duration-300 hover:-translate-y-[3px] hover:shadow-[0_18px_35px_rgba(10,42,87,0.06)]">
-                  <div className="flex items-start gap-5">
-                    <div className="w-12 h-12 border border-[#D4AF37]/50 flex items-center justify-center shrink-0 transition-all duration-300 group-hover:border-[#D4AF37]">
-                      <s.icon size={22} strokeWidth={1.4} className="text-[#D4AF37]" />
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="font-serif text-[30px] text-[#0A2A57] leading-[1.05]">{s.title}</h3>
-                      <p className="text-[#555] text-[15px] leading-relaxed mt-3 max-w-[520px]">{s.desc}</p>
-                    </div>
-                    <ArrowRight size={18} strokeWidth={1.4} className="text-[#D4AF37] group-hover:translate-x-1 transition-transform mt-1"/>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <section className="bg-[#FCFBF8] py-24 border-t border-[#EAE6DC]">
+            <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+              <div className="grid lg:grid-cols-12 gap-12 items-start">
+                <div className="lg:col-span-5">
+                  <div className="eyebrow mb-4">Como Atuamos</div>
 
-            {/* COMPETENCIA TECNICA */}
-      <section className="bg-[#F1EFEA] py-24 border-t border-black/5">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-          <div className="eyebrow text-center mb-3">Competências Técnicas</div>
-          <h2 className="font-serif text-center text-3xl lg:text-4xl text-[#0A2A57] mb-14">Onde atuamos com autoridade</h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              { icon: Database, title: "SPED", desc: "EFD-ICMS/IPI, EFD-Contribuições, ECD, ECF. Escrituração técnica e conciliação completa." },
-              { icon: TrendingUp, title: "Reforma Tributária", desc: "Mapeamento CBS/IBS, plano de transição e parametrização no ERP para 2026+." },
-              { icon: Cpu, title: "TOTVS Protheus", desc: "SIGAFIS, TIOs, matriz tributária, governança de exceções e integrações fiscais." },
-            ].map((x, i) => (
-              <div key={i} className="premium-card p-8 bg-white" data-testid={`auth-${x.title.toLowerCase().replace(/\s/g,'-')}`}>
-                <x.icon size={28} strokeWidth={1.4} className="text-[#D4AF37]" />
-                <div className="gold-bar my-5" />
-                <h3 className="font-serif text-2xl text-[#0A2A57] mb-3">{x.title}</h3>
-                <p className="text-[#444] text-[15px] leading-relaxed">{x.desc}</p>
+                  <h2 className="font-serif text-3xl lg:text-5xl text-[#0A2A57] leading-[1.08]">
+                    Um método técnico para
+                    <span className="text-[#D4AF37]">
+                      {" "}identificar, corrigir e estruturar
+                    </span>
+                  </h2>
+
+                  <p className="mt-6 text-[#444] text-[16px] leading-relaxed max-w-[520px]">
+                    Entramos na operação, identificamos os pontos críticos e atuamos diretamente na correção e estruturação fiscal — com base técnica e segurança.
+                  </p>
+
+                  <Link
+                    to="/diagnostico"
+                    className="inline-flex items-center gap-2 mt-8 link-gold text-sm uppercase tracking-[0.18em]"
+                  >
+                    Solicitar diagnóstico
+                    <ArrowRight size={14} strokeWidth={1.5} />
+                  </Link>
+                </div>
+
+                <div className="lg:col-span-7 space-y-5">
+                  {[
+                    {
+                      icon: FileSearch,
+                      title: "1. Diagnóstico Fiscal",
+                      desc: "Mapeamos a operação, localizamos distorções, riscos e perdas invisíveis cruzando ERP, escrituração e obrigações.",
+                    },
+                    {
+                      icon: TrendingUp,
+                      title: "2. Recuperação de Créditos",
+                      desc: "Identificamos oportunidades concretas de recuperação com base técnica, rastreabilidade documental e segurança na execução.",
+                    },
+                    {
+                      icon: ShieldCheck,
+                      title: "3. Estruturação & Compliance",
+                      desc: "Corrigimos a base fiscal, fortalecemos a governança e deixamos a operação mais segura para seguir crescendo sem exposição.",
+                    },
+                  ].map((s, i) => (
+                    <Link
+                      to="/servicos"
+                      key={i}
+                      className="premium-card p-7 block group bg-[#FCFBF8] border border-[#E7E2D8] shadow-[0_2px_8px_rgba(0,0,0,0.03)] hover:shadow-[0_12px_32px_rgba(0,0,0,0.08)] hover:-translate-y-1 hover:border-[#D4AF37]/70 transition-all duration-300 ease-out"
+                      data-testid={`work-${i}`}
+                    >
+                      <div className="flex items-start gap-5">
+                        <div className="w-12 h-12 border border-[#D4AF37]/50 flex items-center justify-center shrink-0 transition-all duration-300 group-hover:border-[#D4AF37] group-hover:bg-[#D4AF37]/5">
+                          <s.icon
+                            size={22}
+                            strokeWidth={1.4}
+                            className="text-[#D4AF37]"
+                          />
+                        </div>
+
+                        <div className="flex-1">
+                          <h3 className="font-serif text-xl text-[#0A2A57]">
+                            {s.title}
+                          </h3>
+
+                          <p className="text-[#555] text-[14.5px] leading-relaxed mt-2">
+                            {s.desc}
+                          </p>
+                        </div>
+
+                        <ArrowRight
+                          size={18}
+                          strokeWidth={1.4}
+                          className="text-[#D4AF37] opacity-70 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300 mt-1"
+                        />
+                      </div>
+                    </Link>
+                  ))}
+                </div>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
+            </div>
+          </section>
 
-      {/* MISSION QUOTE */}
-      <section className="relative bg-[#0A2A57] py-24 noise overflow-hidden">
-        <div className="absolute inset-0 opacity-15">
-          <img src={MEETING_IMG} alt="" className="w-full h-full object-cover" />
-        </div>
-        <div className="absolute inset-0 bg-[#0A2A57]/80" />
-        <div className="relative max-w-[1000px] mx-auto px-6 lg:px-12 text-center">
-          <div className="text-[#D4AF37] font-serif text-5xl leading-none mb-6">"</div>
-          <p className="font-serif text-white text-2xl lg:text-[32px] leading-[1.35]">
-            Muitas organizações operam com falhas fiscais silenciosas que geram risco e perda financeira ao longo do tempo. Nossa missão é corrigir isso com técnica, segurança e execução.
-          </p>
-          <div className="gold-bar mx-auto mt-8" />
-          <div className="mt-5 text-[#E6C96A] text-[11px] uppercase tracking-[0.28em]">Rocha & Barbosa · Assessoria Contábil</div>
-        </div>
-      </section>
+          {/* COMPETÊNCIA TÉCNICA */}
+          <section className="bg-[#F1EFEA] py-24 border-t border-black/5">
+            <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+
+              <div className="eyebrow text-center mb-3">Competências Técnicas</div>
+
+              <h2 className="font-serif text-center text-3xl lg:text-4xl text-[#0A2A57]">
+                Especialistas em operações fiscais de alta complexidade
+              </h2>
+
+              <p className="text-[#555] text-[16px] max-w-[720px] mx-auto text-center mt-4 leading-relaxed">
+                Atuamos diretamente na estruturação, validação e execução fiscal em ambientes que exigem precisão técnica, governança e integração com ERP — independentemente da plataforma utilizada.
+              </p>
+
+              <div className="grid md:grid-cols-3 gap-6 mt-14">
+                {[
+                  {
+                    icon: Database,
+                    title: "SPED & Obrigações Fiscais",
+                    desc: "Escrituração, validação e conciliação fiscal com controle técnico de consistência e integridade das informações entregues ao fisco.",
+                  },
+                  {
+                    icon: TrendingUp,
+                    title: "Reforma Tributária (CBS & IBS)",
+                    desc: "Estruturação e adaptação da operação às novas regras, com análise de impacto, plano de transição e adequação sistêmica.",
+                  },
+                  {
+                    icon: Cpu,
+                    title: "ERP & Integração Fiscal",
+                    desc: "Parametrização, governança de exceções e integração entre módulos fiscais em diferentes sistemas — incluindo ambientes complexos como o Protheus.",
+                  },
+                ].map((x, i) => (
+                  <div
+                    key={i}
+                    className="premium-card p-8 bg-white border border-[#E7E2D8] shadow-[0_2px_8px_rgba(0,0,0,0.03)] hover:shadow-[0_12px_28px_rgba(0,0,0,0.08)] transition-all duration-300"
+                    data-testid={`auth-${x.title.toLowerCase().replace(/\s/g, "-")}`}
+                  >
+                    <x.icon size={28} strokeWidth={1.4} className="text-[#D4AF37]" />
+
+                    <div className="gold-bar my-5" />
+
+                    <h3 className="font-serif text-2xl text-[#0A2A57] mb-3">
+                      {x.title}
+                    </h3>
+
+                    <p className="text-[#444] text-[15px] leading-relaxed">
+                      {x.desc}
+                    </p>
+                  </div>
+                ))}
+              </div>
+
+              {/* Reforço estratégico */}
+              <p className="text-[#6B7280] text-[14px] text-center mt-12 max-w-[700px] mx-auto leading-relaxed">
+                Nosso foco está na consistência fiscal e na segurança da operação — não na ferramenta utilizada. Atuamos sobre a estrutura, garantindo precisão e controle independente do sistema.
+              </p>
+
+            </div>
+          </section>
+
+          {/* SOLUÇÕES COMPLEMENTARES */}
+          <section className="bg-white py-24 border-t border-[#EAE6DC]">
+            <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+              <div className="text-center max-w-[760px] mx-auto">
+                <div className="eyebrow mb-3">Soluções Complementares</div>
+
+                <h2 className="font-serif text-3xl lg:text-4xl text-[#0A2A57]">
+                  Apoio completo para sua operação fiscal
+                </h2>
+
+                <p className="text-[#555] text-[16px] mt-4 leading-relaxed">
+                  Serviços que complementam nossa atuação técnica, garantindo suporte contínuo para sua empresa.
+                </p>
+              </div>
+
+              <div className="mt-14 space-y-6">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {[
+                    {
+                      title: "Planejamento Tributário",
+                      desc: "Estratégias para redução legal da carga tributária com análise técnica e projeção de cenários.",
+                    },
+                    {
+                      title: "Recuperação Fiscal",
+                      desc: "Identificação e recuperação de créditos tributários com base documental e segurança na execução.",
+                    },
+                    {
+                      title: "Reforma Tributária",
+                      desc: "Preparação da empresa para o novo modelo tributário com análise de impacto e adaptação operacional.",
+                    },
+                  ].map((item, i) => (
+                    <Link
+                      key={i}
+                      to="/servicos"
+                      className="block cursor-pointer bg-[#FAFAF8] border border-[#E7E2D8] p-6 shadow-[0_2px_8px_rgba(0,0,0,0.04)] transition-all duration-300 ease-out hover:-translate-y-1 hover:border-[#D4AF37] hover:shadow-[0_16px_36px_rgba(10,42,87,0.14)]"
+                    >
+                      <h3 className="font-serif text-xl text-[#0A2A57] mb-2">
+                        {item.title}
+                      </h3>
+
+                      <p className="text-[#555] text-[14.5px] leading-relaxed">
+                        {item.desc}
+                      </p>
+                    </Link>
+                  ))}
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-6 max-w-[860px] mx-auto">
+                  {[
+                    {
+                      title: "Certificado Digital",
+                      desc: "Emissão ágil com suporte completo e condições competitivas para empresas e pessoas físicas.",
+                    },
+                    {
+                      title: "ERP & Sistemas",
+                      desc: "Atuação em diferentes plataformas com foco em integração e consistência fiscal.",
+                    },
+                  ].map((item, i) => (
+                    <Link
+                      key={i}
+                      to="/servicos"
+                      className="block cursor-pointer bg-[#FAFAF8] border border-[#E7E2D8] p-6 shadow-[0_2px_8px_rgba(0,0,0,0.04)] transition-all duration-300 ease-out hover:-translate-y-1 hover:border-[#D4AF37] hover:shadow-[0_16px_36px_rgba(10,42,87,0.14)]"
+                    >
+                      <h3 className="font-serif text-xl text-[#0A2A57] mb-2">
+                        {item.title}
+                      </h3>
+
+                      <p className="text-[#555] text-[14.5px] leading-relaxed">
+                        {item.desc}
+                      </p>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+
+              <div className="text-center mt-12">
+                <Link
+                  to="/servicos"
+                  className="inline-flex items-center gap-2 link-gold text-sm uppercase tracking-[0.18em]"
+                >
+                  Ver todos os serviços
+                  <ArrowRight size={14} strokeWidth={1.5} />
+                </Link>
+              </div>
+            </div>
+          </section>
 
       {/* BLOG LATEST */}
       <section className="py-24 bg-white">
