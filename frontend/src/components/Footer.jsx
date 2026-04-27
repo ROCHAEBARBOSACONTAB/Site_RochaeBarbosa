@@ -103,7 +103,7 @@ export default function Footer() {
               <li className="flex items-start gap-3">
                 <MapPin size={16} className="text-[#D4AF37]/90 mt-1" />
                 <a
-                  href="https://www.google.com/maps/search/?api=1&query=Rua+Duque+de+Caxias+294+Centro+Pederneiras+SP"
+                  href="https://maps.app.goo.gl/FwjWsxxiHdU2AmcK7"
                   target="_blank"
                   rel="noreferrer"
                   className="hover:text-[#D4AF37] transition"

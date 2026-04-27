@@ -355,7 +355,7 @@ export default function Home() {
           </section>
 
       {/* BLOG LATEST */}
-      <section className="py-24 bg-white">
+      {/*<section className="py-24 bg-white">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
           <div className="flex items-end justify-between mb-10 flex-wrap gap-4">
             <div>
@@ -379,23 +379,55 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </section>*/}
 
       {/* FINAL CTA */}
-      <section className="bg-[#0A2A57] text-white py-24 relative noise">
-        <div className="max-w-[1100px] mx-auto px-6 lg:px-12 text-center">
-          <div className="eyebrow text-[#E6C96A] mb-4">Próximo Passo</div>
-          <h2 className="font-serif text-3xl lg:text-5xl leading-[1.1] mb-6">
-            Descubra, em 48h, onde sua empresa está <span className="text-[#D4AF37]">perdendo dinheiro por ineficiência fiscal.</span>
-          </h2>
-          <p className="text-white/75 max-w-2xl mx-auto mb-10 leading-relaxed">
-            Solicite um diagnóstico técnico inicial. Sem compromisso. Apenas uma análise honesta da sua operação.
-          </p>
-          <Link to="/diagnostico" data-testid="final-cta-diagnostic" className="btn-gold">
-            Solicitar Diagnóstico <Layers size={16} strokeWidth={1.5}/>
-          </Link>
-        </div>
-      </section>
+     <section className="bg-[#0A2A57] text-white py-24 relative noise">
+  <div className="max-w-[1100px] mx-auto px-6 lg:px-12 text-center">
+    <div className="eyebrow text-[#E6C96A] mb-4">
+      Próximo Passo
+    </div>
+
+    <h2 className="font-serif text-3xl lg:text-5xl leading-[1.08] mb-6">
+      Antes de decidir pelo próximo movimento fiscal,
+      <span className="text-[#D4AF37]">
+        {" "}tenha clareza sobre os riscos, perdas e oportunidades da sua operação.
+      </span>
+    </h2>
+
+    <p className="text-white/75 max-w-2xl mx-auto mb-8 leading-relaxed">
+      O diagnóstico técnico inicial avalia a estrutura fiscal da empresa com base em dados reais,
+      identificando inconsistências, pontos de exposição e possibilidades de recuperação ou melhoria.
+    </p>
+
+    <div className="max-w-[760px] mx-auto mb-10 grid gap-3 text-sm text-white/70 sm:grid-cols-3">
+      <div className="border border-white/10 bg-white/[0.03] px-4 py-3">
+        Riscos fiscais ocultos
+      </div>
+
+      <div className="border border-white/10 bg-white/[0.03] px-4 py-3">
+        Créditos e perdas potenciais
+      </div>
+
+      <div className="border border-white/10 bg-white/[0.03] px-4 py-3">
+        Plano técnico de ação
+      </div>
+    </div>
+
+    <Link
+      to="/diagnostico"
+      data-testid="final-cta-diagnostic"
+      className="btn-gold"
+    >
+      Solicitar Diagnóstico Técnico
+      <Layers size={16} strokeWidth={1.5} />
+    </Link>
+
+    <p className="mt-5 text-xs text-white/45 max-w-xl mx-auto leading-relaxed">
+      A análise é conduzida conforme a complexidade da operação e o volume de informações disponíveis.
+    </p>
+  </div>
+</section>
     </div>
   );
 }
