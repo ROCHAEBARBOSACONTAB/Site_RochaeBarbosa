@@ -7,8 +7,10 @@ import {
   FileSearch,
   Database,
   Cpu,
+  AlertTriangle,
 } from "lucide-react";
 import { api } from "../lib/api";
+import heroBg from "../assets/herobg.png";
 
 export default function Diagnostic() {
   const [form, setForm] = useState({
@@ -25,8 +27,7 @@ export default function Diagnostic() {
   const [loading, setLoading] = useState(false);
   const [done, setDone] = useState(false);
 
-  const upd = (k) => (e) =>
-    setForm((f) => ({ ...f, [k]: e.target.value }));
+  const upd = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target.value }));
 
   const submit = async (e) => {
     e.preventDefault();
@@ -69,37 +70,68 @@ export default function Diagnostic() {
   return (
     <div data-testid="diagnostic-page" className="bg-[#F7F5EF]">
       {/* HERO */}
-      <section className="relative bg-[#0A2A57] text-white overflow-hidden">
-        <div className="max-w-[1100px] mx-auto px-6 lg:px-12 py-24 lg:py-28">
-          <div className="eyebrow text-[#D4AF37] mb-4">
-            Diagnóstico Fiscal Estratégico
-          </div>
+      <section className="relative bg-[#0A2A57] text-white overflow-hidden noise">
+        <div className="absolute inset-0 opacity-24">
+          <img src={heroBg} alt="" className="w-full h-full object-cover" />
+        </div>
 
-          <h1 className="font-serif text-[42px] sm:text-[56px] lg:text-[64px] leading-[1.05] max-w-[780px]">
-            Sua operação fiscal pode estar errada —
-            <span className="text-[#D4AF37]">
-              {" "}sem nenhum erro aparente.
-            </span>
-          </h1>
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(10,42,87,0.96)_0%,rgba(10,42,87,0.90)_36%,rgba(10,42,87,0.74)_68%,rgba(10,42,87,0.82)_100%)]" />
 
-          <p className="mt-6 text-white/75 text-[18px] max-w-[620px] leading-relaxed">
-            Identificamos riscos, perdas e inconsistências diretamente na estrutura da sua operação.
-          </p>
+        <div className="absolute -right-28 top-16 h-[420px] w-[420px] rounded-full bg-[#D4AF37]/10 blur-[90px]" />
+        <div className="absolute left-[-120px] bottom-[-120px] h-[320px] w-[320px] rounded-full bg-white/5 blur-[80px]" />
 
-          <div className="mt-8 flex flex-wrap gap-3 text-sm text-white/70">
-            <span className="border border-white/10 px-4 py-2">ERP</span>
-            <span className="border border-white/10 px-4 py-2">Escrituração</span>
-            <span className="border border-white/10 px-4 py-2">SPED</span>
-            <span className="border border-white/10 px-4 py-2">Créditos fiscais</span>
-          </div>
+        <div className="relative max-w-[1200px] mx-auto px-6 lg:px-12 pt-28 pb-24 lg:pt-36 lg:pb-28">
+          <div className="max-w-[820px]">
+            <div className="eyebrow text-[#D4AF37] mb-5">
+              Diagnóstico Fiscal Estratégico
+            </div>
 
-          <div className="mt-10">
-            <a href="#form-diagnostico" className="btn-gold">
-              Iniciar Diagnóstico Técnico
-              <ArrowRight size={16} strokeWidth={1.5} />
-            </a>
+            <h1 className="font-serif text-[40px] sm:text-[52px] lg:text-[62px] leading-[1.04] tracking-[-0.015em] max-w-[860px]">
+              Se o seu sistema está gerando prejuízo fiscal,
+              <br />
+              <span className="text-[#D4AF37]">
+                o problema já está na operação
+              </span>
+            </h1>
+
+            <p className="mt-6 text-white/75 text-[17px] max-w-[700px] leading-[1.58]">
+              Analisamos ERP, apuração, escrituração e obrigações fiscais para
+              identificar inconsistências, riscos e oportunidades com base em
+              dados reais da operação.
+            </p>
+
+            <div className="mt-8 flex flex-wrap gap-3 text-sm text-white/70">
+              <span className="border border-white/10 bg-white/[0.03] px-4 py-2">
+                ERP
+              </span>
+              <span className="border border-white/10 bg-white/[0.03] px-4 py-2">
+                Apuração fiscal
+              </span>
+              <span className="border border-white/10 bg-white/[0.03] px-4 py-2">
+                SPED
+              </span>
+              <span className="border border-white/10 bg-white/[0.03] px-4 py-2">
+                Créditos fiscais
+              </span>
+            </div>
+
+            <div className="mt-9 flex flex-wrap gap-4">
+              <a href="#form-diagnostico" className="btn-gold">
+                Iniciar Diagnóstico Técnico
+                <ArrowRight size={16} strokeWidth={1.5} />
+              </a>
+
+              <a
+                href="#criterios"
+                className="btn-outline-gold"
+              >
+                Ver critérios
+              </a>
+            </div>
           </div>
         </div>
+
+        <div className="gold-line" />
       </section>
 
       {/* CARDS */}
@@ -110,17 +142,17 @@ export default function Diagnostic() {
               {
                 icon: Database,
                 title: "Cruzamento técnico",
-                desc: "ERP, escrituração, obrigações e regras fiscais analisados em conjunto.",
+                desc: "ERP, escrituração, obrigações e regras fiscais analisados em conjunto para revelar distorções que não aparecem isoladamente.",
               },
               {
                 icon: FileSearch,
                 title: "Foco em evidência",
-                desc: "Nada de promessa genérica. Apenas pontos identificáveis e validáveis.",
+                desc: "Nada de promessa genérica. A análise busca pontos identificáveis, validáveis e conectados ao impacto operacional.",
               },
               {
                 icon: Cpu,
                 title: "Ambientes complexos",
-                desc: "Atuação em operações com alto volume e integração fiscal sistêmica.",
+                desc: "Atuação voltada a empresas com operação estruturada, alto volume de informações e integração fiscal sistêmica.",
               },
             ].map((item, i) => (
               <div
@@ -146,6 +178,70 @@ export default function Diagnostic() {
         </div>
       </section>
 
+      {/* CRITÉRIOS 
+      <section
+        id="criterios"
+        className="bg-[#FCFBF8] py-20 border-b border-[#E7E2D8]"
+      >
+        <div className="max-w-[1200px] mx-auto px-6 lg:px-12 grid lg:grid-cols-12 gap-10 items-start">
+          <div className="lg:col-span-5">
+            <div className="eyebrow mb-4">Antes de Solicitar</div>
+
+            <h2 className="font-serif text-3xl lg:text-5xl text-[#0A2A57] leading-[1.08]">
+              Este diagnóstico não é para empresas
+              <span className="text-[#D4AF37]">
+                {" "}sem estrutura mínima
+              </span>
+            </h2>
+
+            <p className="mt-6 text-[#555] text-[16px] leading-relaxed max-w-[520px]">
+              A análise técnica só gera valor quando existe uma base operacional
+              capaz de ser medida, confrontada e corrigida.
+            </p>
+          </div>
+
+          <div className="lg:col-span-7 grid md:grid-cols-2 gap-6">
+            <div className="border border-[#E7E2D8] bg-white p-7 premium-card">
+              <ShieldCheck
+                size={24}
+                strokeWidth={1.4}
+                className="text-[#D4AF37] mb-4"
+              />
+
+              <h3 className="font-serif text-2xl text-[#0A2A57] mb-3">
+                Indicado para empresas que:
+              </h3>
+
+              <ul className="text-[#555] text-[15px] leading-relaxed space-y-2">
+                <li>• Possuem ERP ativo na operação</li>
+                <li>• Têm apuração fiscal recorrente</li>
+                <li>• Buscam reduzir risco e perda financeira</li>
+                <li>• Aceitam análise baseada em dados reais</li>
+              </ul>
+            </div>
+
+            <div className="border border-[#E7E2D8] bg-[#FAFAF8] p-7 premium-card">
+              <AlertTriangle
+                size={24}
+                strokeWidth={1.4}
+                className="text-[#D4AF37] mb-4"
+              />
+
+              <h3 className="font-serif text-2xl text-[#0A2A57] mb-3">
+                Não é indicado para empresas que:
+              </h3>
+
+              <ul className="text-[#555] text-[15px] leading-relaxed space-y-2">
+                <li>• Operam sem controle financeiro mínimo</li>
+                <li>• Não utilizam sistema ou ERP</li>
+                <li>• Buscam apenas “pagar menos imposto”</li>
+                <li>• Não estão dispostas a corrigir processos</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>*/}
+
       {/* FORMULÁRIO */}
       <section id="form-diagnostico" className="bg-white py-20 lg:py-24">
         <div className="max-w-[1200px] mx-auto px-6 lg:px-12 grid lg:grid-cols-12 gap-12 items-start">
@@ -160,12 +256,14 @@ export default function Diagnostic() {
             </h2>
 
             <p className="mt-6 text-[#555] text-[16px] leading-relaxed max-w-[520px]">
-              A maioria das empresas só identifica falhas fiscais quando o impacto já aconteceu —
-              seja na perda de crédito, na inconsistência do SPED ou em questionamentos fiscais.
+              A maioria das empresas só identifica falhas fiscais quando o
+              impacto já aconteceu — na perda de crédito, na inconsistência do
+              SPED, no retrabalho interno ou em questionamentos fiscais.
             </p>
 
             <p className="mt-4 text-[#444] text-[15px] leading-relaxed max-w-[520px]">
-              Se existe dúvida sobre a consistência da operação, o risco já está presente.
+              Se existe dúvida sobre a consistência da operação, o risco já está
+              presente.
             </p>
 
             <div className="mt-8 p-6 border border-[#D4AF37]/30 bg-[#FAFAF8]">
@@ -175,152 +273,170 @@ export default function Diagnostic() {
               </div>
 
               <p className="text-sm text-[#555] leading-relaxed">
-                O diagnóstico não projeta cenários genéricos. Ele identifica, com base técnica,
-                onde existem riscos, perdas ou distorções na operação fiscal.
+                O diagnóstico não projeta cenários genéricos. Ele identifica,
+                com base técnica, onde existem riscos, perdas ou distorções na
+                operação fiscal.
               </p>
             </div>
           </div>
 
           <div className="lg:col-span-7">
-            {done ? (
-              <div
-                data-testid="diagnostic-success"
-                className="border border-[#D4AF37]/50 bg-[#FAFAF8] p-10 text-center"
-              >
-                <CheckCircle2
-                  size={42}
-                  strokeWidth={1.3}
-                  className="text-[#D4AF37] mx-auto mb-4"
-                />
+           {done ? (
+  <div
+    data-testid="diagnostic-success"
+    className="border border-[#D4AF37]/50 bg-[#FAFAF8] p-10 text-center"
+  >
+    <CheckCircle2
+      size={42}
+      strokeWidth={1.3}
+      className="text-[#D4AF37] mx-auto mb-4"
+    />
 
-                <h3 className="font-serif text-3xl text-[#0A2A57] mb-3">
-                  Solicitação recebida
-                </h3>
+    <h3 className="font-serif text-3xl text-[#0A2A57] mb-3">
+      Solicitação recebida
+    </h3>
 
-                <p className="text-[#555]">
-                  Nossa equipe analisará as informações iniciais e retornará para o próximo passo.
-                </p>
-              </div>
-            ) : (
-              <form
-                onSubmit={submit}
-                data-testid="diagnostic-form"
-                className="border border-[#E7E2D8] bg-[#FAFAF8] p-9 lg:p-12 shadow-[0_18px_50px_rgba(10,42,87,0.08)]"
-              >
-                <div className="mb-10">
-                  <h3 className="font-serif text-2xl lg:text-3xl text-[#0A2A57] leading-tight">
-                    Descubra onde sua operação fiscal está falhando
-                  </h3>
+    <p className="text-[#555] leading-relaxed">
+      Recebemos suas informações.
+      <br />
+      Para acelerar sua análise, fale agora com um especialista e antecipe os
+      principais pontos da sua operação.
+    </p>
 
-                  <p className="mt-3 text-sm text-[#6B7280] leading-relaxed max-w-[560px]">
-                    Para análise correta, todos os dados são necessários.
-                  </p>
-                </div>
+    <a
+      href="https://wa.me/5514991269374?text=Olá,%20acabei%20de%20solicitar%20um%20diagnóstico%20pelo%20site%20e%20gostaria%20de%20antecipar%20as%20informações."
+      target="_blank"
+      rel="noopener noreferrer"
+      className="btn-outline-gold w-full mt-6 py-4 text-[14px] tracking-[0.12em] text-center flex items-center justify-center"
+    >
+      Falar com especialista agora
+    </a>
+  </div>
+) : (
+  <form
+    onSubmit={submit}
+    data-testid="diagnostic-form"
+    className="border border-[#E7E2D8] bg-[#FAFAF8] p-9 lg:p-12 shadow-[0_18px_50px_rgba(10,42,87,0.08)]"
+  >
+    <div className="mb-10">
+      <h3 className="font-serif text-2xl lg:text-3xl text-[#0A2A57] leading-tight">
+        Solicite uma análise técnica da sua operação
+      </h3>
 
-                <div className="grid md:grid-cols-2 gap-8">
-                  <input
-                    data-testid="diag-name"
-                    placeholder="Nome *"
-                    className={inputClass}
-                    value={form.name}
-                    onChange={upd("name")}
-                    required
-                  />
+      <p className="mt-3 text-sm text-[#6B7280] leading-relaxed max-w-[560px]">
+        As informações abaixo permitem identificar pontos críticos e direcionar
+        uma análise real, sem diagnóstico genérico.
+      </p>
+    </div>
 
-                  <input
-                    data-testid="diag-email"
-                    type="email"
-                    placeholder="E-mail *"
-                    className={inputClass}
-                    value={form.email}
-                    onChange={upd("email")}
-                    required
-                  />
+    <div className="grid md:grid-cols-2 gap-8">
+      <input
+        data-testid="diag-name"
+        placeholder="Nome *"
+        className={inputClass}
+        value={form.name}
+        onChange={upd("name")}
+        required
+      />
 
-                  <input
-                    data-testid="diag-phone"
-                    placeholder="Telefone *"
-                    className={inputClass}
-                    value={form.phone}
-                    onChange={upd("phone")}
-                    required
-                  />
+      <input
+        data-testid="diag-email"
+        type="email"
+        placeholder="E-mail *"
+        className={inputClass}
+        value={form.email}
+        onChange={upd("email")}
+        required
+      />
 
-                  <input
-                    data-testid="diag-company"
-                    placeholder="Empresa *"
-                    className={inputClass}
-                    value={form.company}
-                    onChange={upd("company")}
-                    required
-                  />
+      <input
+        data-testid="diag-phone"
+        placeholder="Telefone *"
+        className={inputClass}
+        value={form.phone}
+        onChange={upd("phone")}
+        required
+      />
 
-                  <select
-                    data-testid="diag-revenue"
-                    className={inputClass}
-                    value={form.revenue_range}
-                    onChange={upd("revenue_range")}
-                    required
-                  >
-                    <option value="">Faturamento *</option>
-                    <option>Até R$ 10M/ano</option>
-                    <option>R$ 10M – R$ 50M/ano</option>
-                    <option>R$ 50M – R$ 200M/ano</option>
-                    <option>Acima de R$ 200M/ano</option>
-                  </select>
+      <input
+        data-testid="diag-company"
+        placeholder="Empresa *"
+        className={inputClass}
+        value={form.company}
+        onChange={upd("company")}
+        required
+      />
 
-                  <select
-                    data-testid="diag-erp"
-                    className={inputClass}
-                    value={form.erp}
-                    onChange={upd("erp")}
-                    required
-                  >
-                    <option value="">ERP *</option>
-                    <option>TOTVS Protheus</option>
-                    <option>SAP</option>
-                    <option>Oracle</option>
-                    <option>Domínio Sistemas</option>
-                    <option>Bling</option>
-                    <option>Outro</option>
-                  </select>
+      <select
+        data-testid="diag-revenue"
+        className={inputClass}
+        value={form.revenue_range}
+        onChange={upd("revenue_range")}
+        required
+      >
+        <option value="">Faturamento *</option>
+        <option>Empresa em estruturação</option>
+        <option>Até R$ 10M/ano</option>
+        <option>R$ 10M – R$ 50M/ano</option>
+        <option>R$ 50M – R$ 200M/ano</option>
+        <option>Acima de R$ 200M/ano</option>
+      </select>
 
-                  {form.erp === "Outro" && (
-                    <input
-                      data-testid="diag-other-erp"
-                      placeholder="Informe o ERP utilizado *"
-                      className="md:col-span-2 w-full border border-[#E3DED2] bg-white px-4 py-4 text-[#0A2A57] placeholder:text-[#9CA3AF] outline-none transition-all duration-300 focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37]/40"
-                      value={form.other_erp}
-                      onChange={upd("other_erp")}
-                      required
-                    />
-                  )}
-                </div>
+      <select
+        data-testid="diag-erp"
+        className={inputClass}
+        value={form.erp}
+        onChange={upd("erp")}
+        required
+      >
+        <option value="">ERP *</option>
+        <option>TOTVS Protheus</option>
+        <option>SAP</option>
+        <option>Oracle</option>
+        <option>Domínio Sistemas</option>
+        <option>Bling</option>
+        <option>Outro</option>
+        <option>Não possuo ERP estruturado</option>
+      </select>
 
-                <textarea
-                  data-testid="diag-message"
-                  rows={4}
-                  placeholder="Principal ponto de atenção *"
-                  className={`${inputClass} mt-8 resize-none`}
-                  value={form.message}
-                  onChange={upd("message")}
-                  required
-                />
+      {form.erp === "Outro" && (
+        <input
+          data-testid="diag-other-erp"
+          placeholder="Informe o ERP utilizado *"
+          className="md:col-span-2 w-full border border-[#E3DED2] bg-white px-4 py-4 text-[#0A2A57] placeholder:text-[#9CA3AF] outline-none transition-all duration-300 focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37]/40"
+          value={form.other_erp}
+          onChange={upd("other_erp")}
+          required
+        />
+      )}
 
-                <button
-                  type="submit"
-                  disabled={loading}
-                  data-testid="diag-submit"
-                  className="btn-gold w-full mt-12 py-4 text-[15px] tracking-[0.12em] justify-center disabled:opacity-60"
-                >
-                  {loading ? "Enviando..." : "Iniciar Análise da Minha Operação"}
-                </button>
+      <textarea
+        data-testid="diag-message"
+        rows={5}
+        placeholder="Principal ponto de atenção da operação *"
+        className={`${inputClass} md:col-span-2 resize-none`}
+        value={form.message}
+        onChange={upd("message")}
+        required
+      />
+    </div>
 
-                <p className="mt-4 text-xs text-[#6B7280] text-center">
-                  Retorno em até 1 dia útil após análise inicial.
-                </p>
-              </form>
-            )}
+    <button
+      type="submit"
+      disabled={loading}
+      data-testid="diag-submit"
+      className="btn-gold w-full mt-10 py-4 text-[15px] tracking-[0.12em] justify-center disabled:opacity-60"
+    >
+      {loading
+        ? "Enviando..."
+        : "Iniciar Diagnóstico Técnico da Minha Operação"}
+    </button>
+
+    <p className="mt-4 text-xs text-[#6B7280] text-center">
+      Retorno após análise inicial das informações enviadas.
+    </p>
+  </form>
+)}
           </div>
         </div>
       </section>

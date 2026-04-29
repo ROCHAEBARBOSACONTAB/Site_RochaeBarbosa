@@ -1,12 +1,7 @@
 import axios from "axios";
 
-export const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-export const API = `${BACKEND_URL}/api`;
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:8000";
 
-export const api = axios.create({ baseURL: API });
-
-api.interceptors.request.use((config) => {
-  const token = localStorage.getItem("rb_token");
-  if (token) config.headers.Authorization = `Bearer ${token}`;
-  return config;
+export const api = axios.create({
+  baseURL: `${API_URL}/api`,
 });
