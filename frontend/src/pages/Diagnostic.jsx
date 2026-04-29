@@ -29,40 +29,58 @@ export default function Diagnostic() {
 
   const upd = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target.value }));
 
-  const submit = async (e) => {
-    e.preventDefault();
+ const submit = async (e) => {
+  e.preventDefault();
 
-    if (
-      !form.name ||
-      !form.email ||
-      !form.phone ||
-      !form.company ||
-      !form.revenue_range ||
-      !form.erp ||
-      !form.message ||
-      (form.erp === "Outro" && !form.other_erp)
-    ) {
-      toast.error("Preencha todos os campos obrigatórios.");
-      return;
-    }
+  if (
+    !form.name ||
+    !form.email ||
+    !form.phone ||
+    !form.company ||
+    !form.revenue_range ||
+    !form.erp ||
+    !form.message ||
+    (form.erp === "Outro" && !form.other_erp)
+  ) {
+    toast.error("Preencha todos os campos obrigatórios.");
+    return;
+  }
 
-    setLoading(true);
+  setLoading(true);
 
-    try {
-      await api.post("/leads", {
-        ...form,
-        erp: form.erp === "Outro" ? `Outro: ${form.other_erp}` : form.erp,
-        source: "diagnostic",
-      });
+  try {
+    const data = new FormData();
 
-      setDone(true);
-      toast.success("Solicitação recebida. Entraremos em contato.");
-    } catch {
-      toast.error("Erro ao enviar. Tente novamente.");
-    } finally {
-      setLoading(false);
-    }
-  };
+    data.append("name", form.name);
+    data.append("email", form.email);
+    data.append("phone", form.phone);
+    data.append("company", form.company);
+    data.append("revenue_range", form.revenue_range);
+    data.append(
+      "erp",
+      form.erp === "Outro" ? `Outro: ${form.other_erp}` : form.erp
+    );
+    data.append("message", form.message);
+    data.append("source", "diagnostic");
+
+    await fetch(
+      "https://script.google.com/macros/s/AKfycbw9sSBWTBavR4ruJ1BqhyBDDYQcqkfJKH0gelIDYF1AUdpzabg_YSQNYA9GCkkm0kxS/exec",
+            {
+        method: "POST",
+        mode: "no-cors",
+        body: data,
+      }
+    );
+
+    setDone(true);
+    toast.success("Solicitação recebida. Entraremos em contato.");
+  } catch (err) {
+    console.error(err);
+    toast.error("Erro ao enviar. Tente novamente.");
+  } finally {
+    setLoading(false);
+  }
+};
 
   const inputClass =
     "w-full border border-[#E3DED2] bg-white px-4 py-4 text-[#0A2A57] placeholder:text-[#9CA3AF] outline-none transition-all duration-300 focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37]/40";
