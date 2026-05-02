@@ -7,10 +7,10 @@ import {
   FileSearch,
   Database,
   Cpu,
-  AlertTriangle,
 } from "lucide-react";
-import { api } from "../lib/api";
 import heroBg from "../assets/herobg.png";
+
+const WHATSAPP_NUMBER = "5514991269374";
 
 export default function Diagnostic() {
   const [form, setForm] = useState({
@@ -26,61 +26,63 @@ export default function Diagnostic() {
 
   const [loading, setLoading] = useState(false);
   const [done, setDone] = useState(false);
+  const [whatsappUrl, setWhatsappUrl] = useState("");
 
   const upd = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target.value }));
 
- const submit = async (e) => {
-  e.preventDefault();
+  const buildWhatsappUrl = () => {
+    const erpFinal =
+      form.erp === "Outro" ? `Outro: ${form.other_erp}` : form.erp;
 
-  if (
-    !form.name ||
-    !form.email ||
-    !form.phone ||
-    !form.company ||
-    !form.revenue_range ||
-    !form.erp ||
-    !form.message ||
-    (form.erp === "Outro" && !form.other_erp)
-  ) {
-    toast.error("Preencha todos os campos obrigatórios.");
-    return;
-  }
+    const message = `*Solicitação de Diagnóstico Fiscal Estratégico*
 
-  setLoading(true);
+*Nome:* ${form.name}
+*E-mail:* ${form.email}
+*Telefone:* ${form.phone}
+*Empresa:* ${form.company}
+*Faixa de faturamento:* ${form.revenue_range}
+*ERP utilizado:* ${erpFinal}
 
-  try {
-    const data = new FormData();
+*Principal ponto de atenção da operação:*
+${form.message}
 
-    data.append("name", form.name);
-    data.append("email", form.email);
-    data.append("phone", form.phone);
-    data.append("company", form.company);
-    data.append("revenue_range", form.revenue_range);
-    data.append(
-      "erp",
-      form.erp === "Outro" ? `Outro: ${form.other_erp}` : form.erp
-    );
-    data.append("message", form.message);
-    data.append("source", "diagnostic");
+*Origem:* Página de Diagnóstico - Site Rocha & Barbosa`;
 
-    await fetch(
-      "https://script.google.com/macros/s/AKfycbw9sSBWTBavR4ruJ1BqhyBDDYQcqkfJKH0gelIDYF1AUdpzabg_YSQNYA9GCkkm0kxS/exec",
-            {
-        method: "POST",
-        mode: "no-cors",
-        body: data,
-      }
-    );
+    return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+  };
+
+  const submit = (e) => {
+    e.preventDefault();
+
+    if (
+      !form.name ||
+      !form.email ||
+      !form.phone ||
+      !form.company ||
+      !form.revenue_range ||
+      !form.erp ||
+      !form.message ||
+      (form.erp === "Outro" && !form.other_erp)
+    ) {
+      toast.error("Preencha todos os campos obrigatórios.");
+      return;
+    }
+
+    setLoading(true);
+
+    const url = buildWhatsappUrl();
+    setWhatsappUrl(url);
+
+    const opened = window.open(url, "_blank", "noopener,noreferrer");
+
+    if (!opened) {
+      window.location.href = url;
+    }
 
     setDone(true);
-    toast.success("Solicitação recebida. Entraremos em contato.");
-  } catch (err) {
-    console.error(err);
-    toast.error("Erro ao enviar. Tente novamente.");
-  } finally {
+    toast.success("Formulário preenchido. Encaminhando para o WhatsApp.");
     setLoading(false);
-  }
-};
+  };
 
   const inputClass =
     "w-full border border-[#E3DED2] bg-white px-4 py-4 text-[#0A2A57] placeholder:text-[#9CA3AF] outline-none transition-all duration-300 focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37]/40";
@@ -139,11 +141,8 @@ export default function Diagnostic() {
                 <ArrowRight size={16} strokeWidth={1.5} />
               </a>
 
-              <a
-                href="#criterios"
-                className="btn-outline-gold"
-              >
-                Ver critérios
+              <a href="#form-diagnostico" className="btn-outline-gold">
+                Ver informações necessárias
               </a>
             </div>
           </div>
@@ -196,70 +195,6 @@ export default function Diagnostic() {
         </div>
       </section>
 
-      {/* CRITÉRIOS 
-      <section
-        id="criterios"
-        className="bg-[#FCFBF8] py-20 border-b border-[#E7E2D8]"
-      >
-        <div className="max-w-[1200px] mx-auto px-6 lg:px-12 grid lg:grid-cols-12 gap-10 items-start">
-          <div className="lg:col-span-5">
-            <div className="eyebrow mb-4">Antes de Solicitar</div>
-
-            <h2 className="font-serif text-3xl lg:text-5xl text-[#0A2A57] leading-[1.08]">
-              Este diagnóstico não é para empresas
-              <span className="text-[#D4AF37]">
-                {" "}sem estrutura mínima
-              </span>
-            </h2>
-
-            <p className="mt-6 text-[#555] text-[16px] leading-relaxed max-w-[520px]">
-              A análise técnica só gera valor quando existe uma base operacional
-              capaz de ser medida, confrontada e corrigida.
-            </p>
-          </div>
-
-          <div className="lg:col-span-7 grid md:grid-cols-2 gap-6">
-            <div className="border border-[#E7E2D8] bg-white p-7 premium-card">
-              <ShieldCheck
-                size={24}
-                strokeWidth={1.4}
-                className="text-[#D4AF37] mb-4"
-              />
-
-              <h3 className="font-serif text-2xl text-[#0A2A57] mb-3">
-                Indicado para empresas que:
-              </h3>
-
-              <ul className="text-[#555] text-[15px] leading-relaxed space-y-2">
-                <li>• Possuem ERP ativo na operação</li>
-                <li>• Têm apuração fiscal recorrente</li>
-                <li>• Buscam reduzir risco e perda financeira</li>
-                <li>• Aceitam análise baseada em dados reais</li>
-              </ul>
-            </div>
-
-            <div className="border border-[#E7E2D8] bg-[#FAFAF8] p-7 premium-card">
-              <AlertTriangle
-                size={24}
-                strokeWidth={1.4}
-                className="text-[#D4AF37] mb-4"
-              />
-
-              <h3 className="font-serif text-2xl text-[#0A2A57] mb-3">
-                Não é indicado para empresas que:
-              </h3>
-
-              <ul className="text-[#555] text-[15px] leading-relaxed space-y-2">
-                <li>• Operam sem controle financeiro mínimo</li>
-                <li>• Não utilizam sistema ou ERP</li>
-                <li>• Buscam apenas “pagar menos imposto”</li>
-                <li>• Não estão dispostas a corrigir processos</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>*/}
-
       {/* FORMULÁRIO */}
       <section id="form-diagnostico" className="bg-white py-20 lg:py-24">
         <div className="max-w-[1200px] mx-auto px-6 lg:px-12 grid lg:grid-cols-12 gap-12 items-start">
@@ -299,162 +234,164 @@ export default function Diagnostic() {
           </div>
 
           <div className="lg:col-span-7">
-           {done ? (
-  <div
-    data-testid="diagnostic-success"
-    className="border border-[#D4AF37]/50 bg-[#FAFAF8] p-10 text-center"
-  >
-    <CheckCircle2
-      size={42}
-      strokeWidth={1.3}
-      className="text-[#D4AF37] mx-auto mb-4"
-    />
+            {done ? (
+              <div
+                data-testid="diagnostic-success"
+                className="border border-[#D4AF37]/50 bg-[#FAFAF8] p-10 text-center"
+              >
+                <CheckCircle2
+                  size={42}
+                  strokeWidth={1.3}
+                  className="text-[#D4AF37] mx-auto mb-4"
+                />
 
-    <h3 className="font-serif text-3xl text-[#0A2A57] mb-3">
-      Solicitação recebida
-    </h3>
+                <h3 className="font-serif text-3xl text-[#0A2A57] mb-3">
+                  Informações encaminhadas
+                </h3>
 
-    <p className="text-[#555] leading-relaxed">
-      Recebemos suas informações.
-      <br />
-      Para acelerar sua análise, fale agora com um especialista e antecipe os
-      principais pontos da sua operação.
-    </p>
+                <p className="text-[#555] leading-relaxed">
+                  O WhatsApp foi aberto com os dados preenchidos.
+                  <br />
+                  Basta conferir a mensagem e enviar para iniciar o atendimento.
+                </p>
 
-    <a
-      href="https://wa.me/5514991269374?text=Olá,%20acabei%20de%20solicitar%20um%20diagnóstico%20pelo%20site%20e%20gostaria%20de%20antecipar%20as%20informações."
-      target="_blank"
-      rel="noopener noreferrer"
-      className="btn-outline-gold w-full mt-6 py-4 text-[14px] tracking-[0.12em] text-center flex items-center justify-center"
-    >
-      Falar com especialista agora
-    </a>
-  </div>
-) : (
-  <form
-    onSubmit={submit}
-    data-testid="diagnostic-form"
-    className="border border-[#E7E2D8] bg-[#FAFAF8] p-9 lg:p-12 shadow-[0_18px_50px_rgba(10,42,87,0.08)]"
-  >
-    <div className="mb-10">
-      <h3 className="font-serif text-2xl lg:text-3xl text-[#0A2A57] leading-tight">
-        Solicite uma análise técnica da sua operação
-      </h3>
+                {whatsappUrl && (
+                  <a
+                    href={whatsappUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-outline-gold w-full mt-6 py-4 text-[14px] tracking-[0.12em] text-center flex items-center justify-center"
+                  >
+                    Abrir WhatsApp novamente
+                  </a>
+                )}
+              </div>
+            ) : (
+              <form
+                onSubmit={submit}
+                data-testid="diagnostic-form"
+                className="border border-[#E7E2D8] bg-[#FAFAF8] p-9 lg:p-12 shadow-[0_18px_50px_rgba(10,42,87,0.08)]"
+              >
+                <div className="mb-10">
+                  <h3 className="font-serif text-2xl lg:text-3xl text-[#0A2A57] leading-tight">
+                    Solicite uma análise técnica da sua operação
+                  </h3>
 
-      <p className="mt-3 text-sm text-[#6B7280] leading-relaxed max-w-[560px]">
-        As informações abaixo permitem identificar pontos críticos e direcionar
-        uma análise real, sem diagnóstico genérico.
-      </p>
-    </div>
+                  <p className="mt-3 text-sm text-[#6B7280] leading-relaxed max-w-[560px]">
+                    As informações abaixo permitem identificar pontos críticos e direcionar
+                    uma análise real, sem diagnóstico genérico.
+                  </p>
+                </div>
 
-    <div className="grid md:grid-cols-2 gap-8">
-      <input
-        data-testid="diag-name"
-        placeholder="Nome *"
-        className={inputClass}
-        value={form.name}
-        onChange={upd("name")}
-        required
-      />
+                <div className="grid md:grid-cols-2 gap-8">
+                  <input
+                    data-testid="diag-name"
+                    placeholder="Nome *"
+                    className={inputClass}
+                    value={form.name}
+                    onChange={upd("name")}
+                    required
+                  />
 
-      <input
-        data-testid="diag-email"
-        type="email"
-        placeholder="E-mail *"
-        className={inputClass}
-        value={form.email}
-        onChange={upd("email")}
-        required
-      />
+                  <input
+                    data-testid="diag-email"
+                    type="email"
+                    placeholder="E-mail *"
+                    className={inputClass}
+                    value={form.email}
+                    onChange={upd("email")}
+                    required
+                  />
 
-      <input
-        data-testid="diag-phone"
-        placeholder="Telefone *"
-        className={inputClass}
-        value={form.phone}
-        onChange={upd("phone")}
-        required
-      />
+                  <input
+                    data-testid="diag-phone"
+                    placeholder="Telefone *"
+                    className={inputClass}
+                    value={form.phone}
+                    onChange={upd("phone")}
+                    required
+                  />
 
-      <input
-        data-testid="diag-company"
-        placeholder="Empresa *"
-        className={inputClass}
-        value={form.company}
-        onChange={upd("company")}
-        required
-      />
+                  <input
+                    data-testid="diag-company"
+                    placeholder="Empresa *"
+                    className={inputClass}
+                    value={form.company}
+                    onChange={upd("company")}
+                    required
+                  />
 
-      <select
-        data-testid="diag-revenue"
-        className={inputClass}
-        value={form.revenue_range}
-        onChange={upd("revenue_range")}
-        required
-      >
-        <option value="">Faturamento *</option>
-        <option>Empresa em estruturação</option>
-        <option>Até R$ 10M/ano</option>
-        <option>R$ 10M – R$ 50M/ano</option>
-        <option>R$ 50M – R$ 200M/ano</option>
-        <option>Acima de R$ 200M/ano</option>
-      </select>
+                  <select
+                    data-testid="diag-revenue"
+                    className={inputClass}
+                    value={form.revenue_range}
+                    onChange={upd("revenue_range")}
+                    required
+                  >
+                    <option value="">Faturamento *</option>
+                    <option>Empresa em estruturação</option>
+                    <option>Até R$ 10M/ano</option>
+                    <option>R$ 10M – R$ 50M/ano</option>
+                    <option>R$ 50M – R$ 200M/ano</option>
+                    <option>Acima de R$ 200M/ano</option>
+                  </select>
 
-      <select
-        data-testid="diag-erp"
-        className={inputClass}
-        value={form.erp}
-        onChange={upd("erp")}
-        required
-      >
-        <option value="">ERP *</option>
-        <option>TOTVS Protheus</option>
-        <option>SAP</option>
-        <option>Oracle</option>
-        <option>Domínio Sistemas</option>
-        <option>Bling</option>
-        <option>Outro</option>
-        <option>Não possuo ERP estruturado</option>
-      </select>
+                  <select
+                    data-testid="diag-erp"
+                    className={inputClass}
+                    value={form.erp}
+                    onChange={upd("erp")}
+                    required
+                  >
+                    <option value="">ERP *</option>
+                    <option>TOTVS Protheus</option>
+                    <option>SAP</option>
+                    <option>Oracle</option>
+                    <option>Domínio Sistemas</option>
+                    <option>Bling</option>
+                    <option>Outro</option>
+                    <option>Não possuo ERP estruturado</option>
+                  </select>
 
-      {form.erp === "Outro" && (
-        <input
-          data-testid="diag-other-erp"
-          placeholder="Informe o ERP utilizado *"
-          className="md:col-span-2 w-full border border-[#E3DED2] bg-white px-4 py-4 text-[#0A2A57] placeholder:text-[#9CA3AF] outline-none transition-all duration-300 focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37]/40"
-          value={form.other_erp}
-          onChange={upd("other_erp")}
-          required
-        />
-      )}
+                  {form.erp === "Outro" && (
+                    <input
+                      data-testid="diag-other-erp"
+                      placeholder="Informe o ERP utilizado *"
+                      className="md:col-span-2 w-full border border-[#E3DED2] bg-white px-4 py-4 text-[#0A2A57] placeholder:text-[#9CA3AF] outline-none transition-all duration-300 focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37]/40"
+                      value={form.other_erp}
+                      onChange={upd("other_erp")}
+                      required
+                    />
+                  )}
 
-      <textarea
-        data-testid="diag-message"
-        rows={5}
-        placeholder="Principal ponto de atenção da operação *"
-        className={`${inputClass} md:col-span-2 resize-none`}
-        value={form.message}
-        onChange={upd("message")}
-        required
-      />
-    </div>
+                  <textarea
+                    data-testid="diag-message"
+                    rows={5}
+                    placeholder="Principal ponto de atenção da operação *"
+                    className={`${inputClass} md:col-span-2 resize-none`}
+                    value={form.message}
+                    onChange={upd("message")}
+                    required
+                  />
+                </div>
 
-    <button
-      type="submit"
-      disabled={loading}
-      data-testid="diag-submit"
-      className="btn-gold w-full mt-10 py-4 text-[15px] tracking-[0.12em] justify-center disabled:opacity-60"
-    >
-      {loading
-        ? "Enviando..."
-        : "Iniciar Diagnóstico Técnico da Minha Operação"}
-    </button>
+                <button
+                  type="submit"
+                  disabled={loading}
+                  data-testid="diag-submit"
+                  className="btn-gold w-full mt-10 py-4 text-[15px] tracking-[0.12em] justify-center disabled:opacity-60"
+                >
+                  {loading
+                    ? "Encaminhando..."
+                    : "Iniciar Diagnóstico Técnico da Minha Operação"}
+                  <ArrowRight size={16} strokeWidth={1.5} />
+                </button>
 
-    <p className="mt-4 text-xs text-[#6B7280] text-center">
-      Retorno após análise inicial das informações enviadas.
-    </p>
-  </form>
-)}
+                <p className="mt-4 text-xs text-[#6B7280] text-center">
+                  Ao continuar, seus dados serão organizados em uma mensagem de WhatsApp para atendimento.
+                </p>
+              </form>
+            )}
           </div>
         </div>
       </section>

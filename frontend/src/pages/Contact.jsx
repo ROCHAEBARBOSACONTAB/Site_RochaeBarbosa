@@ -1,72 +1,134 @@
-import React, { useState } from "react";
-import { toast } from "sonner";
-import { Mail, Phone, MapPin } from "lucide-react";
-import { api } from "../lib/api";
+import React from "react";
+import { Link } from "react-router-dom";
+import { ArrowRight, Database, Cpu, FileCheck2 } from "lucide-react";
 
-export default function Contact() {
-  const [f, setF] = useState({ name: "", email: "", phone: "", subject: "", message: "" });
-  const [loading, setLoading] = useState(false);
-  const [done, setDone] = useState(false);
+const categories = [
+  {
+    icon: Database,
+    title: "Fiscal & Tributário",
+    desc: "Riscos fiscais, créditos tributários, IBS/CBS e análise de impacto na operação.",
+    items: [
+      {
+        title: "Por que sua empresa pode estar perdendo crédito sem perceber",
+        desc: "Falhas comuns na parametrização e impacto direto no resultado.",
+      },
+      {
+        title: "Riscos fiscais silenciosos que não aparecem na apuração",
+        desc: "Como inconsistências passam despercebidas até gerar autuação.",
+      },
+    ],
+  },
+  {
+    icon: Cpu,
+    title: "ERP & Protheus",
+    desc: "Parametrização, inconsistências operacionais e impacto do sistema na apuração fiscal.",
+    items: [
+      {
+        title: "Quando o erro não está no fiscal, mas no ERP",
+        desc: "Como falhas de cadastro e regra afetam toda a operação.",
+      },
+      {
+        title: "Dependência operacional do sistema: risco oculto",
+        desc: "Quando a empresa depende do ERP, mas não domina o funcionamento.",
+      },
+    ],
+  },
+  {
+    icon: FileCheck2,
+    title: "SPED & Obrigações",
+    desc: "EFD, validações, inconsistências e riscos na entrega das obrigações acessórias.",
+    items: [
+      {
+        title: "SPED consistente não significa operação correta",
+        desc: "Por que o SPED pode validar e ainda estar errado.",
+      },
+      {
+        title: "Divergência entre XML, ERP e SPED: o problema real",
+        desc: "Como inconsistências se propagam entre sistemas.",
+      },
+    ],
+  },
+];
 
-  const upd = (k) => (e) => setF((x) => ({ ...x, [k]: e.target.value }));
-  const submit = async (e) => {
-    e.preventDefault();
-    if (!f.name || !f.email || !f.message) { toast.error("Preencha nome, e-mail e mensagem."); return; }
-    setLoading(true);
-    try {
-      await api.post("/contact", f);
-      setDone(true); toast.success("Mensagem enviada.");
-    } catch { toast.error("Erro ao enviar."); }
-    finally { setLoading(false); }
-  };
-
+export default function Materials() {
   return (
-    <div data-testid="contact-page">
-      <section className="bg-[#0A2A57] text-white py-20 noise">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-          <div className="eyebrow text-[#E6C96A] mb-4">Contato</div>
-          <h1 className="font-serif text-4xl lg:text-6xl max-w-3xl leading-[1.08]">Entre em contato com a equipe técnica.</h1>
+    <div data-testid="materials-page" className="bg-white">
+      
+      {/* HERO */}
+      <section className="bg-[#0A2A57] text-white pt-36 pb-24 noise">
+        <div className="max-w-[1100px] mx-auto px-6 lg:px-12 text-center">
+          <div className="eyebrow text-[#E6C96A] mb-4">
+            Base Técnica
+          </div>
+
+          <h1 className="font-serif text-4xl lg:text-5xl leading-[1.1] max-w-[800px] mx-auto">
+            Conteúdo técnico para quem precisa entender a operação, não apenas cumprir obrigação.
+          </h1>
+
+          <p className="mt-6 text-white/75 text-lg leading-[1.8] max-w-[700px] mx-auto">
+            Materiais voltados para empresas, analistas fiscais e escritórios que
+            lidam com operação real, ERP e complexidade tributária.
+          </p>
         </div>
       </section>
 
-      <section className="py-20 bg-white">
-        <div className="max-w-[1300px] mx-auto px-6 lg:px-12 grid lg:grid-cols-12 gap-12">
-          <div className="lg:col-span-4 space-y-7">
-            {[
-              { i: Mail, l: "E-mail", v: "contato@rochabarbosa.com.br" },
-              { i: Phone, l: "Telefone", v: "+55 (11) 4000-0000" },
-              { i: MapPin, l: "Endereço", v: "São Paulo · SP, Brasil" },
-            ].map((c, i) => (
-              <div key={i} className="flex items-start gap-4">
-                <div className="w-11 h-11 border border-[#D4AF37] flex items-center justify-center shrink-0">
-                  <c.i size={18} strokeWidth={1.4} className="text-[#D4AF37]"/>
+      {/* CATEGORIES */}
+      <section className="py-24 bg-white">
+        <div className="max-w-[1200px] mx-auto px-6 lg:px-12 space-y-16">
+          {categories.map((cat, index) => {
+            const Icon = cat.icon;
+
+            return (
+              <div key={index}>
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-12 h-12 border border-[#D4AF37] flex items-center justify-center text-[#D4AF37]">
+                    <Icon size={22} />
+                  </div>
+
+                  <div>
+                    <h2 className="font-serif text-3xl text-[#0A2A57]">
+                      {cat.title}
+                    </h2>
+                    <p className="text-[#555]">{cat.desc}</p>
+                  </div>
                 </div>
-                <div>
-                  <div className="eyebrow mb-1">{c.l}</div>
-                  <div className="text-[#0A2A57] font-serif text-lg">{c.v}</div>
-                </div>
-              </div>
-            ))}
-          </div>
-          <div className="lg:col-span-8">
-            {done ? (
-              <div className="border border-[#D4AF37]/50 bg-[#F2F2F2] p-10 text-center">
-                <h3 className="font-serif text-2xl text-[#0A2A57]">Mensagem recebida</h3>
-                <p className="text-[#555] mt-2">Retornaremos em até 1 dia útil.</p>
-              </div>
-            ) : (
-              <form onSubmit={submit} data-testid="contact-form" className="p-8 lg:p-10 border border-[#EAEAEA] space-y-6">
+
                 <div className="grid md:grid-cols-2 gap-6">
-                  <input data-testid="ct-name" className="input-line" placeholder="Nome *" value={f.name} onChange={upd("name")} required/>
-                  <input data-testid="ct-email" type="email" className="input-line" placeholder="E-mail *" value={f.email} onChange={upd("email")} required/>
-                  <input data-testid="ct-phone" className="input-line" placeholder="Telefone" value={f.phone} onChange={upd("phone")}/>
-                  <input data-testid="ct-subject" className="input-line" placeholder="Assunto" value={f.subject} onChange={upd("subject")}/>
+                  {cat.items.map((item, i) => (
+                    <div
+                      key={i}
+                      className="border border-[#0A2A57]/10 p-7 hover:shadow-lg transition group"
+                    >
+                      <h3 className="font-serif text-xl text-[#0A2A57] mb-3">
+                        {item.title}
+                      </h3>
+
+                      <p className="text-[#555] leading-[1.7] mb-5">
+                        {item.desc}
+                      </p>
+
+                      <div className="flex items-center gap-2 text-sm uppercase tracking-[0.16em] text-[#0A2A57] group-hover:text-[#D4AF37] transition">
+                        Ver análise <ArrowRight size={14} />
+                      </div>
+                    </div>
+                  ))}
                 </div>
-                <textarea data-testid="ct-message" rows={5} className="input-line" placeholder="Mensagem *" value={f.message} onChange={upd("message")} required/>
-                <button data-testid="ct-submit" disabled={loading} className="btn-gold">{loading ? "Enviando..." : "Enviar mensagem"}</button>
-              </form>
-            )}
-          </div>
+              </div>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* CTA FINAL */}
+      <section className="bg-[#0A2A57] text-white py-20 text-center noise">
+        <div className="max-w-[800px] mx-auto px-6">
+          <h2 className="font-serif text-3xl lg:text-4xl leading-[1.2] mb-6">
+            Se esse tipo de cenário existe na sua operação, o próximo passo é entender a origem.
+          </h2>
+
+          <Link to="/diagnostico" className="btn-gold">
+            Solicitar diagnóstico
+          </Link>
         </div>
       </section>
     </div>

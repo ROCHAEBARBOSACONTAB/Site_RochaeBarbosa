@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import {
   ArrowRight,
   Building2,
@@ -14,6 +13,8 @@ import {
 } from "lucide-react";
 import heroServ from "../assets/heroserv.png";
 
+const phone = "5514991269374";
+
 const coreServices = [
   {
     icon: Building2,
@@ -25,7 +26,9 @@ const coreServices = [
       "Licenças e alvarás obrigatórios",
       "Estrutura correta desde o início",
     ],
-    cta: "Estruturar empresa",
+    cta: "Quero estruturar minha empresa corretamente",
+    whatsappMessage:
+      "Olá, vim pelo site da Rocha & Barbosa e quero entender como vocês podem me ajudar com Estruturação Empresarial.",
   },
   {
     icon: FileText,
@@ -37,7 +40,9 @@ const coreServices = [
       "Obrigações acessórias sem inconsistência",
       "Visão crítica sobre os números",
     ],
-    cta: "Organizar operação",
+    cta: "Preciso organizar minha operação",
+    whatsappMessage:
+      "Olá, vim pelo site da Rocha & Barbosa e quero entender como vocês podem me ajudar com Gestão Contábil e Fiscal com Controle Real.",
   },
   {
     icon: FileSearch,
@@ -49,8 +54,10 @@ const coreServices = [
       "Riscos que não aparecem no fechamento",
       "Oportunidades financeiras ocultas",
     ],
-    cta: "Solicitar diagnóstico",
+    cta: "Entender meu cenário",
     featured: true,
+    whatsappMessage:
+      "Olá, vim pelo site da Rocha & Barbosa e quero entender como vocês podem me ajudar com Diagnóstico Fiscal e Operacional.",
   },
   {
     icon: Cpu,
@@ -62,8 +69,10 @@ const coreServices = [
       "Revisão de integrações e cadastros",
       "Ajustes técnicos e customizações",
     ],
-    cta: "Avaliar meu ERP",
+    cta: "Quero revisar meu ERP",
     featured: true,
+    whatsappMessage:
+      "Olá, vim pelo site da Rocha & Barbosa e quero entender como vocês podem me ajudar com Inteligência em ERP e TOTVS Protheus.",
   },
   {
     icon: ShieldCheck,
@@ -75,8 +84,10 @@ const coreServices = [
       "Validação de regras fiscais",
       "Redução de erros e consumo de horas",
     ],
-    cta: "Proteger implantação",
+    cta: "Quero garantir uma implantação correta",
     featured: true,
+    whatsappMessage:
+      "Olá, vim pelo site da Rocha & Barbosa e quero entender como vocês podem me ajudar com Compliance de Implantação Protheus.",
   },
   {
     icon: RefreshCw,
@@ -89,6 +100,8 @@ const coreServices = [
       "Manutenção do ambiente controlado",
     ],
     cta: "Monitorar operação",
+    whatsappMessage:
+      "Olá, vim pelo site da Rocha & Barbosa e quero entender como vocês podem me ajudar com Monitoramento Contínuo de Compliance.",
   },
   {
     icon: TrendingUp,
@@ -101,6 +114,8 @@ const coreServices = [
       "Correção sistêmica no ERP",
     ],
     cta: "Avaliar oportunidade",
+    whatsappMessage:
+      "Olá, vim pelo site da Rocha & Barbosa e quero entender como vocês podem me ajudar com Recuperação de Créditos com Correção da Origem.",
   },
   {
     icon: KeyRound,
@@ -114,9 +129,14 @@ const coreServices = [
     ],
     extra:
       "Durante a emissão, avaliamos possíveis inconsistências fiscais na operação.",
-    cta: "Emitir certificado",
+    cta: "Quero emitir meu certificado agora",
+    whatsappMessage:
+      "Olá, vim pelo site da Rocha & Barbosa e quero entender como vocês podem me ajudar com Certificado Digital.",
   },
 ];
+
+const whatsappUrl = (message) =>
+  `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
 
 export default function Services() {
   return (
@@ -138,9 +158,9 @@ export default function Services() {
           </div>
 
           <h1 className="font-serif text-[40px] sm:text-[52px] lg:text-[64px] max-w-5xl leading-[1.05] tracking-[-0.015em]">
-            Soluções para empresas que precisam de
+            Para empresas que não podem mais
             <span className="text-[#D4AF37]">
-              {" "}controle fiscal, ERP confiável e crescimento com segurança
+              {" "}operar com risco fiscal invisível.
             </span>
           </h1>
 
@@ -151,10 +171,17 @@ export default function Services() {
           </p>
 
           <div className="mt-9 flex flex-wrap gap-4">
-            <Link to="/diagnostico" className="btn-gold">
-              Solicitar Diagnóstico
+            <a
+              href={whatsappUrl(
+                "Olá, vim pelo site da Rocha & Barbosa e gostaria de falar com um especialista sobre os serviços estratégicos."
+              )}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-gold"
+            >
+              Falar com especialista
               <ArrowRight size={16} strokeWidth={1.5} />
-            </Link>
+            </a>
 
             <a href="#servicos" className="btn-outline-gold">
               Ver soluções
@@ -274,16 +301,18 @@ export default function Services() {
                       </p>
                     )}
 
-                    <Link
-                      to="/diagnostico"
+                    <a
+                      href={whatsappUrl(s.whatsappMessage)}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 mt-7 link-gold text-sm uppercase tracking-[0.16em]"
                     >
                       {s.cta}
                       <ArrowRight size={14} strokeWidth={1.5} />
-                    </Link>
+                    </a>
 
                     <p className="mt-2 text-xs text-[#6B7280]">
-                      Análise técnica inicial sem compromisso.
+                      Atendimento direto via WhatsApp.
                     </p>
                   </div>
                 </div>
@@ -346,9 +375,9 @@ export default function Services() {
           </h2>
 
           <p className="text-white/75 max-w-2xl mx-auto mb-6 leading-relaxed">
-            O diagnóstico técnico direciona a solução correta: estruturação,
-            gestão contábil, compliance, ERP, recuperação de créditos ou
-            monitoramento contínuo.
+            Fale com nossa equipe e informe o cenário atual da sua empresa.
+            Vamos direcionar o melhor caminho: estruturação, gestão contábil,
+            compliance, ERP, recuperação de créditos ou monitoramento contínuo.
           </p>
 
           <p className="text-white/55 text-sm max-w-[640px] mx-auto mb-8 leading-relaxed">
@@ -357,10 +386,17 @@ export default function Services() {
             está.
           </p>
 
-          <Link to="/diagnostico" className="btn-gold">
-            Solicitar Diagnóstico Técnico
+          <a
+            href={whatsappUrl(
+              "Olá, vim pelo site da Rocha & Barbosa e gostaria de entender qual solução é mais adequada para minha empresa."
+            )}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-gold"
+          >
+            Quero entender meu cenário agora
             <ArrowRight size={16} strokeWidth={1.5} />
-          </Link>
+          </a>
         </div>
       </section>
     </div>
