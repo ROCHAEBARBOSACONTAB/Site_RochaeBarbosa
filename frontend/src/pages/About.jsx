@@ -46,7 +46,7 @@ const method = [
 const realityItems = [
   "Divergências entre XML, SPED e ERP",
   "Créditos tributários não aproveitados",
-  "CFOP, CST, TES ou NCM inconsistentes",
+  "CFOP, CST, ou NCM inconsistentes",
   "Apuração fiscal dependente de ajustes manuais",
   "Risco oculto em operações recorrentes",
   "Dados fiscais afetando decisões gerenciais",

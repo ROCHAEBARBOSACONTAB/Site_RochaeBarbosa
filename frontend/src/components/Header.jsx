@@ -7,7 +7,6 @@ import logogold from "../assets/logogold.png";
 const links = [
   { to: "/", label: "Início" },
   { to: "/servicos", label: "Serviços" },
-  { to: "/conteudo", label: "Conteúdo" },
   { to: "/sobre", label: "Sobre" },
   { to: "/contato", label: "Contato" },
   { to: "/recursos", label: "Materiais Técnicos" },
@@ -68,7 +67,7 @@ export default function Header() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-6 ml-6">
+        {/*<div className="flex items-center gap-6 ml-6">
           {user ? (
             <div className="hidden md:flex items-center gap-6">
               {user.role === "admin" && (
@@ -105,7 +104,7 @@ export default function Header() {
           >
             {open ? <X size={24} /> : <Menu size={24} />}
           </button>
-        </div>
+        </div>*/}
       </div>
 
       {open && (

@@ -1,83 +1,78 @@
-import React, { useEffect, useState } from "react";
-import { Lock, Unlock, Download, X } from "lucide-react";
-import { toast } from "sonner";
-import { api } from "../lib/api";
+import React from "react";
+import { Link } from "react-router-dom";
+import { ArrowRight, Layers, TableProperties, FileCheck2 } from "lucide-react";
+
+const modules = [
+  {
+    icon: Layers,
+    title: "Simples Nacional",
+    to: "/recursos/simples-nacional",
+  },
+  {
+    icon: TableProperties,
+    title: "CFOP",
+    to: "/recursos/cfop",
+  },
+  {
+    icon: FileCheck2,
+    title: "CST, CSOSN, PIS/COFINS e IPI",
+    to: "/recursos/codigos-fiscais",
+  },
+];
 
 export default function Resources() {
-  const [items, setItems] = useState([]);
-  const [gate, setGate] = useState(null);
-  const [form, setForm] = useState({ name: "", email: "", company: "", phone: "" });
-  const [loading, setLoading] = useState(false);
-
-  useEffect(() => { api.get("/resources").then((r) => setItems(r.data)); }, []);
-
-  const openGate = (r) => {
-    if (!r.gated) { window.open("#", "_blank"); return; }
-    setGate(r); setForm({ name: "", email: "", company: "", phone: "" });
-  };
-
-  const submit = async (e) => {
-    e.preventDefault();
-    if (!form.name || !form.email || !form.company) { toast.error("Preencha nome, e-mail e empresa."); return; }
-    setLoading(true);
-    try {
-      const r = await api.post(`/resources/${gate.id}/access`, { ...form, source: "resource_gate" });
-      toast.success("Acesso liberado. Obrigado!");
-      window.open(r.data.file_url, "_blank");
-      setGate(null);
-    } catch {
-      toast.error("Erro ao processar.");
-    } finally { setLoading(false); }
-  };
-
   return (
-    <div data-testid="resources-page">
-      <section className="bg-[#0A2A57] text-white py-20 noise">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-          <div className="eyebrow text-[#E6C96A] mb-4">Base de Conteúdo</div>
-          <h1 className="font-serif text-4xl lg:text-6xl max-w-3xl leading-[1.08]">Apoio técnico aplicável ao dia a dia.</h1>
-          <p className="mt-6 text-white/75 max-w-2xl">Tabelas, checklists e materiais para consulta. Parte aberta. Parte reservada para profissionais cadastrados.</p>
+    <div data-testid="resources-page" className="bg-white">
+      
+      {/* HERO */}
+      <section className="bg-[#0A2A57] text-white pt-36 pb-20 noise">
+        <div className="max-w-[900px] mx-auto px-6 text-center">
+          <div className="eyebrow text-[#E6C96A] mb-4">Base Técnica</div>
+
+          <h1 className="font-serif text-4xl lg:text-5xl leading-[1.1]">
+            Tabelas e referências fiscais para consulta objetiva.
+          </h1>
         </div>
       </section>
 
-      <section className="py-16 bg-white">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {items.map((r) => (
-              <div key={r.id} data-testid={`res-${r.id}`} className="premium-card p-7 flex flex-col">
-                <div className="flex items-center gap-2 eyebrow mb-4">
-                  {r.gated ? <Lock size={13} className="text-[#A67C00]"/> : <Unlock size={13} className="text-[#1B6FC4]"/>}
-                  {r.category}
+      {/* MODULES */}
+      <section className="py-20 bg-white">
+        <div className="max-w-[900px] mx-auto px-6 grid md:grid-cols-3 gap-6">
+          {modules.map((item, index) => {
+            const Icon = item.icon;
+
+            return (
+              <Link
+                key={index}
+                to={item.to}
+                className="border border-[#0A2A57]/10 p-7 hover:shadow-lg transition group text-center"
+              >
+                <div className="w-12 h-12 mx-auto border border-[#D4AF37] flex items-center justify-center mb-5 text-[#D4AF37] group-hover:bg-[#0A2A57] transition">
+                  <Icon size={22} />
                 </div>
-                <h3 className="font-serif text-xl text-[#0A2A57] leading-snug mb-2">{r.title}</h3>
-                <p className="text-[14px] text-[#555] leading-relaxed flex-1">{r.description}</p>
-                <button onClick={() => openGate(r)} data-testid={`res-btn-${r.id}`} className={`mt-5 inline-flex items-center gap-2 text-[12px] uppercase tracking-[0.18em] ${r.gated ? "text-[#A67C00] hover:text-[#D4AF37]" : "text-[#0A2A57]"}`}>
-                  <Download size={14} strokeWidth={1.5}/>
-                  {r.gated ? "Acessar (cadastro rápido)" : "Baixar gratuitamente"}
-                </button>
-              </div>
-            ))}
-          </div>
+
+                <h3 className="font-serif text-xl text-[#0A2A57] mb-4">
+                  {item.title}
+                </h3>
+
+                <div className="flex items-center justify-center gap-2 text-xs uppercase tracking-[0.16em] text-[#0A2A57] group-hover:text-[#D4AF37] transition">
+                  Acessar <ArrowRight size={13} />
+                </div>
+              </Link>
+            );
+          })}
         </div>
       </section>
 
-      {gate && (
-        <div data-testid="resource-gate" className="fixed inset-0 z-[60] bg-black/60 flex items-center justify-center p-4">
-          <div className="bg-white max-w-md w-full p-8 relative border border-[#D4AF37]/40">
-            <button onClick={() => setGate(null)} className="absolute top-4 right-4 text-[#B0B0B0] hover:text-[#0A2A57]"><X size={20}/></button>
-            <div className="eyebrow mb-2">Acesso ao material</div>
-            <h3 className="font-serif text-xl text-[#0A2A57] leading-snug mb-4">{gate.title}</h3>
-            <p className="text-sm text-[#555] mb-6">Preencha os dados profissionais para liberar o download.</p>
-            <form onSubmit={submit} className="space-y-4">
-              <input className="input-line" placeholder="Nome" value={form.name} onChange={(e)=>setForm({...form,name:e.target.value})} required data-testid="gate-name"/>
-              <input className="input-line" type="email" placeholder="E-mail corporativo" value={form.email} onChange={(e)=>setForm({...form,email:e.target.value})} required data-testid="gate-email"/>
-              <input className="input-line" placeholder="Empresa" value={form.company} onChange={(e)=>setForm({...form,company:e.target.value})} required data-testid="gate-company"/>
-              <input className="input-line" placeholder="Telefone (opcional)" value={form.phone} onChange={(e)=>setForm({...form,phone:e.target.value})} data-testid="gate-phone"/>
-              <button type="submit" disabled={loading} data-testid="gate-submit" className="btn-gold w-full justify-center mt-3">{loading ? "Liberando..." : "Liberar download"}</button>
-            </form>
-          </div>
+      {/* MICRO CTA (opcional e leve) */}
+      <section className="pb-16 text-center">
+        <div className="max-w-[600px] mx-auto px-6">
+          <p className="text-[#666] text-sm leading-[1.7]">
+            Para dúvidas de aplicação prática ou inconsistências na operação,
+            o ideal é analisar o cenário completo.
+          </p>
         </div>
-      )}
+      </section>
     </div>
   );
 }
