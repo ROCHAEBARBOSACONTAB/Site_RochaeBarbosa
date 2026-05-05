@@ -122,7 +122,7 @@ export default function SimplesHub() {
       </section>
 
       {/* TOPICS */}
-      <section className="py-20 bg-[#F2F2F2]">
+      {/*<section className="py-20 bg-[#F2F2F2]">
         <div className="max-w-[1050px] mx-auto px-6">
           <div className="eyebrow text-[#D4AF37] mb-4">Referências</div>
 
@@ -158,7 +158,7 @@ export default function SimplesHub() {
             })}
           </div>
         </div>
-      </section>
+      </section>*/}
 
       {/* NOTE */}
       <section className="py-14 bg-white text-center">

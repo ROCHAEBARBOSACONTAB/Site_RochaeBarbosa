@@ -120,7 +120,7 @@ function TableBox({ columns, rows }) {
               {columns.map((col) => (
                 <td
                   key={col.key}
-                  className={`p-4 ${
+                  className={`p-4 align-top ${
                     col.key === "faixa" ? "font-medium text-[#0A2A57]" : ""
                   }`}
                 >
@@ -161,6 +161,22 @@ export default function Anexo1() {
             <ArrowLeft size={15} />
             Voltar para Simples Nacional
           </Link>
+        </div>
+      </section>
+
+      {/* LEITURA TÉCNICA */}
+      <section className="py-14 bg-[#F7F7F4]">
+        <div className="max-w-[900px] mx-auto px-6">
+          <div className="border border-[#D4AF37]/40 bg-white p-7">
+            <div className="eyebrow text-[#D4AF37] mb-3">Leitura técnica</div>
+
+            <p className="text-[#0A2A57] font-serif text-xl leading-[1.6]">
+              O Anexo I do Simples Nacional é aplicado às receitas de comércio.
+              A tabela apresenta a alíquota nominal e a parcela a deduzir, mas a
+              tributação efetiva depende da receita bruta acumulada nos últimos
+              12 meses e da correta segregação das receitas.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -236,10 +252,10 @@ export default function Anexo1() {
           </div>
 
           <p className="text-[#555] leading-[1.8] mt-6">
-            A fórmula acima demonstra apenas a estrutura geral do cálculo da
-            alíquota efetiva. A apuração correta depende da segregação das
-            receitas, natureza da operação, tributação específica dos produtos e
-            demais regras aplicáveis ao caso concreto.
+            A fórmula demonstra a estrutura legal da alíquota efetiva. A apuração
+            correta depende da segregação das receitas, natureza da operação,
+            tributação específica dos produtos e demais regras aplicáveis ao caso
+            concreto.
           </p>
         </div>
       </section>
@@ -305,34 +321,42 @@ export default function Anexo1() {
 
       {/* BASE LEGAL */}
       <section className="py-14 bg-white border-t border-[#0A2A57]/10">
-        <div className="max-w-[900px] mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-8 text-sm text-[#666] leading-[1.7]">
-            <div>
-              <div className="eyebrow text-[#D4AF37] mb-2">Base legal</div>
-              <a
-                href="https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[#0A2A57] hover:text-[#D4AF37] transition underline underline-offset-4"
-              >
-                Lei Complementar nº 123/2006
-              </a>
-            </div>
+        <div className="max-w-[1000px] mx-auto px-6">
+          <div className="eyebrow text-[#D4AF37] mb-4">Base legal</div>
 
-            <div>
-              <div className="eyebrow text-[#D4AF37] mb-2">
-                Atualização da página
+          <div className="grid md:grid-cols-2 gap-5 text-sm">
+            <a
+              href="https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="border border-[#0A2A57]/10 bg-[#F7F7F4] p-5 hover:shadow-md transition"
+            >
+              <div className="font-serif text-[#0A2A57] text-lg mb-2">
+                Lei Complementar nº 123/2006
               </div>
-              <p>Atualizado em maio de 2026.</p>
+              <p className="text-[#666] leading-[1.6]">
+                Institui o Simples Nacional e define as regras dos anexos.
+              </p>
+            </a>
+
+            <div className="border border-[#0A2A57]/10 bg-[#F7F7F4] p-5">
+              <div className="font-serif text-[#0A2A57] text-lg mb-2">
+                Atualização
+              </div>
+              <p className="text-[#666] leading-[1.6]">
+                Atualização manual conforme alterações normativas.
+              </p>
             </div>
           </div>
 
-          <p className="mt-8 text-[#666] text-sm leading-[1.7]">
-            A correta aplicação do Simples Nacional depende da atividade,
-            enquadramento, segregação de receitas e análise da operação. A tabela
-            é referência de consulta e não substitui a validação técnica do caso
-            concreto.
-          </p>
+          <div className="mt-8 grid md:grid-cols-[1fr_260px] gap-8 items-start">
+            <p className="text-[#666] text-sm leading-[1.7]">
+              Esta página é referência de consulta e não substitui a validação
+              técnica da operação. A correta aplicação do Simples Nacional depende
+              da atividade, segregação de receitas, enquadramento tributário,
+              receita acumulada e análise do cenário real.
+            </p>
+          </div>
 
           <Link
             to="/recursos/simples-nacional"

@@ -5,99 +5,21 @@ import { ArrowLeft } from "lucide-react";
 const TABLE_HEAD_BG = "#0A2A57";
 
 const aliquotas = [
-  {
-    faixa: "1ª Faixa",
-    receita: "Até R$ 180.000,00",
-    aliquota: "6,00 %",
-    deducao: "R$ 0,00",
-  },
-  {
-    faixa: "2ª Faixa",
-    receita: "De R$ 180.000,01 a R$ 360.000,00",
-    aliquota: "11,20 %",
-    deducao: "R$ 9.360,00",
-  },
-  {
-    faixa: "3ª Faixa",
-    receita: "De R$ 360.000,01 a R$ 720.000,00",
-    aliquota: "13,50 %",
-    deducao: "R$ 17.640,00",
-  },
-  {
-    faixa: "4ª Faixa",
-    receita: "De R$ 720.000,01 a R$ 1.800.000,00",
-    aliquota: "16,00 %",
-    deducao: "R$ 35.640,00",
-  },
-  {
-    faixa: "5ª Faixa",
-    receita: "De R$ 1.800.000,01 a R$ 3.600.000,00",
-    aliquota: "21,00 %",
-    deducao: "R$ 125.640,00",
-  },
-  {
-    faixa: "6ª Faixa",
-    receita: "De R$ 3.600.000,01 a R$ 4.800.000,00",
-    aliquota: "33,00 %",
-    deducao: "R$ 648.000,00",
-  },
+  { faixa: "1ª Faixa", receita: "Até R$ 180.000,00", aliquota: "6,00 %", deducao: "R$ 0,00" },
+  { faixa: "2ª Faixa", receita: "De R$ 180.000,01 a R$ 360.000,00", aliquota: "11,20 %", deducao: "R$ 9.360,00" },
+  { faixa: "3ª Faixa", receita: "De R$ 360.000,01 a R$ 720.000,00", aliquota: "13,50 %", deducao: "R$ 17.640,00" },
+  { faixa: "4ª Faixa", receita: "De R$ 720.000,01 a R$ 1.800.000,00", aliquota: "16,00 %", deducao: "R$ 35.640,00" },
+  { faixa: "5ª Faixa", receita: "De R$ 1.800.000,01 a R$ 3.600.000,00", aliquota: "21,00 %", deducao: "R$ 125.640,00" },
+  { faixa: "6ª Faixa", receita: "De R$ 3.600.000,01 a R$ 4.800.000,00", aliquota: "33,00 %", deducao: "R$ 648.000,00" },
 ];
 
 const reparticao = [
-  {
-    faixa: "1ª Faixa",
-    irpj: "4,00 %",
-    csll: "3,50 %",
-    cofins: "12,82 %",
-    pis: "2,78 %",
-    cpp: "43,40 %",
-    iss: "33,50 %",
-  },
-  {
-    faixa: "2ª Faixa",
-    irpj: "4,00 %",
-    csll: "3,50 %",
-    cofins: "14,05 %",
-    pis: "3,05 %",
-    cpp: "43,40 %",
-    iss: "32,00 %",
-  },
-  {
-    faixa: "3ª Faixa",
-    irpj: "4,00 %",
-    csll: "3,50 %",
-    cofins: "13,64 %",
-    pis: "2,96 %",
-    cpp: "43,40 %",
-    iss: "32,50 %",
-  },
-  {
-    faixa: "4ª Faixa",
-    irpj: "4,00 %",
-    csll: "3,50 %",
-    cofins: "13,64 %",
-    pis: "2,96 %",
-    cpp: "43,40 %",
-    iss: "32,50 %",
-  },
-  {
-    faixa: "5ª Faixa",
-    irpj: "4,00 %",
-    csll: "3,50 %",
-    cofins: "12,82 %",
-    pis: "2,78 %",
-    cpp: "43,40 %",
-    iss: "33,50 % (*)",
-  },
-  {
-    faixa: "6ª Faixa",
-    irpj: "35,00 %",
-    csll: "15,00 %",
-    cofins: "16,03 %",
-    pis: "3,47 %",
-    cpp: "30,50 %",
-    iss: "–",
-  },
+  { faixa: "1ª Faixa", irpj: "4,00 %", csll: "3,50 %", cofins: "12,82 %", pis: "2,78 %", cpp: "43,40 %", iss: "33,50 %" },
+  { faixa: "2ª Faixa", irpj: "4,00 %", csll: "3,50 %", cofins: "14,05 %", pis: "3,05 %", cpp: "43,40 %", iss: "32,00 %" },
+  { faixa: "3ª Faixa", irpj: "4,00 %", csll: "3,50 %", cofins: "13,64 %", pis: "2,96 %", cpp: "43,40 %", iss: "32,50 %" },
+  { faixa: "4ª Faixa", irpj: "4,00 %", csll: "3,50 %", cofins: "13,64 %", pis: "2,96 %", cpp: "43,40 %", iss: "32,50 %" },
+  { faixa: "5ª Faixa", irpj: "4,00 %", csll: "3,50 %", cofins: "12,82 %", pis: "2,78 %", cpp: "43,40 %", iss: "33,50 % (*)" },
+  { faixa: "6ª Faixa", irpj: "35,00 %", csll: "15,00 %", cofins: "16,03 %", pis: "3,47 %", cpp: "30,50 %", iss: "–" },
 ];
 
 function TableBox({ columns, rows }) {
@@ -120,7 +42,7 @@ function TableBox({ columns, rows }) {
               {columns.map((col) => (
                 <td
                   key={col.key}
-                  className={`p-4 ${
+                  className={`p-4 align-top ${
                     col.key === "faixa" ? "font-medium text-[#0A2A57]" : ""
                   }`}
                 >
@@ -161,6 +83,22 @@ export default function Anexo3() {
             <ArrowLeft size={15} />
             Voltar para Simples Nacional
           </Link>
+        </div>
+      </section>
+
+      {/* LEITURA TÉCNICA */}
+      <section className="py-14 bg-[#F7F7F4]">
+        <div className="max-w-[900px] mx-auto px-6">
+          <div className="border border-[#D4AF37]/40 bg-white p-7">
+            <div className="eyebrow text-[#D4AF37] mb-3">Leitura técnica</div>
+
+            <p className="text-[#0A2A57] font-serif text-xl leading-[1.6]">
+              O Anexo III é aplicado a diversas atividades de prestação de
+              serviços no Simples Nacional. A correta aplicação depende da
+              atividade exercida, do enquadramento legal, da segregação das
+              receitas e, em alguns casos, da análise do Fator R.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -233,10 +171,7 @@ export default function Anexo3() {
 
             <div className="overflow-x-auto border border-[#0A2A57]/10 bg-white">
               <table className="w-full text-sm text-[#0A2A57]">
-                <thead
-                  style={{ backgroundColor: TABLE_HEAD_BG }}
-                  className="text-white"
-                >
+                <thead style={{ backgroundColor: TABLE_HEAD_BG }} className="text-white">
                   <tr>
                     <th className="p-4 text-left font-semibold">Faixa</th>
                     <th className="p-4 text-left font-semibold">CPP</th>
@@ -253,24 +188,12 @@ export default function Anexo3() {
                     <td className="p-4 font-medium text-[#0A2A57]">
                       5ª Faixa, com alíquota efetiva superior a 14,92537 %
                     </td>
-                    <td className="p-4">
-                      (Alíquota efetiva - 5 %) × 65,26 %
-                    </td>
-                    <td className="p-4">
-                      Percentual de ISS fixo em 5,00 %
-                    </td>
-                    <td className="p-4">
-                      (Alíquota efetiva - 5 %) × 5,26 %
-                    </td>
-                    <td className="p-4">
-                      (Alíquota efetiva - 5 %) × 6,02 %
-                    </td>
-                    <td className="p-4">
-                      (Alíquota efetiva - 5 %) × 19,28 %
-                    </td>
-                    <td className="p-4">
-                      (Alíquota efetiva - 5 %) × 4,18 %
-                    </td>
+                    <td className="p-4">(Alíquota efetiva - 5 %) × 65,26 %</td>
+                    <td className="p-4">Percentual de ISS fixo em 5,00 %</td>
+                    <td className="p-4">(Alíquota efetiva - 5 %) × 5,26 %</td>
+                    <td className="p-4">(Alíquota efetiva - 5 %) × 6,02 %</td>
+                    <td className="p-4">(Alíquota efetiva - 5 %) × 19,28 %</td>
+                    <td className="p-4">(Alíquota efetiva - 5 %) × 4,18 %</td>
                   </tr>
                 </tbody>
               </table>
@@ -300,10 +223,10 @@ export default function Anexo3() {
           </div>
 
           <p className="text-[#555] leading-[1.8] mt-6">
-            A fórmula acima demonstra apenas a estrutura geral do cálculo da
-            alíquota efetiva. A apuração correta depende da segregação das
-            receitas, natureza da operação, enquadramento da atividade e demais
-            regras aplicáveis ao caso concreto.
+            A fórmula demonstra a estrutura legal da alíquota efetiva. A apuração
+            correta depende da segregação das receitas, natureza da operação,
+            enquadramento da atividade e demais regras aplicáveis ao caso
+            concreto.
           </p>
         </div>
       </section>
@@ -355,59 +278,53 @@ export default function Anexo3() {
           </h2>
 
           <ul className="space-y-3 text-[#555] leading-[1.8]">
-            <li>
-              • Aplicar o Anexo III sem validar o enquadramento correto da
-              atividade.
-            </li>
-            <li>
-              • Desconsiderar o Fator R em atividades que podem migrar entre
-              Anexo III e Anexo V.
-            </li>
-            <li>
-              • Aplicar a alíquota nominal da tabela diretamente, sem calcular a
-              alíquota efetiva.
-            </li>
-            <li>
-              • Não segregar receitas de serviços, comércio e atividades sujeitas
-              a anexos distintos.
-            </li>
-            <li>
-              • Ignorar o impacto do ISS na composição da carga tributária.
-            </li>
+            <li>• Aplicar o Anexo III sem validar o enquadramento correto da atividade.</li>
+            <li>• Desconsiderar o Fator R em atividades que podem migrar entre Anexo III e Anexo V.</li>
+            <li>• Aplicar a alíquota nominal da tabela diretamente, sem calcular a alíquota efetiva.</li>
+            <li>• Não segregar receitas de serviços, comércio e atividades sujeitas a anexos distintos.</li>
+            <li>• Ignorar o impacto do ISS na composição da carga tributária.</li>
           </ul>
         </div>
       </section>
 
       {/* BASE LEGAL */}
       <section className="py-14 bg-white border-t border-[#0A2A57]/10">
-        <div className="max-w-[900px] mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-8 text-sm text-[#666] leading-[1.7]">
-            <div>
-              <div className="eyebrow text-[#D4AF37] mb-2">Base legal</div>
-              <a
-                href="https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[#0A2A57] hover:text-[#D4AF37] transition underline underline-offset-4"
-              >
-                Lei Complementar nº 123/2006
-              </a>
-            </div>
+        <div className="max-w-[1000px] mx-auto px-6">
+          <div className="eyebrow text-[#D4AF37] mb-4">Base legal</div>
 
-            <div>
-              <div className="eyebrow text-[#D4AF37] mb-2">
-                Atualização da página
+          <div className="grid md:grid-cols-2 gap-5 text-sm">
+            <a
+              href="https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="border border-[#0A2A57]/10 bg-[#F7F7F4] p-5 hover:shadow-md transition"
+            >
+              <div className="font-serif text-[#0A2A57] text-lg mb-2">
+                Lei Complementar nº 123/2006
               </div>
-              <p>Atualizado em maio de 2026.</p>
+              <p className="text-[#666] leading-[1.6]">
+                Institui o Simples Nacional e define as regras dos anexos.
+              </p>
+            </a>
+
+            <div className="border border-[#0A2A57]/10 bg-[#F7F7F4] p-5">
+              <div className="font-serif text-[#0A2A57] text-lg mb-2">
+                Atualização
+              </div>
+              <p className="text-[#666] leading-[1.6]">
+                Atualização manual conforme alterações normativas.
+              </p>
             </div>
           </div>
 
-          <p className="mt-8 text-[#666] text-sm leading-[1.7]">
-            A correta aplicação do Simples Nacional depende da atividade,
-            enquadramento, Fator R, segregação de receitas e análise da operação.
-            A tabela é referência de consulta e não substitui a validação técnica
-            do caso concreto.
-          </p>
+          <div className="mt-8 grid md:grid-cols-[1fr_260px] gap-8 items-start">
+            <p className="text-[#666] text-sm leading-[1.7]">
+              Esta página é referência de consulta e não substitui a validação
+              técnica da operação. A correta aplicação do Simples Nacional depende
+              da atividade, Fator R, segregação de receitas, receita acumulada e
+              análise do cenário real.
+            </p>
+          </div>
 
           <Link
             to="/recursos/simples-nacional"

@@ -29,6 +29,7 @@ import Plans from "./pages/Plans";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import AdminDashboard from "./pages/AdminDashboard";
+import TabelasHub from "./pages/resources/tabelas/TabelasHub";
 
 function Layout({ children }) {
   return (
@@ -70,6 +71,10 @@ export default function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/registro" element={<Register />} />
             <Route path="/admin" element={<AdminDashboard />} />
+            <Route path="/recursos/tabelas" element={<TabelasHub />} />
+            <Route path="/recursos/tabelas/icms" element={<ICMS />} />
+            <Route path="/recursos/tabelas/ipi" element={<IPI />} />
+            <Route path="/recursos/tabelas/pis-cofins" element={<PIS_COFINS />} />
           </Routes>
         </Layout>
       </BrowserRouter>

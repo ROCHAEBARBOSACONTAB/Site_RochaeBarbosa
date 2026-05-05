@@ -15,8 +15,8 @@ const modules = [
   },
   {
     icon: FileCheck2,
-    title: "CST, CSOSN, PIS/COFINS e IPI",
-    to: "/recursos/codigos-fiscais",
+    title: "Tabelas Fiscais",
+    to: "/recursos/tabelas"
   },
 ];
 
