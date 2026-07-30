@@ -61,7 +61,7 @@ export default function SimplesHub() {
   return (
     <div data-testid="simples-hub-page" className="bg-white">
       {/* HERO */}
-      <section className="bg-[#0A2A57] text-white pt-7 pb-10 lg:pt-36 lg:pb-20 noise">
+      <section className="bg-[#0A2A57] text-white pt-7 pb-10 lg:pt-20 lg:pb-14 noise">
         <div className="max-w-[950px] mx-auto px-6 text-center">
           <div className="eyebrow text-[#E6C96A] mb-4">
             Base Técnica · Simples Nacional

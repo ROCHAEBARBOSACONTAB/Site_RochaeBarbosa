@@ -142,7 +142,7 @@ export default function Services() {
   return (
     <div data-testid="services-page">
       {/* HERO */}
-      <section className="relative bg-[#0A2A57] text-white pt-7 pb-10 lg:py-28 overflow-hidden noise">
+      <section className="relative bg-[#0A2A57] text-white pt-7 pb-10 lg:pt-20 lg:pb-16 overflow-hidden noise">
         <div className="absolute inset-0 opacity-100">
           <img src={heroServ} alt="" className="w-full h-full object-cover" />
         </div>

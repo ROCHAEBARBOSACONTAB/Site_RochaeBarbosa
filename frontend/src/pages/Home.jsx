@@ -38,7 +38,7 @@ export default function Home() {
 
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(10,42,87,0.92)_0%,rgba(10,42,87,0.86)_30%,rgba(10,42,87,0.70)_55%,rgba(10,42,87,0.52)_75%,rgba(10,42,87,0.62)_100%)]" />
 
-         <div className="relative max-w-[1400px] mx-auto px-6 lg:px-12 pt-7 pb-8 lg:pt-32 lg:pb-24">
+         <div className="relative max-w-[1400px] mx-auto px-6 lg:px-12 pt-7 pb-8 lg:pt-20 lg:pb-14">
           <div className="max-w-3xl">
             <div className="fade-up text-[14px] uppercase tracking-[0.26em] text-[#D4AF37] mb-7">
               Inteligência Fiscal · ERP · Compliance Operacional

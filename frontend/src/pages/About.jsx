@@ -15,8 +15,8 @@ import {
   XCircle,
 } from "lucide-react";
 
-const CORRIDOR =
-  "https://images.pexels.com/photos/5511130/pexels-photo-5511130.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940";
+const ABOUT_HERO =
+  "https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=1200&w=2000";
 
 const whatsappMessage =
   "Olá, vim pela página Sobre da Rocha & Barbosa. Quero entender se minha operação fiscal/contábil possui riscos, inconsistências ou oportunidades que não estou enxergando.";
@@ -89,69 +89,51 @@ export default function About() {
   return (
     <div data-testid="about-page" className="bg-white">
       {/* HERO */}
-      <section className="relative bg-[#0A2A57] text-white pt-7 pb-10 lg:pt-36 lg:pb-24 noise overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(212,175,55,0.18),transparent_35%)]" />
+      <section className="relative bg-[#0A2A57] text-white pt-7 pb-10 lg:pt-20 lg:pb-14 noise overflow-hidden">
+        <div className="absolute inset-0 opacity-55">
+          <img src={ABOUT_HERO} alt="" className="w-full h-full object-cover" />
+        </div>
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(10,42,87,0.9)_0%,rgba(10,42,87,0.78)_50%,rgba(10,42,87,0.86)_100%)]" />
 
-        <div className="relative max-w-[1400px] mx-auto px-6 lg:px-12 grid lg:grid-cols-[1.05fr_0.95fr] gap-16 items-center">
-          <div>
-            <div className="eyebrow text-[#E6C96A] mb-5">
-              Sobre a Rocha & Barbosa
-            </div>
-
-            <h1 className="font-serif text-4xl lg:text-6xl leading-[1.05] max-w-[850px]">
-              Empresas não perdem dinheiro no fiscal por acaso.
-              <span className="text-[#D4AF37] block">
-                Perdem por falta de leitura técnica da operação.
-              </span>
-            </h1>
-
-            <p className="mt-7 text-white/78 text-lg leading-[1.85] max-w-[740px]">
-              A Rocha & Barbosa une contabilidade estratégica, compliance fiscal
-              e visão técnica de ERP para identificar riscos ocultos, perdas
-              tributárias e inconsistências que muitas empresas só descobrem
-              quando já viraram custo, retrabalho ou autuação.
-            </p>
-
-            <div className="mt-10 flex flex-col sm:flex-row gap-4">
-              <a
-                href={whatsappLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-gold inline-flex items-center justify-center gap-2"
-              >
-                <MessageCircle size={18} />
-                Conversar no WhatsApp
-              </a>
-
-              <Link
-                to="/diagnostico"
-                className="inline-flex items-center justify-center gap-2 px-7 py-4 border border-white/20 text-white/90 hover:text-[#D4AF37] hover:border-[#D4AF37]/50 transition text-sm uppercase tracking-[0.18em]"
-              >
-                Ver diagnóstico <ArrowRight size={16} />
-              </Link>
-            </div>
+        <div className="relative max-w-[980px] mx-auto px-6 lg:px-12 text-center">
+          <div className="eyebrow text-[#E6C96A] mb-3 lg:mb-5">
+            Sobre a Rocha & Barbosa
           </div>
 
-          <div className="relative">
-            <div className="absolute -inset-4 border border-[#D4AF37]/20 translate-x-4 translate-y-4" />
-            <div className="relative aspect-[4/3] overflow-hidden border border-[#D4AF37]/35 shadow-2xl">
-              <img
-                src={CORRIDOR}
-                alt="Ambiente corporativo"
-                className="w-full h-full object-cover opacity-80 scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0A2A57]/90 via-[#0A2A57]/25 to-transparent" />
-              <div className="absolute bottom-8 left-8 right-8">
-                <div className="text-[#E6C96A] text-xs uppercase tracking-[0.25em] mb-3">
-                  Precisão técnica
-                </div>
-                <p className="font-serif text-2xl leading-snug">
-                  O erro fiscal começa antes da apuração.
-                </p>
-              </div>
-            </div>
+          <h1 className="font-serif text-[32px] sm:text-4xl lg:text-6xl leading-[1.05]">
+            Empresas não perdem dinheiro no fiscal por acaso.
+            <span className="text-[#D4AF37] block">
+              Perdem por falta de leitura técnica da operação.
+            </span>
+          </h1>
+
+          <p className="mt-4 lg:mt-6 text-white/82 text-[15px] lg:text-lg leading-[1.7] max-w-[760px] mx-auto">
+            A Rocha & Barbosa une contabilidade estratégica, compliance fiscal
+            e visão técnica de ERP para identificar riscos ocultos, perdas
+            tributárias e inconsistências que muitas empresas só descobrem
+            quando já viraram custo, retrabalho ou autuação.
+          </p>
+
+          <div className="mt-6 lg:mt-8 flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
+            <a
+              href={whatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-gold inline-flex items-center justify-center gap-2"
+            >
+              <MessageCircle size={18} />
+              Conversar no WhatsApp
+            </a>
+
+            <Link
+              to="/diagnostico"
+              className="inline-flex items-center justify-center gap-2 px-7 py-4 border border-white/20 text-white/90 hover:text-[#D4AF37] hover:border-[#D4AF37]/50 transition text-sm uppercase tracking-[0.18em]"
+            >
+              Ver diagnóstico <ArrowRight size={16} />
+            </Link>
           </div>
         </div>
+        <div className="relative gold-line mt-6 lg:mt-12" />
       </section>
 
       {/* POSITIONING */}

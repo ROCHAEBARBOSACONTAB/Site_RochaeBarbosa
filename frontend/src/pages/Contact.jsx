@@ -1,134 +1,213 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { ArrowRight, Database, Cpu, FileCheck2 } from "lucide-react";
+import React, { useState } from "react";
+import {
+  ArrowUpRight,
+  Clock3,
+  Mail,
+  MapPin,
+  MessageCircle,
+  Phone,
+  Send,
+} from "lucide-react";
 
-const categories = [
+const WHATSAPP_NUMBER = "5514991269374";
+const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+  "Olá, vim pelo site da Rocha & Barbosa e gostaria de falar com um especialista."
+)}`;
+const MAPS_LINK = "https://maps.app.goo.gl/FwjWsxxiHdU2AmcK7";
+const CONTACT_HERO =
+  "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=1200&w=2000";
+
+const contactChannels = [
   {
-    icon: Database,
-    title: "Fiscal & Tributário",
-    desc: "Riscos fiscais, créditos tributários, IBS/CBS e análise de impacto na operação.",
-    items: [
-      {
-        title: "Por que sua empresa pode estar perdendo crédito sem perceber",
-        desc: "Falhas comuns na parametrização e impacto direto no resultado.",
-      },
-      {
-        title: "Riscos fiscais silenciosos que não aparecem na apuração",
-        desc: "Como inconsistências passam despercebidas até gerar autuação.",
-      },
-    ],
+    icon: MessageCircle,
+    label: "WhatsApp",
+    value: "(14) 99126-9374",
+    detail: "Atendimento direto com nossa equipe.",
+    href: WHATSAPP_LINK,
+    external: true,
   },
   {
-    icon: Cpu,
-    title: "ERP & Protheus",
-    desc: "Parametrização, inconsistências operacionais e impacto do sistema na apuração fiscal.",
-    items: [
-      {
-        title: "Quando o erro não está no fiscal, mas no ERP",
-        desc: "Como falhas de cadastro e regra afetam toda a operação.",
-      },
-      {
-        title: "Dependência operacional do sistema: risco oculto",
-        desc: "Quando a empresa depende do ERP, mas não domina o funcionamento.",
-      },
-    ],
+    icon: Phone,
+    label: "Telefone fixo",
+    value: "(14) 3435-1298",
+    detail: "Fale conosco em horário comercial.",
+    href: "tel:+551434351298",
   },
   {
-    icon: FileCheck2,
-    title: "SPED & Obrigações",
-    desc: "EFD, validações, inconsistências e riscos na entrega das obrigações acessórias.",
-    items: [
-      {
-        title: "SPED consistente não significa operação correta",
-        desc: "Por que o SPED pode validar e ainda estar errado.",
-      },
-      {
-        title: "Divergência entre XML, ERP e SPED: o problema real",
-        desc: "Como inconsistências se propagam entre sistemas.",
-      },
-    ],
+    icon: Mail,
+    label: "E-mail",
+    value: "contabilidade@rochaebarbosa.com.br",
+    detail: "Envie sua solicitação por e-mail.",
+    href: "mailto:contabilidade@rochaebarbosa.com.br",
   },
 ];
 
-export default function Materials() {
+export default function Contact() {
+  const [form, setForm] = useState({ name: "", company: "", email: "", phone: "", message: "" });
+
+  const update = (field) => (event) =>
+    setForm((current) => ({ ...current, [field]: event.target.value }));
+
+  const submit = (event) => {
+    event.preventDefault();
+    const message = [
+      "Olá, vim pela página de Contato da Rocha & Barbosa.",
+      "",
+      `Nome: ${form.name}`,
+      form.company && `Empresa: ${form.company}`,
+      `E-mail: ${form.email}`,
+      form.phone && `Telefone: ${form.phone}`,
+      "",
+      "Como podemos ajudar:",
+      form.message,
+    ]
+      .filter(Boolean)
+      .join("\n");
+
+    window.open(
+      `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`,
+      "_blank",
+      "noopener,noreferrer"
+    );
+  };
+
+  const inputClass =
+    "w-full border border-[#DCD8CF] bg-white px-4 py-3.5 text-[15px] text-[#0A2A57] outline-none transition focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37]/30 placeholder:text-[#7C8590]";
+
   return (
-    <div data-testid="materials-page" className="bg-white">
-      
-      {/* HERO */}
-      <section className="bg-[#0A2A57] text-white pt-7 pb-10 lg:pt-36 lg:pb-24 noise">
-        <div className="max-w-[1100px] mx-auto px-6 lg:px-12 text-center">
-          <div className="eyebrow text-[#E6C96A] mb-4">
-            Base Técnica
+    <div data-testid="contact-page" className="bg-[#F7F6F2]">
+      <section className="relative overflow-hidden bg-[#0A2A57] text-white noise">
+        <div className="absolute inset-0 opacity-50">
+          <img src={CONTACT_HERO} alt="" className="w-full h-full object-cover" />
+        </div>
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(10,42,87,0.88)_0%,rgba(10,42,87,0.78)_52%,rgba(10,42,87,0.7)_100%)]" />
+        <div className="relative max-w-[1200px] mx-auto px-6 lg:px-12 pt-7 pb-10 lg:pt-16 lg:pb-12 text-center">
+          <div className="eyebrow text-[#E6C96A] mb-4">Contato</div>
+          <div className="max-w-[850px] mx-auto">
+            <h1 className="font-serif text-[36px] sm:text-[46px] lg:text-[60px] leading-[1.06]">
+              A conversa certa para
+              <span className="text-[#D4AF37]"> destravar a sua operação.</span>
+            </h1>
+            <p className="mt-5 max-w-[620px] mx-auto text-white/80 text-[16px] leading-relaxed">
+              Escolha o canal mais conveniente. Nossa equipe está pronta para orientar o próximo passo.
+            </p>
+          </div>
+        </div>
+        <div className="relative gold-line" />
+      </section>
+
+      <section className="py-12 lg:py-20">
+        <div className="max-w-[1200px] mx-auto px-6 lg:px-12">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {contactChannels.map((channel) => {
+              const Icon = channel.icon;
+              return (
+                <a
+                  key={channel.label}
+                  href={channel.href}
+                  target={channel.external ? "_blank" : undefined}
+                  rel={channel.external ? "noreferrer" : undefined}
+                  className="group border border-[#DDD8CE] bg-[#FCFBF8] p-6 min-h-[188px] flex flex-col justify-between transition hover:border-[#D4AF37] hover:shadow-[0_14px_30px_rgba(10,42,87,0.08)]"
+                >
+                  <div className="flex items-start justify-between gap-4">
+                    <div className="w-11 h-11 border border-[#D4AF37]/60 flex items-center justify-center text-[#B48600]">
+                      <Icon size={21} strokeWidth={1.5} />
+                    </div>
+                    <ArrowUpRight size={18} className="text-[#B48600] transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                  </div>
+                  <div className="mt-6">
+                    <div className="eyebrow mb-2">{channel.label}</div>
+                    <div className="text-[#0A2A57] font-medium text-[14px] leading-snug break-all">{channel.value}</div>
+                    <p className="mt-2 text-sm text-[#657080] leading-relaxed">{channel.detail}</p>
+                  </div>
+                </a>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white border-y border-[#E7E2D8] py-12 lg:py-20">
+        <div className="max-w-[1200px] mx-auto px-6 lg:px-12 grid lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+          <div className="lg:col-span-5">
+            <div className="eyebrow mb-4">Escritório</div>
+            <h2 className="font-serif text-3xl lg:text-[42px] leading-[1.1] text-[#0A2A57]">
+              Atendimento em Pederneiras, com atuação para todo o Brasil.
+            </h2>
+            <div className="mt-7 space-y-5 text-[#35445A]">
+              <div className="flex gap-3">
+                <MapPin size={20} className="shrink-0 mt-0.5 text-[#B48600]" strokeWidth={1.5} />
+                <address className="not-italic leading-relaxed">
+                  Rua Duque de Caxias, nº 294<br />
+                  Centro, Pederneiras - SP
+                </address>
+              </div>
+              <div className="flex gap-3">
+                <Clock3 size={20} className="shrink-0 mt-0.5 text-[#B48600]" strokeWidth={1.5} />
+                <p className="leading-relaxed">Segunda a sexta, em horário comercial.</p>
+              </div>
+            </div>
+            <a
+              href={MAPS_LINK}
+              target="_blank"
+              rel="noreferrer"
+              className="btn-outline-blue mt-8"
+            >
+              Abrir no Google Maps <ArrowUpRight size={16} strokeWidth={1.5} />
+            </a>
           </div>
 
-          <h1 className="font-serif text-4xl lg:text-5xl leading-[1.1] max-w-[800px] mx-auto">
-            Conteúdo técnico para quem precisa entender a operação, não apenas cumprir obrigação.
-          </h1>
-
-          <p className="mt-6 text-white/75 text-lg leading-[1.8] max-w-[700px] mx-auto">
-            Materiais voltados para empresas, analistas fiscais e escritórios que
-            lidam com operação real, ERP e complexidade tributária.
-          </p>
+          <div className="lg:col-span-7 border border-[#DDD8CE] p-2 bg-[#F7F6F2]">
+            <iframe
+              title="Localização da Rocha & Barbosa em Pederneiras"
+              src="https://www.google.com/maps?q=Rua%20Duque%20de%20Caxias%20294%2C%20Pederneiras%20SP&output=embed"
+              className="w-full h-[320px] lg:h-[410px] border-0"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </div>
         </div>
       </section>
 
-      {/* CATEGORIES */}
-      <section className="py-24 bg-white">
-        <div className="max-w-[1200px] mx-auto px-6 lg:px-12 space-y-16">
-          {categories.map((cat, index) => {
-            const Icon = cat.icon;
+      <section className="py-12 lg:py-20">
+        <div className="max-w-[1200px] mx-auto px-6 lg:px-12 grid lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+          <div className="lg:col-span-5">
+            <div className="eyebrow mb-4">Envie uma mensagem</div>
+            <h2 className="font-serif text-3xl lg:text-[42px] leading-[1.1] text-[#0A2A57]">
+              Conte brevemente o que sua empresa precisa.
+            </h2>
+            <p className="mt-5 text-[#536174] leading-relaxed max-w-[460px]">
+              Ao enviar, abriremos uma mensagem preenchida no WhatsApp para que você possa revisar e falar diretamente com a nossa equipe.
+            </p>
+          </div>
 
-            return (
-              <div key={index}>
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="w-12 h-12 border border-[#D4AF37] flex items-center justify-center text-[#D4AF37]">
-                    <Icon size={22} />
-                  </div>
-
-                  <div>
-                    <h2 className="font-serif text-3xl text-[#0A2A57]">
-                      {cat.title}
-                    </h2>
-                    <p className="text-[#555]">{cat.desc}</p>
-                  </div>
-                </div>
-
-                <div className="grid md:grid-cols-2 gap-6">
-                  {cat.items.map((item, i) => (
-                    <div
-                      key={i}
-                      className="border border-[#0A2A57]/10 p-7 hover:shadow-lg transition group"
-                    >
-                      <h3 className="font-serif text-xl text-[#0A2A57] mb-3">
-                        {item.title}
-                      </h3>
-
-                      <p className="text-[#555] leading-[1.7] mb-5">
-                        {item.desc}
-                      </p>
-
-                      <div className="flex items-center gap-2 text-sm uppercase tracking-[0.16em] text-[#0A2A57] group-hover:text-[#D4AF37] transition">
-                        Ver análise <ArrowRight size={14} />
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </section>
-
-      {/* CTA FINAL */}
-      <section className="bg-[#0A2A57] text-white py-20 text-center noise">
-        <div className="max-w-[800px] mx-auto px-6">
-          <h2 className="font-serif text-3xl lg:text-4xl leading-[1.2] mb-6">
-            Se esse tipo de cenário existe na sua operação, o próximo passo é entender a origem.
-          </h2>
-
-          <Link to="/diagnostico" className="btn-gold">
-            Solicitar diagnóstico
-          </Link>
+          <form onSubmit={submit} className="lg:col-span-7 bg-white border border-[#DDD8CE] p-6 sm:p-8 lg:p-10">
+            <div className="grid sm:grid-cols-2 gap-5">
+              <label className="block">
+                <span className="sr-only">Nome</span>
+                <input className={inputClass} value={form.name} onChange={update("name")} placeholder="Nome *" required />
+              </label>
+              <label className="block">
+                <span className="sr-only">Empresa</span>
+                <input className={inputClass} value={form.company} onChange={update("company")} placeholder="Empresa" />
+              </label>
+              <label className="block">
+                <span className="sr-only">E-mail</span>
+                <input className={inputClass} type="email" value={form.email} onChange={update("email")} placeholder="E-mail *" required />
+              </label>
+              <label className="block">
+                <span className="sr-only">Telefone</span>
+                <input className={inputClass} type="tel" value={form.phone} onChange={update("phone")} placeholder="Telefone" />
+              </label>
+              <label className="sm:col-span-2 block">
+                <span className="sr-only">Mensagem</span>
+                <textarea className={`${inputClass} min-h-[150px] resize-y`} value={form.message} onChange={update("message")} placeholder="Como podemos ajudar? *" required />
+              </label>
+            </div>
+            <button type="submit" className="btn-gold mt-7 w-full justify-center">
+              Enviar pelo WhatsApp <Send size={16} strokeWidth={1.5} />
+            </button>
+          </form>
         </div>
       </section>
     </div>

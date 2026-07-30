@@ -2,6 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Layers, TableProperties, FileCheck2 } from "lucide-react";
 
+const RESOURCES_HERO =
+  "https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=1200&w=2000";
+
 const modules = [
   {
     icon: Layers,
@@ -25,14 +28,24 @@ export default function Resources() {
     <div data-testid="resources-page" className="bg-white">
       
       {/* HERO */}
-      <section className="bg-[#0A2A57] text-white pt-7 pb-10 lg:pt-36 lg:pb-20 noise">
-        <div className="max-w-[900px] mx-auto px-6 text-center">
+      <section className="relative overflow-hidden bg-[#0A2A57] text-white noise">
+        <div className="absolute inset-0 opacity-50">
+          <img src={RESOURCES_HERO} alt="" className="w-full h-full object-cover" />
+        </div>
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(10,42,87,0.9)_0%,rgba(10,42,87,0.78)_52%,rgba(10,42,87,0.86)_100%)]" />
+        <div className="relative max-w-[900px] mx-auto px-6 lg:px-12 pt-7 pb-10 lg:pt-16 lg:pb-12 text-center">
           <div className="eyebrow text-[#E6C96A] mb-4">Base Técnica</div>
 
-          <h1 className="font-serif text-4xl lg:text-5xl leading-[1.1]">
-            Tabelas e referências fiscais para consulta objetiva.
+          <h1 className="font-serif text-[36px] sm:text-[46px] lg:text-[60px] leading-[1.06]">
+            Tabelas e referências fiscais
+            <span className="text-[#D4AF37]"> para decisões objetivas.</span>
           </h1>
+
+          <p className="mt-5 max-w-[620px] mx-auto text-white/80 text-[16px] leading-relaxed">
+            Consulte classificações, anexos e dados fiscais essenciais para apoiar a sua operação.
+          </p>
         </div>
+        <div className="relative gold-line" />
       </section>
 
       {/* MODULES */}

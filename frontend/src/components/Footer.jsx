@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, MessageCircle, Phone, MapPin } from "lucide-react";
 import logogold from "../assets/logogold.png";
 
 export default function Footer() {
@@ -81,12 +81,22 @@ export default function Footer() {
               <li className="flex items-start gap-3">
                 <Phone size={16} className="text-[#D4AF37]/90 mt-1" />
                 <a
+                  href="tel:+551434351298"
+                  className="hover:text-[#D4AF37] transition"
+                >
+                  (14) 3435-1298
+                </a>
+              </li>
+
+              <li className="flex items-start gap-3">
+                <MessageCircle size={16} className="text-[#D4AF37]/90 mt-1" />
+                <a
                   href="https://wa.me/5514991269374"
                   target="_blank"
                   rel="noreferrer"
                   className="hover:text-[#D4AF37] transition"
                 >
-                  (14) 99126-9374
+                  WhatsApp: (14) 99126-9374
                 </a>
               </li>
 

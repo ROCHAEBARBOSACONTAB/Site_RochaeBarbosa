@@ -100,7 +100,7 @@ ${form.message}
         <div className="absolute -right-28 top-16 h-[420px] w-[420px] rounded-full bg-[#D4AF37]/10 blur-[90px]" />
         <div className="absolute left-[-120px] bottom-[-120px] h-[320px] w-[320px] rounded-full bg-white/5 blur-[80px]" />
 
-        <div className="relative max-w-[1200px] mx-auto px-6 lg:px-12 pt-7 pb-10 lg:pt-36 lg:pb-28">
+        <div className="relative max-w-[1200px] mx-auto px-6 lg:px-12 pt-7 pb-10 lg:pt-20 lg:pb-16">
           <div className="max-w-[820px]">
             <div className="eyebrow text-[#D4AF37] mb-5">
               Diagnóstico Fiscal Estratégico
