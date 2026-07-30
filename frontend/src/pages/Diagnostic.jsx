@@ -8,9 +8,10 @@ import {
   Database,
   Cpu,
 } from "lucide-react";
-import heroBg from "../assets/herobg.png";
 
 const WHATSAPP_NUMBER = "5514991269374";
+const DIAGNOSTIC_HERO =
+  "https://images.pexels.com/photos/669610/pexels-photo-669610.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=1200&w=2000";
 
 export default function Diagnostic() {
   const [form, setForm] = useState({
@@ -91,11 +92,11 @@ ${form.message}
     <div data-testid="diagnostic-page" className="bg-[#F7F5EF]">
       {/* HERO */}
       <section className="relative bg-[#0A2A57] text-white overflow-hidden noise">
-        <div className="absolute inset-0 opacity-24">
-          <img src={heroBg} alt="" className="w-full h-full object-cover" />
+        <div className="absolute inset-0 opacity-55">
+          <img src={DIAGNOSTIC_HERO} alt="" className="w-full h-full object-cover" />
         </div>
 
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(10,42,87,0.96)_0%,rgba(10,42,87,0.90)_36%,rgba(10,42,87,0.74)_68%,rgba(10,42,87,0.82)_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(10,42,87,0.92)_0%,rgba(10,42,87,0.82)_42%,rgba(10,42,87,0.72)_100%)]" />
 
         <div className="absolute -right-28 top-16 h-[420px] w-[420px] rounded-full bg-[#D4AF37]/10 blur-[90px]" />
         <div className="absolute left-[-120px] bottom-[-120px] h-[320px] w-[320px] rounded-full bg-white/5 blur-[80px]" />
@@ -346,7 +347,6 @@ ${form.message}
                     <option value="">ERP *</option>
                     <option>TOTVS Protheus</option>
                     <option>SAP</option>
-                    <option>Oracle</option>
                     <option>Domínio Sistemas</option>
                     <option>Bling</option>
                     <option>Outro</option>
