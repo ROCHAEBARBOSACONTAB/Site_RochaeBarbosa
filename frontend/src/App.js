@@ -30,6 +30,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import AdminDashboard from "./pages/AdminDashboard";
 import TabelasHub from "./pages/resources/tabelas/TabelasHub";
+import CfopBrowser from "./pages/resources/cfop/CfopBrowser";
 
 function Layout({ children }) {
   return (
@@ -56,6 +57,8 @@ export default function App() {
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/recursos" element={<Resources />} />
+            <Route path="/recursos/cfop" element={<CfopBrowser />} />
+            <Route path="/recursos/cfop/:code" element={<CfopBrowser />} />
             <Route path="/recursos/simples-nacional" element={<SimplesHub />} />
             <Route path="/recursos/simples-nacional/anexo-1" element={<Anexo1 />} /> 
             <Route path="/recursos/simples-nacional/anexo-2" element={<Anexo2 />} />
