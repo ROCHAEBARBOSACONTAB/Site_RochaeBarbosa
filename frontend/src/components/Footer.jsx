@@ -40,7 +40,7 @@ export default function Footer() {
           </div>
 
           {/* ===== COLUNA 2 — NAVEGAR ===== */}
-          <div className="hidden lg:block lg:col-span-2">
+          <div className="lg:col-span-2">
             <div className="mb-5 text-[11px] uppercase tracking-[0.28em] text-[#D4AF37]">
               Navegar
             </div>
@@ -56,7 +56,7 @@ export default function Footer() {
           </div>
 
           {/* ===== COLUNA 3 — ESPECIALIDADES ===== */}
-          <div className="hidden lg:block lg:col-span-3">
+          <div className="hidden sm:block lg:col-span-3">
             <div className="mb-5 text-xs uppercase tracking-[0.24em] text-[#D4AF37]">
               Especialidades
             </div>

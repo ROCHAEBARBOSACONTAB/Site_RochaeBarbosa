@@ -50,6 +50,19 @@ html, body, #root {
     font-family: 'Montserrat', system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
     font-weight: 400;
+    overflow-x: hidden;
+}
+
+img, svg, video, canvas { max-width: 100%; }
+
+@media (max-width: 639px) {
+    h1, h2, h3, h4, p, a, button, input, textarea { overflow-wrap: anywhere; }
+
+    .btn-gold, .btn-outline-gold, .btn-outline-blue {
+        justify-content: center;
+        max-width: 100%;
+        text-align: center;
+    }
 }
 
 h1, h2, h3, h4, .font-serif {

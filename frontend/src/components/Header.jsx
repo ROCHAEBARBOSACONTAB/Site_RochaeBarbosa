@@ -31,19 +31,19 @@ export default function Header() {
       data-testid="site-header"
       className="fixed top-0 left-0 right-0 z-50 glass-header transition-all border-b border-white/5"
     >
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-12 h-[96px] flex items-center justify-between">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-5 lg:px-12 h-[80px] lg:h-[96px] flex items-center justify-between">
         <Link
           to="/"
           data-testid="logo-home"
           onClick={() => window.scrollTo(0, 0)}
-          className="flex items-center gap-6 py-2 group"
+          className="flex min-w-0 items-center gap-2 sm:gap-3 lg:gap-6 py-2 group"
         >
           <img
             src={logogold}
             alt="Rocha & Barbosa"
-            className="h-16 w-auto translate-y-[-2px] transition group-hover:opacity-90"
+            className="h-10 sm:h-12 lg:h-16 w-auto translate-y-[-2px] transition group-hover:opacity-90"
           />
-          <div className="font-serif text-[#D4AF37] text-[28px] tracking-[0.04em] leading-none translate-y-[4px] transition group-hover:opacity-110">
+          <div className="min-w-0 font-serif text-[#D4AF37] text-[20px] sm:text-[22px] lg:text-[28px] tracking-[0.04em] leading-none translate-y-[3px] whitespace-nowrap transition group-hover:opacity-110">
             Rocha & Barbosa
           </div>
         </Link>
@@ -66,6 +66,17 @@ export default function Header() {
             </NavLink>
           ))}
         </nav>
+
+        <button
+          type="button"
+          data-testid="nav-mobile-toggle"
+          aria-label={open ? "Fechar menu" : "Abrir menu"}
+          aria-expanded={open}
+          onClick={() => setOpen((value) => !value)}
+          className="lg:hidden ml-2 shrink-0 p-2 text-white hover:text-[#D4AF37] transition-colors"
+        >
+          {open ? <X size={24} /> : <Menu size={24} />}
+        </button>
 
         {/*<div className="flex items-center gap-6 ml-6">
           {user ? (
@@ -109,7 +120,7 @@ export default function Header() {
 
       {open && (
         <div className="lg:hidden bg-[#0A2A57] border-t border-[#D4AF37]/20">
-          <div className="px-8 py-6 flex flex-col gap-6">
+          <div className="px-6 py-6 flex flex-col gap-5">
             {links.map((l) => (
               <NavLink
                 key={l.to}

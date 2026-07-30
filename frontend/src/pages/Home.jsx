@@ -38,15 +38,15 @@ export default function Home() {
 
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(10,42,87,0.92)_0%,rgba(10,42,87,0.86)_30%,rgba(10,42,87,0.70)_55%,rgba(10,42,87,0.52)_75%,rgba(10,42,87,0.62)_100%)]" />
 
-         <div className="relative max-w-[1400px] mx-auto px-6 lg:px-12 pt-24 pb-18 lg:pt-32 lg:pb-24">
+         <div className="relative max-w-[1400px] mx-auto px-6 lg:px-12 pt-7 pb-8 lg:pt-32 lg:pb-24">
           <div className="max-w-3xl">
             <div className="fade-up text-[14px] uppercase tracking-[0.26em] text-[#D4AF37] mb-7">
               Inteligência Fiscal · ERP · Compliance Operacional
             </div>
 
-            <h1 className="fade-up-2 font-serif text-[38px] sm:text-[48px] lg:text-[58px] leading-[1.03] tracking-[-0.015em] max-w-[820px]">
-            Seu sistema pode estar gerando
-            <br />
+            <h1 className="fade-up-2 font-serif text-[34px] sm:text-[48px] lg:text-[58px] leading-[1.06] tracking-[-0.015em] max-w-[820px]">
+            Seu sistema pode estar gerando{" "}
+            <br className="hidden sm:block" />
             <span className="text-[#D4AF37]">
               prejuízo fiscal sem que você perceba
             </span>
@@ -496,15 +496,15 @@ export default function Home() {
           </p>
 
           <div className="max-w-[760px] mx-auto mb-10 grid gap-3 text-sm text-white/70 sm:grid-cols-3">
-            <div className="border border-white/10 bg-white/[0.03] px-4 py-3">
+            <div className="min-h-[66px] border border-white/10 bg-white/[0.03] px-4 py-3 flex items-center justify-center text-center leading-snug">
               Riscos fiscais ocultos
             </div>
 
-            <div className="border border-white/10 bg-white/[0.03] px-4 py-3">
+            <div className="min-h-[66px] border border-white/10 bg-white/[0.03] px-4 py-3 flex items-center justify-center text-center leading-snug">
               Créditos e perdas potenciais
             </div>
 
-            <div className="border border-white/10 bg-white/[0.03] px-4 py-3">
+            <div className="min-h-[66px] border border-white/10 bg-white/[0.03] px-4 py-3 flex items-center justify-center text-center leading-snug">
               Plano técnico de ação
             </div>
           </div>

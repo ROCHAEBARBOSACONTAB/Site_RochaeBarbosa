@@ -61,7 +61,7 @@ export default function Anexo4() {
   return (
     <div data-testid="anexo4-page" className="bg-white">
       {/* HERO */}
-      <section className="bg-[#0A2A57] text-white pt-36 pb-20 noise">
+      <section className="bg-[#0A2A57] text-white pt-7 pb-10 lg:pt-36 lg:pb-20 noise">
         <div className="max-w-[900px] mx-auto px-6 text-center">
           <div className="eyebrow text-[#E6C96A] mb-4">
             Simples Nacional · Anexo IV

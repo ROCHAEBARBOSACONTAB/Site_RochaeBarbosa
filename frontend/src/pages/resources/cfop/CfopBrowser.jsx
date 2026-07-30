@@ -116,7 +116,7 @@ function CfopIndex() {
 
   return (
     <div data-testid="cfop-index-page" className="bg-white">
-      <section className="bg-[#0A2A57] text-white pt-12 lg:pt-14 pb-9 lg:pb-10 noise">
+      <section className="bg-[#0A2A57] text-white pt-7 pb-7 lg:pt-14 lg:pb-10 noise">
         <div className="max-w-[960px] mx-auto px-6">
           <div className="eyebrow text-[#E6C96A] mb-4">Base técnica · CFOP</div>
           <h1 className="font-serif text-3xl lg:text-4xl leading-[1.15]">CFOPs para consulta por natureza da operação.</h1>
@@ -219,7 +219,7 @@ export default function CfopBrowser() {
 
   return (
     <div data-testid={`cfop-${code}-page`} className="bg-white">
-      <section className="bg-[#0A2A57] text-white pt-12 lg:pt-14 pb-9 lg:pb-10 noise">
+      <section className="bg-[#0A2A57] text-white pt-7 pb-7 lg:pt-14 lg:pb-10 noise">
         <div className="max-w-[960px] mx-auto px-6">
           <Breadcrumbs node={node} />
           <div className="mt-5 mb-4 border-l-2 border-[#D4AF37] pl-4">

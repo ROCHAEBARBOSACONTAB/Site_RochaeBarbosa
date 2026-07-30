@@ -23,12 +23,12 @@ export default function Register() {
   };
 
   return (
-    <div data-testid="register-page" className="min-h-[calc(100vh-72px)] grid lg:grid-cols-2">
-      <div className="bg-[#0A2A57] text-white p-12 lg:p-20 flex flex-col justify-center noise">
+    <div data-testid="register-page" className="min-h-[calc(100vh-80px)] lg:min-h-[calc(100vh-96px)] grid lg:grid-cols-2">
+      <div className="bg-[#0A2A57] text-white px-6 py-14 sm:p-12 lg:p-20 flex flex-col justify-center noise">
         <div className="eyebrow text-[#E6C96A] mb-4">Cadastro</div>
         <h1 className="font-serif text-4xl lg:text-5xl leading-[1.1]">Crie sua conta profissional.</h1>
       </div>
-      <div className="p-12 lg:p-20 flex flex-col justify-center">
+      <div className="px-6 py-14 sm:p-12 lg:p-20 flex flex-col justify-center">
         <form onSubmit={submit} data-testid="register-form" className="max-w-sm w-full mx-auto space-y-6">
           <h2 className="font-serif text-2xl text-[#0A2A57]">Registrar</h2>
           <input data-testid="reg-name" className="input-line" placeholder="Nome" value={f.name} onChange={upd("name")} required/>

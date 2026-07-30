@@ -53,7 +53,7 @@ export default function ChatWidget() {
         <button
           data-testid="chat-toggle"
           onClick={() => setOpen(true)}
-          className="fixed bottom-24 right-6 z-[70] w-14 h-14 rounded-full bg-[#D4AF37] text-[#0A2A57] flex items-center justify-center shadow-xl pulse-gold hover:bg-[#E6C96A] transition-colors"
+          className="fixed bottom-4 right-4 lg:bottom-24 lg:right-6 z-[70] w-14 h-14 rounded-full bg-[#D4AF37] text-[#0A2A57] flex items-center justify-center shadow-xl pulse-gold hover:bg-[#E6C96A] transition-colors"
           aria-label="Abrir chat"
         >
           <MessageCircle size={24} strokeWidth={1.8} />
@@ -61,7 +61,7 @@ export default function ChatWidget() {
       )}
 
       {open && (
-        <div data-testid="chat-panel" className="fixed bottom-24 right-6 z-[70] w-[360px] max-w-[calc(100vw-24px)] h-[540px] max-h-[calc(100vh-120px)] bg-white border border-[#0A2A57]/10 shadow-2xl flex flex-col">
+        <div data-testid="chat-panel" className="fixed inset-x-3 bottom-3 lg:inset-x-auto lg:bottom-24 lg:right-6 z-[70] w-auto lg:w-[360px] max-w-none lg:max-w-[calc(100vw-24px)] h-[min(540px,calc(100dvh-24px))] lg:max-h-[calc(100vh-120px)] bg-white border border-[#0A2A57]/10 shadow-2xl flex flex-col">
           <div className="bg-[#0A2A57] text-white px-5 py-4 flex items-center justify-between border-b border-[#D4AF37]/30">
             <div>
               <div className="font-serif text-[16px]">Fale com um Consultor</div>

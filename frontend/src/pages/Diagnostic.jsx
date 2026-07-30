@@ -100,15 +100,15 @@ ${form.message}
         <div className="absolute -right-28 top-16 h-[420px] w-[420px] rounded-full bg-[#D4AF37]/10 blur-[90px]" />
         <div className="absolute left-[-120px] bottom-[-120px] h-[320px] w-[320px] rounded-full bg-white/5 blur-[80px]" />
 
-        <div className="relative max-w-[1200px] mx-auto px-6 lg:px-12 pt-28 pb-24 lg:pt-36 lg:pb-28">
+        <div className="relative max-w-[1200px] mx-auto px-6 lg:px-12 pt-7 pb-10 lg:pt-36 lg:pb-28">
           <div className="max-w-[820px]">
             <div className="eyebrow text-[#D4AF37] mb-5">
               Diagnóstico Fiscal Estratégico
             </div>
 
-            <h1 className="font-serif text-[40px] sm:text-[52px] lg:text-[62px] leading-[1.04] tracking-[-0.015em] max-w-[860px]">
-              Se o seu sistema está gerando prejuízo fiscal,
-              <br />
+            <h1 className="font-serif text-[34px] sm:text-[52px] lg:text-[62px] leading-[1.06] tracking-[-0.015em] max-w-[860px]">
+              Se o seu sistema está gerando prejuízo fiscal,{" "}
+              <br className="hidden sm:block" />
               <span className="text-[#D4AF37]">
                 o problema já está na operação
               </span>
@@ -270,7 +270,7 @@ ${form.message}
               <form
                 onSubmit={submit}
                 data-testid="diagnostic-form"
-                className="border border-[#E7E2D8] bg-[#FAFAF8] p-9 lg:p-12 shadow-[0_18px_50px_rgba(10,42,87,0.08)]"
+                className="border border-[#E7E2D8] bg-[#FAFAF8] p-6 sm:p-9 lg:p-12 shadow-[0_18px_50px_rgba(10,42,87,0.08)]"
               >
                 <div className="mb-10">
                   <h3 className="font-serif text-2xl lg:text-3xl text-[#0A2A57] leading-tight">

@@ -89,7 +89,7 @@ export default function About() {
   return (
     <div data-testid="about-page" className="bg-white">
       {/* HERO */}
-      <section className="relative bg-[#0A2A57] text-white pt-36 pb-24 noise overflow-hidden">
+      <section className="relative bg-[#0A2A57] text-white pt-7 pb-10 lg:pt-36 lg:pb-24 noise overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(212,175,55,0.18),transparent_35%)]" />
 
         <div className="relative max-w-[1400px] mx-auto px-6 lg:px-12 grid lg:grid-cols-[1.05fr_0.95fr] gap-16 items-center">

@@ -36,7 +36,7 @@ function Layout({ children }) {
   return (
     <>
       <Header />
-      <main className="pt-[72px] min-h-screen bg-white">{children}</main>
+      <main className="pt-[80px] lg:pt-[96px] min-h-screen bg-white">{children}</main>
       <Footer />
       <ChatWidget />
     </>
