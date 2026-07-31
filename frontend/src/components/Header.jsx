@@ -240,14 +240,7 @@ export default function Header() {
                   Sair
                 </button>
               </>
-            ) : (
-              <Link
-                to="/login"
-                className="text-white/85 hover:text-[#D4AF37] text-[13px] uppercase tracking-[0.22em] transition-colors"
-              >
-                Entrar
-              </Link>
-            )}
+            ) : null}
           </div>
         </div>
       )}

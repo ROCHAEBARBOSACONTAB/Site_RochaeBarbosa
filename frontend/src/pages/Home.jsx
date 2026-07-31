@@ -138,7 +138,7 @@ export default function Home() {
             <p className="mt-6 text-[#566477] leading-relaxed max-w-[530px]">
               Para cenários de divergência, risco fiscal, perdas recorrentes ou ERP sem confiabilidade, avaliamos a origem do problema antes de propor qualquer correção.
             </p>
-            <Link to="/diagnostico" className="btn-outline-blue mt-8 justify-center">
+            <Link to="/diagnostico" className="hidden lg:inline-flex btn-outline-blue mt-8 justify-center">
               Solicitar diagnóstico técnico <ArrowRight size={16} strokeWidth={1.5} />
             </Link>
           </div>
@@ -155,6 +155,9 @@ export default function Home() {
               </div>
             ))}
           </div>
+          <Link to="/diagnostico" className="lg:hidden btn-outline-blue justify-center">
+            Solicitar diagnóstico técnico <ArrowRight size={16} strokeWidth={1.5} />
+          </Link>
         </div>
       </section>
 
