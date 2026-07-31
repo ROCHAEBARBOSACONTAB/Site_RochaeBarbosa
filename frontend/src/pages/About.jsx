@@ -166,6 +166,17 @@ export default function About() {
               Nosso trabalho é identificar a origem — não apenas corrigir o
               efeito.
             </p>
+
+            <div className="grid sm:grid-cols-3 gap-3 pt-2 text-center">
+              {["Estrutura", "Controle", "Escala"].map((item) => (
+                <div
+                  key={item}
+                  className="border border-[#E7E2D8] bg-[#F7F7F4] px-5 py-4 font-serif text-[#0A2A57]"
+                >
+                  {item}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -207,7 +218,8 @@ export default function About() {
           <div className="max-w-[780px] mb-14">
             <div className="eyebrow text-[#D4AF37] mb-4">Como pensamos</div>
             <h2 className="font-serif text-3xl lg:text-5xl leading-[1.1] text-[#0A2A57]">
-              A contabilidade precisa acompanhar a complexidade da operação.
+              Onde a contabilidade comum para,
+              <span className="text-[#D4AF37]"> nós entramos com ERP e compliance.</span>
             </h2>
           </div>
 

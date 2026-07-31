@@ -10,6 +10,7 @@ import ScrollToTop from "./components/ScrollToTop";
 
 import Home from "./pages/Home";
 import Services from "./pages/Services";
+import BusinessRegistration from "./pages/services/BusinessRegistration";
 import Diagnostic from "./pages/Diagnostic";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
@@ -53,6 +54,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/servicos" element={<Services />} />
+            <Route path="/servicos/abertura-de-empresa" element={<BusinessRegistration />} />
             <Route path="/diagnostico" element={<Diagnostic />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />

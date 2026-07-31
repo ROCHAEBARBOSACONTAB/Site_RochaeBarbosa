@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
   ArrowRight,
   Building2,
@@ -10,29 +11,31 @@ import {
   TrendingUp,
   KeyRound,
   CheckCircle2,
+  Star,
 } from "lucide-react";
-import heroServ from "../assets/heroserv.png";
 
 const phone = "5514991269374";
+const googleReviewsUrl =
+  "https://www.google.com/search?kgmid=/g/11xkvg45zb&q=ROCHA+E+BARBOSA+ASSESSORIA+CONT%C3%81BIL";
 
 const coreServices = [
   {
-    icon: Building2,
-    eyebrow: "01 · Base operacional",
-    title: "Estruturação Empresarial",
-    desc: "Empresas começam erradas não por falta de esforço, mas por falta de estrutura. Organizamos a base legal e operacional para evitar problemas futuros.",
+    icon: ShieldCheck,
+    eyebrow: "Operação regulada",
+    title: "Licenças e Regularização Operacional",
+    desc: "Conduzimos as exigências regulatórias necessárias para que a empresa opere com regularidade perante órgãos municipais, estaduais e setoriais.",
     points: [
-      "Abertura, alteração e regularização",
-      "Licenças e alvarás obrigatórios",
-      "Estrutura correta desde o início",
+      "Licenças, alvarás e inscrições aplicáveis",
+      "Demandas municipais e estaduais",
+      "ANVISA, CETESB e órgãos reguladores, quando aplicável",
     ],
-    cta: "Quero estruturar minha empresa corretamente",
+    cta: "Preciso regularizar minha operação",
     whatsappMessage:
-      "Olá, vim pelo site da Rocha & Barbosa e quero entender como vocês podem me ajudar com Estruturação Empresarial.",
+      "Olá, vim pelo site da Rocha & Barbosa e preciso entender a regularização operacional e as licenças necessárias para minha empresa.",
   },
   {
     icon: FileText,
-    eyebrow: "02 · Operação recorrente",
+    eyebrow: "Gestão recorrente",
     title: "Gestão Contábil e Fiscal com Controle Real",
     desc: "Fechar imposto não significa controle. Garantimos que sua operação contábil e fiscal esteja coerente com a realidade do negócio.",
     points: [
@@ -46,7 +49,7 @@ const coreServices = [
   },
   {
     icon: FileSearch,
-    eyebrow: "03 · Diagnóstico",
+    eyebrow: "Diagnóstico",
     title: "Diagnóstico Fiscal e Operacional",
     desc: "Identificamos onde sua operação está gerando risco, perda financeira ou distorção fiscal — mesmo quando tudo aparenta estar correto.",
     points: [
@@ -61,7 +64,7 @@ const coreServices = [
   },
   {
     icon: Cpu,
-    eyebrow: "04 · ERP e sistemas",
+    eyebrow: "Sistemas e ERP",
     title: "Inteligência em ERP e TOTVS Protheus",
     desc: "A maioria dos problemas fiscais nasce no sistema. Atuamos diretamente no ERP para corrigir a origem dos erros.",
     points: [
@@ -76,7 +79,7 @@ const coreServices = [
   },
   {
     icon: ShieldCheck,
-    eyebrow: "05 · Compliance premium",
+    eyebrow: "Implantação e compliance",
     title: "Compliance de Implantação Protheus",
     desc: "Implantações mal conduzidas geram retrabalho, custo e risco. Atuamos como controle técnico para garantir que o projeto seja feito corretamente.",
     points: [
@@ -91,7 +94,7 @@ const coreServices = [
   },
   {
     icon: RefreshCw,
-    eyebrow: "06 · Recorrência",
+    eyebrow: "Monitoramento",
     title: "Monitoramento Contínuo de Compliance",
     desc: "Mesmo uma operação estruturada degrada com o tempo. Monitoramos continuamente para evitar que erros voltem a acontecer.",
     points: [
@@ -105,7 +108,7 @@ const coreServices = [
   },
   {
     icon: TrendingUp,
-    eyebrow: "07 · Recuperação",
+    eyebrow: "Recuperação",
     title: "Recuperação de Créditos com Correção da Origem",
     desc: "Recuperar valores sem corrigir a causa é inútil. Atuamos na recuperação e na eliminação do erro que gerou a perda.",
     points: [
@@ -119,7 +122,7 @@ const coreServices = [
   },
   {
     icon: KeyRound,
-    eyebrow: "08 · Entrada estratégica",
+    eyebrow: "Certificado digital",
     title: "Certificado Digital com Validação Inteligente",
     desc: "Resolva agora — e não se preocupe com isso de novo tão cedo.",
     points: [
@@ -135,104 +138,129 @@ const coreServices = [
   },
 ];
 
+const serviceGroups = [
+  {
+    id: "regularizar",
+    title: "Regularize sua operação",
+    desc: "Para empresas que precisam cumprir exigências e manter a atividade regular.",
+    gridClass: "grid-cols-1",
+    services: [coreServices[0]],
+  },
+  {
+    id: "organizar",
+    title: "Organize e mantenha o controle",
+    desc: "Para a rotina contábil, fiscal e documental da empresa.",
+    gridClass: "lg:grid-cols-3",
+    compactCards: true,
+    services: [coreServices[1], coreServices[5], coreServices[7]],
+  },
+  {
+    id: "evoluir",
+    title: "Diagnostique, corrija e evolua",
+    desc: "Para operações que exigem revisão técnica, ERP, compliance ou recuperação.",
+    gridClass: "lg:grid-cols-2",
+    services: [coreServices[2], coreServices[3], coreServices[4], coreServices[6]],
+  },
+];
+
 const whatsappUrl = (message) =>
   `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
 
 export default function Services() {
   return (
     <div data-testid="services-page">
-      {/* HERO */}
-      <section className="relative bg-[#0A2A57] text-white pt-7 pb-10 lg:pt-20 lg:pb-16 overflow-hidden noise">
-        <div className="absolute inset-0 opacity-100">
-          <img src={heroServ} alt="" className="w-full h-full object-cover" />
-        </div>
-
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(10,42,87,0.96)_0%,rgba(10,42,87,0.90)_34%,rgba(10,42,87,0.70)_68%,rgba(10,42,87,0.82)_100%)]" />
-
-        <div className="absolute -right-28 top-12 h-[420px] w-[420px] rounded-full bg-[#D4AF37]/10 blur-[90px]" />
-        <div className="absolute left-[-120px] bottom-[-120px] h-[320px] w-[320px] rounded-full bg-white/5 blur-[80px]" />
-
-        <div className="relative max-w-[1400px] mx-auto px-6 lg:px-12">
-          <div className="eyebrow text-[#E6C96A] mb-5">
-            Serviços Estratégicos
-          </div>
-
-          <h1 className="font-serif text-[40px] sm:text-[52px] lg:text-[64px] max-w-5xl leading-[1.05] tracking-[-0.015em]">
-            Para empresas que não podem mais
-            <span className="text-[#D4AF37]">
-              {" "}operar com risco fiscal invisível.
-            </span>
-          </h1>
-
-          <p className="mt-6 text-white/75 text-[17px] max-w-[760px] leading-[1.6]">
-            Atuamos da estruturação inicial ao compliance avançado, conectando
-            contabilidade, fiscal e sistemas para reduzir riscos, recuperar
-            oportunidades e melhorar a tomada de decisão.
-          </p>
-
-          <div className="mt-9 flex flex-wrap gap-4">
-            <a
-              href={whatsappUrl(
-                "Olá, vim pelo site da Rocha & Barbosa e gostaria de falar com um especialista sobre os serviços estratégicos."
-              )}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-gold"
-            >
-              Falar com especialista
-              <ArrowRight size={16} strokeWidth={1.5} />
-            </a>
-
-            <a href="#servicos" className="btn-outline-gold">
-              Ver soluções
-            </a>
+      {/* SERVICE HEADER */}
+      <section className="bg-[#0A2A57] text-white border-b border-[#D4AF37]/20">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12 pt-7 pb-8 lg:pt-10 lg:pb-9">
+          <div className="eyebrow text-[#E6C96A] mb-3">Serviços</div>
+          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4">
+            <h1 className="font-serif text-[34px] sm:text-[42px] lg:text-[48px] leading-[1.08] max-w-[760px]">
+              Soluções contábeis, fiscais e empresariais
+              <span className="text-[#D4AF37]"> para cada etapa da sua operação.</span>
+            </h1>
+            <p className="max-w-[380px] text-white/72 text-[15px] leading-relaxed lg:pb-1">
+              Comece pela necessidade atual e avance com a estrutura adequada para o seu negócio.
+            </p>
           </div>
         </div>
-
-        <div className="gold-line mt-12" />
       </section>
 
-      {/* INTRO */}
-      <section className="bg-[#F7F5EF] py-20 border-b border-[#E7E2D8]">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-          <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
-            <div className="lg:col-span-5">
-              <div className="eyebrow mb-4">Nossa lógica de atuação</div>
+      {/* SERVICE GUIDE */}
+      <section className="bg-white border-b border-[#E7E2D8] py-5 lg:py-6">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12 flex flex-col lg:flex-row lg:items-center gap-4 lg:gap-8">
+          <p className="shrink-0 text-[#0A2A57] font-serif text-xl">Escolha seu ponto de partida</p>
+          <div className="grid sm:grid-cols-3 gap-3 flex-1">
+            {[
+              { label: "Abrir ou regularizar empresa", href: "#formalizar" },
+              { label: "Organizar fiscal e contábil", href: "#organizar" },
+              { label: "Corrigir ERP ou recuperar créditos", href: "#evoluir" },
+            ].map((item) => (
+              <a
+                key={item.label}
+                href={item.href}
+                className="group flex items-center justify-between gap-3 border border-[#E2DED4] px-4 py-3 text-sm text-[#0A2A57] transition hover:border-[#D4AF37] hover:bg-[#F7F5EF]"
+              >
+                <span>{item.label}</span>
+                <ArrowRight size={15} strokeWidth={1.5} className="shrink-0 text-[#B48600] transition group-hover:translate-x-0.5" />
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
 
-              <h2 className="font-serif text-3xl lg:text-5xl text-[#0A2A57] leading-[1.08]">
-                Não entregamos apenas serviços.
-                <span className="text-[#D4AF37]">
-                  {" "}estruturamos uma jornada de controle.
-                </span>
-              </h2>
+      {/* EMPRESARIAL ENTRY POINT */}
+      <section id="formalizar" className="bg-[#F7F5EF] border-b border-[#E7E2D8] py-8 lg:py-10 scroll-mt-24">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12 grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+          <div className="lg:col-span-6">
+            <div className="eyebrow mb-4">Para começar ou reorganizar sua empresa</div>
+            <h2 className="font-serif text-3xl lg:text-5xl text-[#0A2A57] leading-[1.08] max-w-[720px]">
+              Abertura, alteração e regularização
+              <span className="text-[#D4AF37]"> com a estrutura certa desde o início.</span>
+            </h2>
+            <p className="mt-6 max-w-[680px] text-[#556172] text-[16px] leading-relaxed">
+              A parte societária e paralegal é onde decisões apressadas costumam virar pendência, retrabalho ou enquadramento inadequado. Organizamos cada etapa com leitura contábil, fiscal e operacional.
+            </p>
+          </div>
+
+          <div className="lg:col-span-6 lg:border-l lg:border-[#D9D4C9] lg:pl-12">
+            <div className="grid sm:grid-cols-2 gap-x-8 gap-y-4 text-[#33445C]">
+              {[
+                "Abertura de empresa e CNPJ",
+                "Alteração de contrato social",
+                "Mudança de endereço ou atividade",
+                "Inclusão ou saída de sócios",
+                "Encerramento e baixa de empresa",
+                "Regularização de pendências cadastrais",
+              ].map((item) => (
+                <div key={item} className="flex items-start gap-3 text-[15px] leading-snug">
+                  <CheckCircle2 size={17} strokeWidth={1.5} className="mt-0.5 shrink-0 text-[#B48600]" />
+                  <span>{item}</span>
+                </div>
+              ))}
             </div>
 
-            <div className="lg:col-span-7 lg:pt-1">
-              <p className="text-[#555] text-[16px] leading-relaxed max-w-[720px]">
-                Cada solução existe para corrigir uma etapa da operação: base
-                legal, controle contábil, consistência fiscal, ERP, compliance e
-                recuperação de oportunidades. O objetivo não é apenas cumprir
-                obrigações, mas transformar dados, processos e sistemas em
-                segurança e resultado.
-              </p>
-
-              <div className="mt-8 grid sm:grid-cols-3 gap-4 max-w-[720px]">
-                {["Estrutura", "Controle", "Escala"].map((item) => (
-                  <div
-                    key={item}
-                    className="border border-[#E7E2D8] bg-white px-5 py-4 text-center text-[#0A2A57] font-serif"
-                  >
-                    {item}
-                  </div>
-                ))}
-              </div>
+            <div className="mt-8 flex flex-col sm:flex-row gap-3">
+              <Link
+                to="/servicos/abertura-de-empresa"
+                className="btn-gold justify-center"
+              >
+                Conhecer abertura de empresa <ArrowRight size={16} strokeWidth={1.5} />
+              </Link>
+              <a
+                href={whatsappUrl("Olá, vim pelo site da Rocha & Barbosa e preciso alterar ou regularizar minha empresa.")}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-outline-blue justify-center"
+              >
+                Alterar ou regularizar <ArrowRight size={16} strokeWidth={1.5} />
+              </a>
             </div>
           </div>
         </div>
       </section>
 
       {/* SERVICES */}
-      <section id="servicos" className="py-24 bg-white">
+      <section id="servicos" className="py-12 lg:py-16 bg-white">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
           <div className="max-w-[780px] mb-14">
             <div className="eyebrow mb-4">Portfólio</div>
@@ -248,18 +276,25 @@ export default function Services() {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-7">
-            {coreServices.map((s, i) => (
+          <div className="space-y-14">
+            {serviceGroups.map((group) => (
+              <div id={group.id} key={group.title} className="scroll-mt-24">
+                <div className="mb-6 flex flex-col lg:flex-row lg:items-end lg:justify-between gap-2 border-b border-[#E7E2D8] pb-4">
+                  <h3 className="font-serif text-2xl lg:text-3xl text-[#0A2A57]">{group.title}</h3>
+                  <p className="text-sm text-[#667386] leading-relaxed lg:text-right">{group.desc}</p>
+                </div>
+                <div className={`grid gap-7 ${group.gridClass}`}>
+                  {group.services.map((s) => (
               <div
-                key={i}
-                data-testid={`service-${i}`}
-                className={`group premium-card bg-[#FAFAF8] p-8 lg:p-9 transition-all duration-300 hover:-translate-y-1 hover:border-[#D4AF37] hover:shadow-[0_18px_44px_rgba(10,42,87,0.10)] ${
+                key={s.title}
+                data-testid={`service-${s.title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
+                className={`group h-full premium-card bg-[#FAFAF8] ${group.compactCards ? "p-7" : "p-8 lg:p-9"} transition-all duration-300 hover:-translate-y-1 hover:border-[#D4AF37] hover:shadow-[0_18px_44px_rgba(10,42,87,0.10)] ${
                   s.featured
                     ? "border-2 border-[#D4AF37]/70 shadow-[0_14px_36px_rgba(10,42,87,0.08)]"
                     : "border border-[#E7E2D8]"
                 }`}
               >
-                <div className="flex items-start gap-5">
+                <div className={group.compactCards ? "flex flex-col gap-5" : "flex items-start gap-5"}>
                   <div className="w-14 h-14 border border-[#D4AF37]/60 flex items-center justify-center shrink-0 group-hover:bg-[#D4AF37]/5 transition-all duration-300">
                     <s.icon
                       size={25}
@@ -271,15 +306,15 @@ export default function Services() {
                   <div className="flex-1">
                     <div className="eyebrow mb-3">{s.eyebrow}</div>
 
-                    <h3 className="font-serif text-2xl lg:text-3xl text-[#0A2A57] leading-tight">
+                    <h4 className={`font-serif ${group.compactCards ? "text-2xl" : "text-2xl lg:text-3xl"} text-[#0A2A57] leading-tight`}>
                       {s.title}
-                    </h3>
+                    </h4>
 
                     <p className="mt-4 text-[#555] text-[15px] leading-relaxed">
                       {s.desc}
                     </p>
 
-                    <div className="mt-6 grid sm:grid-cols-3 gap-3">
+                    <div className={`mt-6 grid gap-3 ${group.compactCards ? "grid-cols-1" : "sm:grid-cols-3"}`}>
                       {s.points.map((p) => (
                         <div
                           key={p}
@@ -317,86 +352,86 @@ export default function Services() {
                   </div>
                 </div>
               </div>
+                  ))}
+                </div>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* PREMIUM HIGHLIGHT */}
-      <section className="bg-[#F1EFEA] py-24 border-t border-[#E7E2D8]">
-        <div className="max-w-[1200px] mx-auto px-6 lg:px-12 grid lg:grid-cols-12 gap-12 items-center">
-          <div className="lg:col-span-5">
-            <div className="eyebrow mb-4">Diferencial Rocha & Barbosa</div>
-
-            <h2 className="font-serif text-3xl lg:text-5xl text-[#0A2A57] leading-[1.08]">
-              Onde a contabilidade comum para,
-              <span className="text-[#D4AF37]">
-                {" "}nós entramos com ERP e compliance.
-              </span>
-            </h2>
-          </div>
-
-          <div className="lg:col-span-7">
-            <p className="text-[#555] text-[16px] leading-relaxed">
-              Muitos problemas fiscais não nascem no fechamento contábil. Eles
-              nascem no cadastro, na parametrização, no processo, na integração
-              e na forma como o ERP conduz a operação. Por isso, nossa atuação
-              une visão contábil, fiscal e sistêmica.
-            </p>
-
-            <div className="mt-8 grid md:grid-cols-3 gap-5">
-              {[
-                "Domínio fiscal",
-                "Leitura contábil",
-                "Profundidade em ERP",
-              ].map((item) => (
-                <div
-                  key={item}
-                  className="bg-white border border-[#E7E2D8] p-5 text-center font-serif text-[#0A2A57]"
-                >
-                  {item}
-                </div>
-              ))}
+      {/* GOOGLE REVIEWS */}
+      <section className="bg-white border-t border-[#E7E2D8] py-10 lg:py-12">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+          <div className="border border-[#E7E2D8] bg-[#FAFAF8] px-6 py-7 lg:px-9 lg:py-8 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+            <div>
+              <div className="eyebrow mb-3">Experiência de clientes</div>
+              <h2 className="font-serif text-2xl lg:text-3xl text-[#0A2A57] leading-tight">
+                Veja o que clientes dizem sobre a Rocha & Barbosa.
+              </h2>
+              <div className="mt-4 flex items-center gap-1 text-[#D4AF37]" aria-label="Avaliações de clientes no Google">
+                {[1, 2, 3, 4, 5].map((star) => (
+                  <Star key={star} size={18} fill="currentColor" strokeWidth={1.25} />
+                ))}
+                <span className="ml-2 text-sm text-[#566477]">Avaliações de clientes no Google</span>
+              </div>
             </div>
+
+            <a
+              href={googleReviewsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-outline-blue justify-center shrink-0"
+            >
+              Conferir avaliações no Google <ArrowRight size={16} strokeWidth={1.5} />
+            </a>
           </div>
         </div>
       </section>
 
       {/* FINAL CTA */}
-      <section className="bg-[#0A2A57] text-white py-24 relative noise">
-        <div className="max-w-[1000px] mx-auto px-6 lg:px-12 text-center">
-          <div className="eyebrow text-[#E6C96A] mb-4">Próximo Passo</div>
+      <section className="bg-[#F1EFEA] border-t border-[#E7E2D8] py-14 lg:py-16">
+        <div className="max-w-[900px] mx-auto px-6 lg:px-12 text-center">
+          <div className="eyebrow mb-4">Próximo passo</div>
 
-          <h2 className="font-serif text-3xl lg:text-5xl leading-[1.08] mb-6">
-            Antes de contratar uma solução,
-            <span className="text-[#D4AF37]">
-              {" "}entenda onde está o problema real da sua operação.
-            </span>
+          <h2 className="font-serif text-3xl lg:text-5xl text-[#0A2A57] leading-[1.08]">
+            Não sabe qual solução
+            <span className="text-[#D4AF37]"> sua empresa precisa?</span>
           </h2>
 
-          <p className="text-white/75 max-w-2xl mx-auto mb-6 leading-relaxed">
-            Fale com nossa equipe e informe o cenário atual da sua empresa.
-            Vamos direcionar o melhor caminho: estruturação, gestão contábil,
-            compliance, ERP, recuperação de créditos ou monitoramento contínuo.
+          <p className="mt-5 max-w-2xl mx-auto text-[#566477] leading-relaxed">
+            Conte o cenário atual da sua operação. Direcionamos o próximo passo com clareza técnica.
           </p>
 
-          <p className="text-white/55 text-sm max-w-[640px] mx-auto mb-8 leading-relaxed">
-            Se sua operação depende de sistema, apuração fiscal e controle
-            contábil, o risco não está em “se existe erro” — mas em onde ele
-            está.
-          </p>
-
-          <a
-            href={whatsappUrl(
-              "Olá, vim pelo site da Rocha & Barbosa e gostaria de entender qual solução é mais adequada para minha empresa."
-            )}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-gold"
-          >
-            Quero entender meu cenário agora
-            <ArrowRight size={16} strokeWidth={1.5} />
-          </a>
+          <div className="mt-7 grid sm:grid-cols-3 gap-3 max-w-[900px] mx-auto">
+            {[
+              {
+                label: "Abrir ou regularizar empresa",
+                message: "Olá, vim pelo site da Rocha & Barbosa e preciso abrir, alterar ou regularizar minha empresa.",
+                className: "btn-gold justify-center",
+              },
+              {
+                label: "Organizar fiscal e contábil",
+                message: "Olá, vim pelo site da Rocha & Barbosa e preciso organizar a gestão fiscal e contábil da minha empresa.",
+                className: "btn-outline-blue justify-center",
+              },
+              {
+                label: "Revisar ERP ou recuperar créditos",
+                message: "Olá, vim pelo site da Rocha & Barbosa e preciso revisar meu ERP ou avaliar oportunidades de recuperação de créditos.",
+                className: "btn-outline-blue justify-center",
+              },
+            ].map((cta) => (
+              <a
+                key={cta.label}
+                href={whatsappUrl(cta.message)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={cta.className}
+              >
+                {cta.label} <ArrowRight size={16} strokeWidth={1.5} />
+              </a>
+            ))}
+          </div>
         </div>
       </section>
     </div>
