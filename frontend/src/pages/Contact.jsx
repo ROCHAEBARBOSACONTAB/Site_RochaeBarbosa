@@ -81,15 +81,14 @@ export default function Contact() {
           <img src={CONTACT_HERO} alt="" className="w-full h-full object-cover" />
         </div>
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(10,42,87,0.88)_0%,rgba(10,42,87,0.78)_52%,rgba(10,42,87,0.7)_100%)]" />
-        <div className="relative max-w-[1200px] mx-auto px-6 lg:px-12 pt-7 pb-10 lg:pt-16 lg:pb-12 text-center">
+        <div className="relative max-w-[1200px] mx-auto px-6 lg:px-12 pt-7 pb-10 lg:pt-14 lg:pb-11 text-left">
           <div className="eyebrow text-[#E6C96A] mb-4">Contato</div>
-          <div className="max-w-[850px] mx-auto">
+          <div className="max-w-[850px]">
             <h1 className="font-serif text-[36px] sm:text-[46px] lg:text-[60px] leading-[1.06]">
-              A conversa certa para
-              <span className="text-[#D4AF37]"> destravar a sua operação.</span>
+              Fale com a Rocha & Barbosa.
             </h1>
-            <p className="mt-5 max-w-[620px] mx-auto text-white/80 text-[16px] leading-relaxed">
-              Escolha o canal mais conveniente. Nossa equipe está pronta para orientar o próximo passo.
+            <p className="mt-5 max-w-[680px] text-white/80 text-[16px] leading-relaxed">
+              <span className="text-[#E6C96A]">Escolha o canal mais conveniente.</span> Nossa equipe está pronta para orientar o próximo passo da sua empresa.
             </p>
           </div>
         </div>
@@ -132,8 +131,11 @@ export default function Contact() {
           <div className="lg:col-span-5">
             <div className="eyebrow mb-4">Escritório</div>
             <h2 className="font-serif text-3xl lg:text-[42px] leading-[1.1] text-[#0A2A57]">
-              Atendimento em Pederneiras, com atuação para todo o Brasil.
+              Atendimento onde sua empresa precisa.
             </h2>
+            <p className="mt-5 max-w-[470px] text-[#536174] leading-relaxed">
+              Base em Pederneiras, com suporte presencial quando necessário e atendimento remoto para empresas de toda a região e do Brasil.
+            </p>
             <div className="mt-7 space-y-5 text-[#35445A]">
               <div className="flex gap-3">
                 <MapPin size={20} className="shrink-0 mt-0.5 text-[#B48600]" strokeWidth={1.5} />
@@ -161,7 +163,7 @@ export default function Contact() {
             <iframe
               title="Localização da Rocha & Barbosa em Pederneiras"
               src="https://www.google.com/maps?q=Rua%20Duque%20de%20Caxias%20294%2C%20Pederneiras%20SP&output=embed"
-              className="w-full h-[320px] lg:h-[410px] border-0"
+              className="w-full h-[300px] lg:h-[360px] border-0"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             />
@@ -177,7 +179,7 @@ export default function Contact() {
               Conte brevemente o que sua empresa precisa.
             </h2>
             <p className="mt-5 text-[#536174] leading-relaxed max-w-[460px]">
-              Ao enviar, abriremos uma mensagem preenchida no WhatsApp para que você possa revisar e falar diretamente com a nossa equipe.
+              Preencha os dados essenciais. Abriremos uma mensagem preenchida no WhatsApp para você revisar antes de falar diretamente com nossa equipe.
             </p>
           </div>
 
@@ -205,8 +207,11 @@ export default function Contact() {
               </label>
             </div>
             <button type="submit" className="btn-gold mt-7 w-full justify-center">
-              Enviar pelo WhatsApp <Send size={16} strokeWidth={1.5} />
+              Abrir mensagem no WhatsApp <Send size={16} strokeWidth={1.5} />
             </button>
+            <p className="mt-4 text-center text-xs leading-relaxed text-[#6B7280]">
+              Nenhuma mensagem é enviada automaticamente: você confirma o envio no WhatsApp.
+            </p>
           </form>
         </div>
       </section>
