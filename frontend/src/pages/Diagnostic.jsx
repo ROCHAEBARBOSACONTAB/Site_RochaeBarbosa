@@ -98,9 +98,6 @@ ${form.message}
 
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(10,42,87,0.92)_0%,rgba(10,42,87,0.82)_42%,rgba(10,42,87,0.72)_100%)]" />
 
-        <div className="absolute -right-28 top-16 h-[420px] w-[420px] rounded-full bg-[#D4AF37]/10 blur-[90px]" />
-        <div className="absolute left-[-120px] bottom-[-120px] h-[320px] w-[320px] rounded-full bg-white/5 blur-[80px]" />
-
         <div className="relative max-w-[1200px] mx-auto px-6 lg:px-12 pt-7 pb-10 lg:pt-20 lg:pb-16">
           <div className="max-w-[820px]">
             <div className="eyebrow text-[#D4AF37] mb-5">
@@ -108,17 +105,13 @@ ${form.message}
             </div>
 
             <h1 className="font-serif text-[34px] sm:text-[52px] lg:text-[62px] leading-[1.06] tracking-[-0.015em] max-w-[860px]">
-              Se o seu sistema está gerando prejuízo fiscal,{" "}
-              <br className="hidden sm:block" />
-              <span className="text-[#D4AF37]">
-                o problema já está na operação
-              </span>
+              Quando a operação não fecha,
+              <span className="text-[#D4AF37]"> a origem precisa aparecer.</span>
             </h1>
 
             <p className="mt-6 text-white/75 text-[17px] max-w-[700px] leading-[1.58]">
-              Analisamos ERP, apuração, escrituração e obrigações fiscais para
-              identificar inconsistências, riscos e oportunidades com base em
-              dados reais da operação.
+              Analisamos dados, processos, fiscal e ERP para identificar inconsistências,
+              riscos e oportunidades antes de propor qualquer correção.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3 text-sm text-white/70">
@@ -138,12 +131,8 @@ ${form.message}
 
             <div className="mt-9 flex flex-wrap gap-4">
               <a href="#form-diagnostico" className="btn-gold">
-                Iniciar Diagnóstico Técnico
+                Solicitar análise técnica
                 <ArrowRight size={16} strokeWidth={1.5} />
-              </a>
-
-              <a href="#form-diagnostico" className="btn-outline-gold">
-                Ver informações necessárias
               </a>
             </div>
           </div>
@@ -159,17 +148,17 @@ ${form.message}
             {[
               {
                 icon: Database,
-                title: "Cruzamento técnico",
-                desc: "ERP, escrituração, obrigações e regras fiscais analisados em conjunto para revelar distorções que não aparecem isoladamente.",
+                title: "Visão integrada",
+                desc: "ERP, escrituração, obrigações e regras fiscais são analisados em conjunto para entender a operação de ponta a ponta.",
               },
               {
                 icon: FileSearch,
-                title: "Foco em evidência",
-                desc: "Nada de promessa genérica. A análise busca pontos identificáveis, validáveis e conectados ao impacto operacional.",
+                title: "Análise com evidência",
+                desc: "A avaliação busca pontos identificáveis, validáveis e conectados ao impacto real da operação.",
               },
               {
                 icon: Cpu,
-                title: "Ambientes complexos",
+                title: "Operações complexas",
                 desc: "Atuação voltada a empresas com operação estruturada, alto volume de informações e integração fiscal sistêmica.",
               },
             ].map((item, i) => (
@@ -203,21 +192,17 @@ ${form.message}
             <div className="eyebrow mb-4">Solicitação de Diagnóstico</div>
 
             <h2 className="font-serif text-3xl lg:text-5xl text-[#0A2A57] leading-[1.08]">
-              O problema não está no relatório.
-              <span className="text-[#D4AF37]">
-                {" "}Está na estrutura da operação.
-              </span>
+              Antes de corrigir,
+              <span className="text-[#D4AF37]"> precisamos entender.</span>
             </h2>
 
             <p className="mt-6 text-[#555] text-[16px] leading-relaxed max-w-[520px]">
-              A maioria das empresas só identifica falhas fiscais quando o
-              impacto já aconteceu — na perda de crédito, na inconsistência do
-              SPED, no retrabalho interno ou em questionamentos fiscais.
+              O diagnóstico organiza as informações que já existem na empresa
+              para revelar onde processos, dados e obrigações deixam de conversar entre si.
             </p>
 
             <p className="mt-4 text-[#444] text-[15px] leading-relaxed max-w-[520px]">
-              Se existe dúvida sobre a consistência da operação, o risco já está
-              presente.
+              Com esse entendimento, a próxima ação deixa de ser tentativa e passa a ter direção técnica.
             </p>
 
             <div className="mt-8 p-6 border border-[#D4AF37]/30 bg-[#FAFAF8]">
