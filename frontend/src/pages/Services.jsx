@@ -294,7 +294,7 @@ export default function Services() {
                     : "border border-[#E7E2D8]"
                 }`}
               >
-                <div className={group.compactCards ? "flex flex-col gap-5" : "flex items-start gap-5"}>
+                <div className={group.compactCards ? "flex flex-col gap-5" : "flex flex-col gap-5 sm:flex-row sm:items-start"}>
                   <div className="w-14 h-14 border border-[#D4AF37]/60 flex items-center justify-center shrink-0 group-hover:bg-[#D4AF37]/5 transition-all duration-300">
                     <s.icon
                       size={25}
