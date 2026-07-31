@@ -11,12 +11,16 @@ import {
   TrendingUp,
   KeyRound,
   CheckCircle2,
-  Star,
 } from "lucide-react";
 
 const phone = "5514991269374";
-const googleReviewsUrl =
-  "https://www.google.com/search?kgmid=/g/11xkvg45zb&q=ROCHA+E+BARBOSA+ASSESSORIA+CONT%C3%81BIL";
+const whatsappUrl = (message) =>
+  `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+
+// Quando a landing page da RB Tecnologias estiver publicada, substitua somente esta URL.
+const certificatePartnerUrl = whatsappUrl(
+  "Olá, vim pelo site da Rocha & Barbosa e quero emitir um certificado digital pela RB Tecnologias."
+);
 
 const coreServices = [
   {
@@ -133,6 +137,7 @@ const coreServices = [
     extra:
       "Durante a emissão, avaliamos possíveis inconsistências fiscais na operação.",
     cta: "Quero emitir meu certificado agora",
+    partnerCta: true,
     whatsappMessage:
       "Olá, vim pelo site da Rocha & Barbosa e quero entender como vocês podem me ajudar com Certificado Digital.",
   },
@@ -140,31 +145,37 @@ const coreServices = [
 
 const serviceGroups = [
   {
-    id: "regularizar",
-    title: "Regularize sua operação",
-    desc: "Para empresas que precisam cumprir exigências e manter a atividade regular.",
-    gridClass: "grid-cols-1",
-    services: [coreServices[0]],
-  },
-  {
     id: "organizar",
-    title: "Organize e mantenha o controle",
-    desc: "Para a rotina contábil, fiscal e documental da empresa.",
+    title: "Contabilidade e fiscal para a rotina funcionar",
+    desc: "Acompanhamento recorrente para decisões mais seguras e uma operação sob controle.",
     gridClass: "lg:grid-cols-3",
     compactCards: true,
     services: [coreServices[1], coreServices[5], coreServices[7]],
+    cta: "Quero organizar minha rotina contábil e fiscal",
+    whatsappMessage:
+      "Olá, vim pelo site da Rocha & Barbosa e quero organizar a rotina contábil e fiscal da minha empresa.",
+  },
+  {
+    id: "regularizar",
+    title: "Regularize a operação além do CNPJ",
+    desc: "Para empresas que precisam cumprir exigências e manter a atividade regular perante os órgãos aplicáveis.",
+    gridClass: "grid-cols-1",
+    services: [coreServices[0]],
+    cta: "Quero regularizar minha operação",
+    whatsappMessage:
+      "Olá, vim pelo site da Rocha & Barbosa e preciso entender a regularização operacional e as licenças necessárias para minha empresa.",
   },
   {
     id: "evoluir",
-    title: "Diagnostique, corrija e evolua",
-    desc: "Para operações que exigem revisão técnica, ERP, compliance ou recuperação.",
+    title: "Projetos técnicos para situações específicas",
+    desc: "Para operações que exigem diagnóstico, ERP, compliance de implantação ou recuperação de créditos.",
     gridClass: "lg:grid-cols-2",
     services: [coreServices[2], coreServices[3], coreServices[4], coreServices[6]],
+    cta: "Quero avaliar uma necessidade técnica",
+    whatsappMessage:
+      "Olá, vim pelo site da Rocha & Barbosa e quero avaliar uma necessidade técnica da minha operação.",
   },
 ];
-
-const whatsappUrl = (message) =>
-  `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
 
 export default function Services() {
   return (
@@ -175,11 +186,11 @@ export default function Services() {
           <div className="eyebrow text-[#E6C96A] mb-3">Serviços</div>
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4">
             <h1 className="font-serif text-[34px] sm:text-[42px] lg:text-[48px] leading-[1.08] max-w-[760px]">
-              Soluções contábeis, fiscais e empresariais
-              <span className="text-[#D4AF37]"> para cada etapa da sua operação.</span>
+              Contabilidade para sua empresa
+              <span className="text-[#D4AF37]"> operar com clareza.</span>
             </h1>
             <p className="max-w-[380px] text-white/72 text-[15px] leading-relaxed lg:pb-1">
-              Comece pela necessidade atual e avance com a estrutura adequada para o seu negócio.
+              Da rotina contábil às decisões de estrutura, acompanhamos o que mantém sua operação em movimento.
             </p>
           </div>
         </div>
@@ -191,8 +202,8 @@ export default function Services() {
           <p className="shrink-0 text-[#0A2A57] font-serif text-xl">Escolha seu ponto de partida</p>
           <div className="grid sm:grid-cols-3 gap-3 flex-1">
             {[
-              { label: "Abrir ou regularizar empresa", href: "#formalizar" },
               { label: "Organizar fiscal e contábil", href: "#organizar" },
+              { label: "Abrir ou regularizar empresa", href: "#formalizar" },
               { label: "Corrigir ERP ou recuperar créditos", href: "#evoluir" },
             ].map((item) => (
               <a
@@ -266,13 +277,13 @@ export default function Services() {
             <div className="eyebrow mb-4">Portfólio</div>
 
             <h2 className="font-serif text-3xl lg:text-5xl text-[#0A2A57] leading-[1.08]">
-              O que fazemos para proteger e otimizar sua operação
+              Acompanhamento contábil para o presente. Estrutura para os próximos passos.
             </h2>
 
             <p className="mt-5 text-[#555] text-[16px] leading-relaxed">
-              A maioria das empresas não sabe exatamente onde está errando —
-              apenas sente o impacto no resultado. Nossas soluções direcionam o
-              problema certo para a correção certa.
+              Nossa base é a rotina contábil e fiscal bem conduzida. A partir dela,
+              apoiamos abertura, regularização, decisões empresariais e desafios
+              técnicos que pedem uma análise mais profunda.
             </p>
           </div>
 
@@ -336,55 +347,36 @@ export default function Services() {
                       </p>
                     )}
 
-                    <a
-                      href={whatsappUrl(s.whatsappMessage)}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 mt-7 link-gold text-sm uppercase tracking-[0.16em]"
-                    >
-                      {s.cta}
-                      <ArrowRight size={14} strokeWidth={1.5} />
-                    </a>
+                    {s.partnerCta && (
+                      <div className="mt-6 pt-5 border-t border-[#E7E2D8]">
+                        <p className="eyebrow mb-3">Atendimento em parceria com RB Tecnologias</p>
+                        <a
+                          href={certificatePartnerUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="btn-outline-blue justify-center"
+                        >
+                          Solicitar certificado digital <ArrowRight size={16} strokeWidth={1.5} />
+                        </a>
+                      </div>
+                    )}
 
-                    <p className="mt-2 text-xs text-[#6B7280]">
-                      Atendimento direto via WhatsApp.
-                    </p>
                   </div>
                 </div>
               </div>
                   ))}
                 </div>
+                <a
+                  href={whatsappUrl(group.whatsappMessage)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-gold mt-6 justify-center"
+                >
+                  {group.cta}
+                  <ArrowRight size={14} strokeWidth={1.5} />
+                </a>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* GOOGLE REVIEWS */}
-      <section className="bg-white border-t border-[#E7E2D8] py-10 lg:py-12">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-          <div className="border border-[#E7E2D8] bg-[#FAFAF8] px-6 py-7 lg:px-9 lg:py-8 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
-            <div>
-              <div className="eyebrow mb-3">Experiência de clientes</div>
-              <h2 className="font-serif text-2xl lg:text-3xl text-[#0A2A57] leading-tight">
-                Veja o que clientes dizem sobre a Rocha & Barbosa.
-              </h2>
-              <div className="mt-4 flex items-center gap-1 text-[#D4AF37]" aria-label="Avaliações de clientes no Google">
-                {[1, 2, 3, 4, 5].map((star) => (
-                  <Star key={star} size={18} fill="currentColor" strokeWidth={1.25} />
-                ))}
-                <span className="ml-2 text-sm text-[#566477]">Avaliações de clientes no Google</span>
-              </div>
-            </div>
-
-            <a
-              href={googleReviewsUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-outline-blue justify-center shrink-0"
-            >
-              Conferir avaliações no Google <ArrowRight size={16} strokeWidth={1.5} />
-            </a>
           </div>
         </div>
       </section>
