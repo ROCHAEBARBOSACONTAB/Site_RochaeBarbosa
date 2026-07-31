@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import {
+  ArrowLeft,
   ArrowRight,
-  Building2,
   CheckCircle2,
   FilePenLine,
   Landmark,
@@ -15,11 +15,6 @@ const whatsappUrl = (message) =>
   `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 
 const situations = [
-  {
-    icon: Building2,
-    title: "Abrir uma empresa",
-    text: "Definição da estrutura inicial, atividades e enquadramento para começar com mais segurança.",
-  },
   {
     icon: FilePenLine,
     title: "Alterar informações da empresa",
@@ -43,17 +38,35 @@ export default function BusinessRegistration() {
       <section className="bg-[#0A2A57] text-white border-b border-[#D4AF37]/20">
         <div className="max-w-[1200px] mx-auto px-6 lg:px-12 pt-7 pb-9 lg:pt-14 lg:pb-12">
           <Link to="/servicos" className="inline-flex items-center gap-2 text-[12px] uppercase tracking-[0.16em] text-[#E6C96A] hover:text-white transition">
-            Serviços <ArrowRight size={13} strokeWidth={1.5} />
+            <ArrowLeft size={13} strokeWidth={1.5} /> Serviços
           </Link>
           <div className="mt-5 max-w-[840px]">
-            <div className="eyebrow text-[#E6C96A] mb-4">Paralegal e societário</div>
+            <div className="eyebrow text-[#E6C96A] mb-4">Abertura de empresa</div>
             <h1 className="font-serif text-[36px] sm:text-[46px] lg:text-[58px] leading-[1.06]">
-              Abertura, alteração e regularização
-              <span className="text-[#D4AF37]"> de empresas com orientação desde o início.</span>
+              Abra sua empresa com estrutura
+              <span className="text-[#D4AF37]"> certa desde o início.</span>
             </h1>
             <p className="mt-5 max-w-[710px] text-white/78 text-[16px] leading-relaxed">
-              Cada decisão societária, cadastral e fiscal influencia o funcionamento da empresa. Organizamos o caminho necessário para você começar, alterar ou regularizar a operação com clareza técnica.
+              Definimos a estrutura, as atividades e o enquadramento necessários para sua empresa começar organizada e preparada para operar.
             </p>
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+              <a
+                href={whatsappUrl("Olá, vim pelo site da Rocha & Barbosa e quero abrir uma empresa. Preciso de orientação para estruturar o início da operação.")}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-gold justify-center"
+              >
+                Quero abrir uma empresa <ArrowRight size={16} strokeWidth={1.5} />
+              </a>
+              <a
+                href={whatsappUrl("Olá, vim pelo site da Rocha & Barbosa e preciso alterar ou regularizar minha empresa.")}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-outline-gold justify-center"
+              >
+                Alterar ou regularizar <ArrowRight size={16} strokeWidth={1.5} />
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -61,16 +74,16 @@ export default function BusinessRegistration() {
       <section className="bg-[#F7F5EF] border-b border-[#E7E2D8] py-10 lg:py-14">
         <div className="max-w-[1200px] mx-auto px-6 lg:px-12 grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
           <div className="lg:col-span-5">
-            <div className="eyebrow mb-4">Como podemos ajudar</div>
+            <div className="eyebrow mb-4">Demandas relacionadas</div>
             <h2 className="font-serif text-3xl lg:text-[42px] text-[#0A2A57] leading-[1.1]">
-              O serviço certo para a situação atual da sua empresa.
+              A empresa muda. A estrutura também precisa acompanhar.
             </h2>
             <p className="mt-5 text-[#596678] leading-relaxed">
-              Atendemos empresas em Pederneiras e região, com análise da necessidade antes de indicar os próximos passos.
+              Além da abertura, orientamos alterações, regularizações e baixas com base na necessidade real da empresa. Atendemos remotamente e presencialmente quando necessário.
             </p>
           </div>
 
-          <div className="lg:col-span-7 grid sm:grid-cols-2 gap-4">
+          <div className="lg:col-span-7 grid md:grid-cols-3 gap-4">
             {situations.map((item) => {
               const Icon = item.icon;
               return (
@@ -88,16 +101,16 @@ export default function BusinessRegistration() {
       <section className="py-12 lg:py-16">
         <div className="max-w-[1200px] mx-auto px-6 lg:px-12">
           <div className="max-w-[740px] mb-9">
-            <div className="eyebrow mb-4">Condução técnica</div>
+            <div className="eyebrow mb-4">Como conduzimos</div>
             <h2 className="font-serif text-3xl lg:text-[42px] text-[#0A2A57] leading-[1.1]">
-              Antes de protocolar, entendemos o impacto da decisão.
+              Antes de protocolar, alinhamos a decisão à realidade da empresa.
             </h2>
           </div>
           <div className="grid md:grid-cols-3 gap-5">
             {[
-              ["01", "Entendemos a necessidade", "Você nos apresenta a empresa, o objetivo e o ponto que precisa ser resolvido."],
-              ["02", "Definimos o caminho aplicável", "Avaliamos estrutura, atividades e obrigações relacionadas à solicitação."],
-              ["03", "Conduzimos as etapas", "Organizamos os documentos e acompanhamos o andamento necessário para a demanda."],
+              ["01", "Entendemos o momento", "Você apresenta o objetivo, a empresa e o que precisa ser estruturado, alterado ou resolvido."],
+              ["02", "Definimos a estrutura", "Avaliamos atividades, composição societária, enquadramento e obrigações relacionadas à solicitação."],
+              ["03", "Conduzimos as etapas", "Organizamos documentos e orientamos o andamento necessário para que a demanda avance com clareza."],
             ].map(([step, title, text]) => (
               <div key={step} className="border-t-2 border-[#D4AF37] pt-5">
                 <div className="font-serif text-3xl text-[#B48600]">{step}</div>
@@ -113,11 +126,11 @@ export default function BusinessRegistration() {
         <div className="max-w-[860px] mx-auto px-6 lg:px-12 text-center">
           <div className="eyebrow mb-4">Próximo passo</div>
           <h2 className="font-serif text-3xl lg:text-5xl text-[#0A2A57] leading-[1.08]">
-            Conte o que sua empresa precisa
-            <span className="text-[#D4AF37]"> regularizar ou alterar.</span>
+            Vamos organizar o próximo passo
+            <span className="text-[#D4AF37]"> da sua empresa.</span>
           </h2>
           <p className="mt-5 text-[#596678] leading-relaxed">
-            Nossa equipe orienta qual é o caminho mais adequado para a sua situação.
+            Nossa equipe avalia a sua necessidade e orienta o caminho mais adequado para começar, alterar ou regularizar.
           </p>
           <a
             href={whatsappUrl("Olá, vim pela página de abertura e regularização de empresas e preciso de orientação para minha situação.")}
@@ -125,7 +138,7 @@ export default function BusinessRegistration() {
             rel="noopener noreferrer"
             className="btn-gold mt-7"
           >
-            Falar sobre minha empresa <ArrowRight size={16} strokeWidth={1.5} />
+            Falar com um especialista <ArrowRight size={16} strokeWidth={1.5} />
           </a>
         </div>
       </section>

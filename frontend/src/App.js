@@ -12,8 +12,9 @@ import Home from "./pages/Home";
 import Services from "./pages/Services";
 import BusinessRegistration from "./pages/services/BusinessRegistration";
 import Diagnostic from "./pages/Diagnostic";
-import Blog from "./pages/Blog";
-import BlogPost from "./pages/BlogPost";
+// Blog e planos permanecem preservados para uma reativacao futura.
+// import Blog from "./pages/Blog";
+// import BlogPost from "./pages/BlogPost";
 import Resources from "./pages/Resources";
 import SimplesHub from "./pages/resources/simples/SimplesHub";
 import Anexo1 from "./pages/resources/simples/Anexo1";
@@ -26,7 +27,7 @@ import IPI from "./pages/resources/tabelas/IPI";
 import PIS_COFINS from "./pages/resources/tabelas/PIS_COFINS";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
-import Plans from "./pages/Plans";
+// import Plans from "./pages/Plans";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import AdminDashboard from "./pages/AdminDashboard";
@@ -56,8 +57,9 @@ export default function App() {
             <Route path="/servicos" element={<Services />} />
             <Route path="/servicos/abertura-de-empresa" element={<BusinessRegistration />} />
             <Route path="/diagnostico" element={<Diagnostic />} />
-            <Route path="/blog" element={<Blog />} />
-            <Route path="/blog/:slug" element={<BlogPost />} />
+            {/* Rotas temporariamente desativadas. Manter os arquivos para reativacao futura. */}
+            {/* <Route path="/blog" element={<Blog />} /> */}
+            {/* <Route path="/blog/:slug" element={<BlogPost />} /> */}
             <Route path="/recursos" element={<Resources />} />
             <Route path="/recursos/cfop" element={<CfopBrowser />} />
             <Route path="/recursos/cfop/:code" element={<CfopBrowser />} />
@@ -72,7 +74,7 @@ export default function App() {
             <Route path="/recursos/tabelas/pis-cofins" element={<PIS_COFINS />} />
             <Route path="/sobre" element={<About />} />
             <Route path="/contato" element={<Contact />} />
-            <Route path="/planos" element={<Plans />} />
+            {/* <Route path="/planos" element={<Plans />} /> */}
             <Route path="/login" element={<Login />} />
             <Route path="/registro" element={<Register />} />
             <Route path="/admin" element={<AdminDashboard />} />
