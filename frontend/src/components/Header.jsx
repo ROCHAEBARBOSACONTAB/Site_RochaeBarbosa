@@ -112,7 +112,7 @@ export default function Header() {
               <div
                 role="menu"
                 aria-label="Materiais técnicos"
-                className="absolute right-0 top-full mt-4 w-[286px] border border-[#D4AF37]/35 bg-[#08254E] p-2 shadow-[0_18px_42px_rgba(0,0,0,0.24)]"
+                className="absolute right-0 top-full w-[286px] border border-[#D4AF37]/35 bg-[#08254E] p-2 shadow-[0_18px_42px_rgba(0,0,0,0.24)]"
               >
                 <div className="px-3 pt-2 pb-3 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#E6C96A]">
                   Acesso rápido
