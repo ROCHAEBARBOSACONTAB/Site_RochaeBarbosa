@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Mail, MapPin, MessageCircle, Phone, Star } from "lucide-react";
-import logogold from "../assets/logogold.png";
+import logogold from "../assets/logogold-160.png";
 
 const googleReviewsUrl =
   "https://www.google.com/search?kgmid=/g/11xkvg45zb&q=ROCHA+E+BARBOSA+ASSESSORIA+CONT%C3%81BIL";

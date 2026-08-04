@@ -1,4 +1,4 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import "@/index.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Toaster } from "sonner";
@@ -10,30 +10,31 @@ import ScrollToTop from "./components/ScrollToTop";
 import SEO from "./components/SEO";
 
 import Home from "./pages/Home";
-import Services from "./pages/Services";
-import BusinessRegistration from "./pages/services/BusinessRegistration";
-import Diagnostic from "./pages/Diagnostic";
 // Blog e planos permanecem preservados para uma reativacao futura.
 // import Blog from "./pages/Blog";
 // import BlogPost from "./pages/BlogPost";
-import Resources from "./pages/Resources";
-import SimplesHub from "./pages/resources/simples/SimplesHub";
-import Anexo1 from "./pages/resources/simples/Anexo1";
-import Anexo2 from "./pages/resources/simples/Anexo2";
-import Anexo3 from "./pages/resources/simples/Anexo3";
-import Anexo4 from "./pages/resources/simples/Anexo4";
-import Anexo5 from "./pages/resources/simples/Anexo5";
-import ICMS from "./pages/resources/tabelas/ICMS";
-import IPI from "./pages/resources/tabelas/IPI";
-import PIS_COFINS from "./pages/resources/tabelas/PIS_COFINS";
-import About from "./pages/About";
-import Contact from "./pages/Contact";
 // import Plans from "./pages/Plans";
-import Login from "./pages/Login";
-import Register from "./pages/Register";
-import AdminDashboard from "./pages/AdminDashboard";
-import TabelasHub from "./pages/resources/tabelas/TabelasHub";
-import CfopBrowser from "./pages/resources/cfop/CfopBrowser";
+
+const Services = lazy(() => import("./pages/Services"));
+const BusinessRegistration = lazy(() => import("./pages/services/BusinessRegistration"));
+const Diagnostic = lazy(() => import("./pages/Diagnostic"));
+const Resources = lazy(() => import("./pages/Resources"));
+const SimplesHub = lazy(() => import("./pages/resources/simples/SimplesHub"));
+const Anexo1 = lazy(() => import("./pages/resources/simples/Anexo1"));
+const Anexo2 = lazy(() => import("./pages/resources/simples/Anexo2"));
+const Anexo3 = lazy(() => import("./pages/resources/simples/Anexo3"));
+const Anexo4 = lazy(() => import("./pages/resources/simples/Anexo4"));
+const Anexo5 = lazy(() => import("./pages/resources/simples/Anexo5"));
+const ICMS = lazy(() => import("./pages/resources/tabelas/ICMS"));
+const IPI = lazy(() => import("./pages/resources/tabelas/IPI"));
+const PIS_COFINS = lazy(() => import("./pages/resources/tabelas/PIS_COFINS"));
+const About = lazy(() => import("./pages/About"));
+const Contact = lazy(() => import("./pages/Contact"));
+const Login = lazy(() => import("./pages/Login"));
+const Register = lazy(() => import("./pages/Register"));
+const AdminDashboard = lazy(() => import("./pages/AdminDashboard"));
+const TabelasHub = lazy(() => import("./pages/resources/tabelas/TabelasHub"));
+const CfopBrowser = lazy(() => import("./pages/resources/cfop/CfopBrowser"));
 
 function Layout({ children }) {
   return (
@@ -54,7 +55,8 @@ export default function App() {
         <ScrollToTop />
         <Toaster position="top-right" richColors />
         <Layout>
-          <Routes>
+          <Suspense fallback={null}>
+            <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/servicos" element={<Services />} />
             <Route path="/servicos/abertura-de-empresa" element={<BusinessRegistration />} />
@@ -84,7 +86,8 @@ export default function App() {
             <Route path="/recursos/tabelas/icms" element={<ICMS />} />
             <Route path="/recursos/tabelas/ipi" element={<IPI />} />
             <Route path="/recursos/tabelas/pis-cofins" element={<PIS_COFINS />} />
-          </Routes>
+            </Routes>
+          </Suspense>
         </Layout>
       </BrowserRouter>
     </AuthProvider>

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { ArrowRight, ChevronDown, FileCheck2, Layers, Menu, TableProperties, X } from "lucide-react";
 import { useAuth } from "../context/AuthContext";
-import logogold from "../assets/logogold.png";
+import logogold from "../assets/logogold-160.png";
 
 const links = [
   { to: "/", label: "Início" },
