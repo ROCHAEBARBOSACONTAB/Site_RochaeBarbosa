@@ -36,6 +36,9 @@ export const getAnalyticsConsent = () => {
 
 export const setAnalyticsConsent = (value) => {
   window.localStorage.setItem(CONSENT_KEY, value);
+  if (value === "granted") {
+    initializeAnalytics();
+  }
   window.dispatchEvent(new Event("analytics-consent-change"));
 };
 
