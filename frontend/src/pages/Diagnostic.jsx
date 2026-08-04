@@ -9,6 +9,7 @@ import {
   Cpu,
 } from "lucide-react";
 import diagnosticHero from "../assets/diagnostic-hero.jpg";
+import { trackEvent } from "../lib/analytics";
 
 const WHATSAPP_NUMBER = "5514991269374";
 
@@ -72,6 +73,11 @@ ${form.message}
 
     const url = buildWhatsappUrl();
     setWhatsappUrl(url);
+
+    trackEvent("generate_lead", {
+      method: "formulario_diagnostico_whatsapp",
+      form_name: "diagnostico",
+    });
 
     const opened = window.open(url, "_blank", "noopener,noreferrer");
 

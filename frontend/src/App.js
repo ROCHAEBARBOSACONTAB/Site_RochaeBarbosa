@@ -8,6 +8,8 @@ import Footer from "./components/Footer";
 import ChatWidget from "./components/ChatWidget";
 import ScrollToTop from "./components/ScrollToTop";
 import SEO from "./components/SEO";
+import Analytics from "./components/Analytics";
+import CookieConsent from "./components/CookieConsent";
 
 import Home from "./pages/Home";
 // Blog e planos permanecem preservados para uma reativacao futura.
@@ -30,6 +32,7 @@ const IPI = lazy(() => import("./pages/resources/tabelas/IPI"));
 const PIS_COFINS = lazy(() => import("./pages/resources/tabelas/PIS_COFINS"));
 const About = lazy(() => import("./pages/About"));
 const Contact = lazy(() => import("./pages/Contact"));
+const CookiePolicy = lazy(() => import("./pages/CookiePolicy"));
 const Login = lazy(() => import("./pages/Login"));
 const Register = lazy(() => import("./pages/Register"));
 const AdminDashboard = lazy(() => import("./pages/AdminDashboard"));
@@ -52,6 +55,8 @@ export default function App() {
     <AuthProvider>
       <BrowserRouter>
         <SEO />
+        <Analytics />
+        <CookieConsent />
         <ScrollToTop />
         <Toaster position="top-right" richColors />
         <Layout>
@@ -78,6 +83,7 @@ export default function App() {
             <Route path="/recursos/tabelas/pis-cofins" element={<PIS_COFINS />} />
             <Route path="/sobre" element={<About />} />
             <Route path="/contato" element={<Contact />} />
+            <Route path="/politica-de-cookies" element={<CookiePolicy />} />
             {/* <Route path="/planos" element={<Plans />} /> */}
             <Route path="/login" element={<Login />} />
             <Route path="/registro" element={<Register />} />

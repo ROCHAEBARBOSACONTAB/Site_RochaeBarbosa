@@ -148,6 +148,7 @@ export default function Header() {
         </nav>
         <Link
           to="/contato"
+          data-analytics="cabecalho_falar_com_especialista"
           className="hidden xl:inline-flex items-center gap-2 border border-[#D4AF37]/80 px-4 py-2.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-[#E6C96A] transition hover:bg-[#D4AF37] hover:text-[#0A2A57] focus-visible:outline focus-visible:outline-1 focus-visible:outline-offset-4 focus-visible:outline-[#E6C96A]"
         >
           Falar com especialista <ArrowRight size={14} strokeWidth={1.5} />

@@ -124,7 +124,19 @@ export default function Footer() {
         </div>
 
         <div className="mt-8 lg:mt-12 border-t border-white/10 pt-5 lg:pt-6 text-[11px] text-white/45 tracking-[0.04em]">
-          <div>© {new Date().getFullYear()} Rocha & Barbosa Assessoria Contábil. Todos os direitos reservados.</div>
+          <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
+            <span>© {new Date().getFullYear()} Rocha & Barbosa Assessoria Contábil. Todos os direitos reservados.</span>
+            <button
+              type="button"
+              onClick={() => window.dispatchEvent(new Event("open-cookie-consent"))}
+              className="text-left underline decoration-white/25 underline-offset-4 transition hover:text-white"
+            >
+              Preferências de cookies
+            </button>
+            <Link to="/politica-de-cookies" className="underline decoration-white/25 underline-offset-4 transition hover:text-white">
+              Política de Cookies
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

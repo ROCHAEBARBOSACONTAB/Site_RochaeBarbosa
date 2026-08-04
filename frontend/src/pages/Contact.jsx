@@ -9,6 +9,7 @@ import {
   Send,
 } from "lucide-react";
 import contactHero from "../assets/contact-hero.jpg";
+import { trackEvent } from "../lib/analytics";
 
 const WHATSAPP_NUMBER = "5514991269374";
 const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
@@ -61,6 +62,11 @@ export default function Contact() {
     ]
       .filter(Boolean)
       .join("\n");
+
+    trackEvent("generate_lead", {
+      method: "formulario_contato_whatsapp",
+      form_name: "contato",
+    });
 
     window.open(
       `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`,

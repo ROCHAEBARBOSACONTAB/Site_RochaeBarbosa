@@ -45,6 +45,11 @@ const pageMetadata = {
     description:
       "Fale com a Rocha & Barbosa para abertura, regularizacao, contabilidade, fiscal e diagnostico de ERP. Atendimento em Pederneiras, regiao e remoto.",
   },
+  "/politica-de-cookies": {
+    title: "Politica de Cookies | Rocha & Barbosa",
+    description:
+      "Entenda como a Rocha & Barbosa utiliza cookies essenciais e de medicao no site e como gerenciar suas preferencias.",
+  },
   "/recursos": {
     title: "Materiais tecnicos contabeis e fiscais | Rocha & Barbosa",
     description:
