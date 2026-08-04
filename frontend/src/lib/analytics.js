@@ -1,4 +1,4 @@
-const MEASUREMENT_ID = "G-5Y2VQZBQ3F";
+const MEASUREMENT_ID = "G-5Y2Y0ZBQ3F";
 const CONSENT_KEY = "rochaebarbosa_analytics_consent";
 
 let initialized = false;
