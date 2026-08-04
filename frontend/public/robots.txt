@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Disallow: /login
+Disallow: /registro
+Disallow: /admin
+
+Sitemap: https://www.rochaebarbosa.com.br/sitemap.xml
