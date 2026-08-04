@@ -8,9 +8,7 @@ import {
   Search,
   ShieldCheck,
 } from "lucide-react";
-
-const ABOUT_HERO =
-  "https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=1200&w=2000";
+import aboutHero from "../assets/about-hero.jpg";
 
 const pillars = [
   {
@@ -53,7 +51,7 @@ export default function About() {
     <div data-testid="about-page" className="bg-white">
       <section className="relative overflow-hidden bg-[#0A2A57] pb-10 pt-7 text-white lg:pb-12 lg:pt-14 noise">
         <div className="absolute inset-0 opacity-55">
-          <img src={ABOUT_HERO} alt="" className="h-full w-full object-cover" />
+          <img src={aboutHero} alt="" width="1800" height="1200" fetchPriority="high" className="h-full w-full object-cover" />
         </div>
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(10,42,87,0.92)_0%,rgba(10,42,87,0.78)_52%,rgba(10,42,87,0.88)_100%)]" />
 

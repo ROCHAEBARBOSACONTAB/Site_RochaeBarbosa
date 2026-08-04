@@ -8,15 +8,13 @@ import {
   Phone,
   Send,
 } from "lucide-react";
+import contactHero from "../assets/contact-hero.jpg";
 
 const WHATSAPP_NUMBER = "5514991269374";
 const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
   "Olá, vim pelo site da Rocha & Barbosa e gostaria de falar com um especialista."
 )}`;
 const MAPS_LINK = "https://maps.app.goo.gl/FwjWsxxiHdU2AmcK7";
-const CONTACT_HERO =
-  "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=1200&w=2000";
-
 const contactChannels = [
   {
     icon: MessageCircle,
@@ -78,7 +76,7 @@ export default function Contact() {
     <div data-testid="contact-page" className="bg-[#F7F6F2]">
       <section className="relative overflow-hidden bg-[#0A2A57] text-white noise">
         <div className="absolute inset-0 opacity-50">
-          <img src={CONTACT_HERO} alt="" className="w-full h-full object-cover" />
+          <img src={contactHero} alt="" width="1800" height="1200" fetchPriority="high" className="w-full h-full object-cover" />
         </div>
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(10,42,87,0.88)_0%,rgba(10,42,87,0.78)_52%,rgba(10,42,87,0.7)_100%)]" />
         <div className="relative max-w-[1200px] mx-auto px-6 lg:px-12 pt-7 pb-10 lg:pt-14 lg:pb-11 text-left">

@@ -5,8 +5,7 @@ import {
   CheckCircle2,
 } from "lucide-react";
 
-const HOME_HERO =
-  "https://images.pexels.com/photos/3184639/pexels-photo-3184639.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=1400&w=2200";
+const homeHero = "/home-hero-202608.jpg";
 
 const entryPoints = [
   {
@@ -40,7 +39,7 @@ export default function Home() {
     <div data-testid="home-page">
       <section className="relative overflow-hidden bg-[#0A2A57] text-white">
         <div className="absolute inset-0 opacity-45">
-          <img src={HOME_HERO} alt="" className="w-full h-full object-cover" />
+          <img src={homeHero} alt="" width="1800" height="1200" fetchPriority="high" className="w-full h-full object-cover" />
         </div>
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(7,30,64,0.96)_0%,rgba(10,42,87,0.91)_43%,rgba(10,42,87,0.67)_74%,rgba(10,42,87,0.68)_100%)]" />
 

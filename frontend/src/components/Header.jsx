@@ -50,6 +50,8 @@ export default function Header() {
           <img
             src={logogold}
             alt="Rocha & Barbosa"
+            width="500"
+            height="500"
             className="h-10 sm:h-12 lg:h-16 w-auto translate-y-[-2px] transition group-hover:opacity-90"
           />
           <div className="min-w-0 font-serif text-[#D4AF37] text-[20px] sm:text-[22px] lg:text-[28px] tracking-[0.04em] leading-none translate-y-[3px] whitespace-nowrap transition group-hover:opacity-110">

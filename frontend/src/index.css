@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -82,12 +80,12 @@ h1, h2, h3, h4, .font-serif {
 .eyebrow {
     font-family: 'Montserrat', sans-serif;
     font-size: 11px; font-weight: 600; text-transform: uppercase;
-    letter-spacing: 0.24em; color: #A67C00;
+    letter-spacing: 0.24em; color: #8A6500;
 }
 
 /* Glass header */
 .glass-header {
-    background: rgba(10, 42, 87, 0.85);
+    background: #071E40;
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border-bottom: 1px solid rgba(212, 175, 55, 0.18);

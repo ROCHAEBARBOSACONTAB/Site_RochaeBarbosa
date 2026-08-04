@@ -1,0 +1,26 @@
+# Rocha & Barbosa Assessoria Contabil
+
+> Assessoria contabil para empresas, com atuacao em abertura e regularizacao, rotina contabil e fiscal, diagnostico tecnico e suporte a sistemas ERP. Atendimento em Pederneiras, regiao e remoto.
+
+## Paginas institucionais
+
+- [Inicio](https://www.rochaebarbosa.com.br/): Visao geral da atuacao contabil, fiscal e empresarial da Rocha & Barbosa.
+- [Servicos](https://www.rochaebarbosa.com.br/servicos): Solucoes de regularizacao operacional, gestao contabil e fiscal, ERP, compliance e certificado digital.
+- [Abertura e regularizacao de empresa](https://www.rochaebarbosa.com.br/servicos/abertura-de-empresa): Abertura, alteracao, regularizacao e organizacao societaria.
+- [Diagnostico fiscal e de ERP](https://www.rochaebarbosa.com.br/diagnostico): Avaliacao de processos, dados, obrigacoes fiscais e sistemas para identificar riscos e oportunidades.
+- [Sobre](https://www.rochaebarbosa.com.br/sobre): Forma de atuacao, principios e abordagem tecnica da empresa.
+- [Contato](https://www.rochaebarbosa.com.br/contato): Canais de atendimento, telefone, WhatsApp, e-mail e endereco comercial.
+
+## Materiais tecnicos
+
+- [Materiais tecnicos](https://www.rochaebarbosa.com.br/recursos): Portal de consulta para apoio a rotinas contabeis e fiscais.
+- [Consulta de CFOP](https://www.rochaebarbosa.com.br/recursos/cfop): Codigos fiscais, descricoes e classificacoes relacionadas.
+- [Simples Nacional](https://www.rochaebarbosa.com.br/recursos/simples-nacional): Anexos, faixas e aliquotas do Simples Nacional.
+- [Tabelas fiscais](https://www.rochaebarbosa.com.br/recursos/tabelas): Consultas de ICMS, IPI e PIS/COFINS.
+
+## Contato
+
+- Telefone: [(14) 3435-1298](tel:+551434351298)
+- WhatsApp: [(14) 99126-9374](https://wa.me/5514991269374)
+- E-mail: [contabilidade@rochaebarbosa.com.br](mailto:contabilidade@rochaebarbosa.com.br)
+- Endereco: Rua Duque de Caxias, 294, Centro, Pederneiras - SP, Brasil.

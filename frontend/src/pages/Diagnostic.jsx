@@ -8,10 +8,9 @@ import {
   Database,
   Cpu,
 } from "lucide-react";
+import diagnosticHero from "../assets/diagnostic-hero.jpg";
 
 const WHATSAPP_NUMBER = "5514991269374";
-const DIAGNOSTIC_HERO =
-  "https://images.pexels.com/photos/669610/pexels-photo-669610.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=1200&w=2000";
 
 export default function Diagnostic() {
   const [form, setForm] = useState({
@@ -93,7 +92,7 @@ ${form.message}
       {/* HERO */}
       <section className="relative bg-[#0A2A57] text-white overflow-hidden noise">
         <div className="absolute inset-0 opacity-55">
-          <img src={DIAGNOSTIC_HERO} alt="" className="w-full h-full object-cover" />
+          <img src={diagnosticHero} alt="" width="1800" height="1192" fetchPriority="high" className="w-full h-full object-cover" />
         </div>
 
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(10,42,87,0.92)_0%,rgba(10,42,87,0.82)_42%,rgba(10,42,87,0.72)_100%)]" />

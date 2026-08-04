@@ -35,6 +35,8 @@ export default function Footer() {
               <img
                 src={logogold}
                 alt="Rocha & Barbosa"
+                width="500"
+                height="500"
                 className="h-12 lg:h-14 w-auto translate-y-[-2px] transition group-hover:opacity-90"
               />
               <div className="font-serif text-[#D4AF37] text-[24px] lg:text-[28px] tracking-[0.04em] leading-none translate-y-[4px]">

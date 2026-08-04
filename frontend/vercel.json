@@ -1,0 +1,13 @@
+{
+  "headers": [
+    {
+      "source": "/home-hero-202608.jpg",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    }
+  ]
+}
