@@ -44,7 +44,11 @@ export default function ServiceLanding({
                 {primaryCta} <ArrowRight size={16} strokeWidth={1.5} />
               </a>
               {supportingLink && (
-                <Link to={supportingLink.to} className="btn-outline-gold justify-center">
+                <Link
+                  to={supportingLink.to}
+                  data-analytics={`servico_relacionado_${supportingLink.to.replace("/servicos/", "").replace(/-/g, "_")}`}
+                  className="btn-outline-gold justify-center"
+                >
                   {supportingLink.label} <ArrowRight size={16} strokeWidth={1.5} />
                 </Link>
               )}

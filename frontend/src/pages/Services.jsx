@@ -375,7 +375,11 @@ export default function Services() {
 
                     {s.internalCta && (
                       <div className="mt-auto pt-5 border-t border-[#E7E2D8]">
-                        <Link to={s.href} className="btn-outline-blue justify-center">
+                        <Link
+                          to={s.href}
+                          data-analytics={`servico_${s.href.replace("/servicos/", "").replace(/-/g, "_")}`}
+                          className="btn-outline-blue justify-center"
+                        >
                           {s.internalCta} <ArrowRight size={16} strokeWidth={1.5} />
                         </Link>
                       </div>
