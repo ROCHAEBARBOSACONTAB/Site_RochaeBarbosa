@@ -29,6 +29,16 @@ const pageMetadata = {
       ["Abertura e regularizacao de empresa", "/servicos/abertura-de-empresa"],
     ],
   },
+  "/servicos/contabilidade-e-gestao-fiscal": {
+    title: "Contabilidade e gestao fiscal em Pederneiras | Rocha & Barbosa",
+    description:
+      "Contabilidade e gestao fiscal em Pederneiras para empresas que precisam organizar rotinas, obrigacoes e informacoes para decidir com clareza.",
+    service: "Contabilidade e gestao fiscal",
+    breadcrumbs: [
+      ["Servicos", "/servicos"],
+      ["Contabilidade e gestao fiscal", "/servicos/contabilidade-e-gestao-fiscal"],
+    ],
+  },
   "/diagnostico": {
     title: "Diagnostico fiscal e de ERP | Rocha & Barbosa",
     description:

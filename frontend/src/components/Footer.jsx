@@ -8,7 +8,7 @@ const googleReviewsUrl =
 
 const solutionLinks = [
   { to: "/servicos/abertura-de-empresa", label: "Abertura e regularização" },
-  { to: "/servicos#organizar", label: "Gestão contábil e fiscal" },
+  { to: "/servicos/contabilidade-e-gestao-fiscal", label: "Gestão contábil e fiscal" },
   { to: "/diagnostico", label: "Diagnóstico fiscal" },
   { to: "/servicos#evoluir", label: "ERP e compliance" },
 ];

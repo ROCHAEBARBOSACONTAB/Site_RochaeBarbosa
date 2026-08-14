@@ -17,7 +17,7 @@ const entryPoints = [
   {
     title: "Organizar contabilidade e fiscal",
     description: "Rotinas contábeis e fiscais alinhadas à realidade da empresa, para operar com informação e segurança.",
-    to: "/servicos#organizar",
+    to: "/servicos/contabilidade-e-gestao-fiscal",
     cta: "Organizar minha operação",
   },
   {

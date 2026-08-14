@@ -19,6 +19,7 @@ import Home from "./pages/Home";
 
 const Services = lazy(() => import("./pages/Services"));
 const BusinessRegistration = lazy(() => import("./pages/services/BusinessRegistration"));
+const AccountingManagement = lazy(() => import("./pages/services/AccountingManagement"));
 const Diagnostic = lazy(() => import("./pages/Diagnostic"));
 const Resources = lazy(() => import("./pages/Resources"));
 const SimplesHub = lazy(() => import("./pages/resources/simples/SimplesHub"));
@@ -65,6 +66,7 @@ export default function App() {
             <Route path="/" element={<Home />} />
             <Route path="/servicos" element={<Services />} />
             <Route path="/servicos/abertura-de-empresa" element={<BusinessRegistration />} />
+            <Route path="/servicos/contabilidade-e-gestao-fiscal" element={<AccountingManagement />} />
             <Route path="/diagnostico" element={<Diagnostic />} />
             {/* Rotas temporariamente desativadas. Manter os arquivos para reativacao futura. */}
             {/* <Route path="/blog" element={<Blog />} /> */}

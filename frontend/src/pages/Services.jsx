@@ -48,6 +48,8 @@ const coreServices = [
       "Visão crítica sobre os números",
     ],
     cta: "Preciso organizar minha operação",
+    internalCta: "Conhecer gestão contábil e fiscal",
+    href: "/servicos/contabilidade-e-gestao-fiscal",
     whatsappMessage:
       "Olá, vim pelo site da Rocha & Barbosa e quero entender como vocês podem me ajudar com Gestão Contábil e Fiscal com Controle Real.",
   },
@@ -151,7 +153,7 @@ const serviceGroups = [
     gridClass: "lg:grid-cols-3",
     compactCards: true,
     services: [coreServices[1], coreServices[5], coreServices[7]],
-    cta: "Quero organizar minha rotina contábil e fiscal",
+    showGroupCta: false,
     whatsappMessage:
       "Olá, vim pelo site da Rocha & Barbosa e quero organizar a rotina contábil e fiscal da minha empresa.",
   },
@@ -305,7 +307,7 @@ export default function Services() {
                     : "border border-[#E7E2D8]"
                 }`}
               >
-                <div className={group.compactCards ? "flex flex-col gap-5" : "flex flex-col gap-5 sm:flex-row sm:items-start"}>
+                <div className={group.compactCards ? "flex h-full flex-col gap-5" : "flex flex-col gap-5 sm:flex-row sm:items-start"}>
                   <div className="w-14 h-14 border border-[#D4AF37]/60 flex items-center justify-center shrink-0 group-hover:bg-[#D4AF37]/5 transition-all duration-300">
                     <s.icon
                       size={25}
@@ -314,7 +316,7 @@ export default function Services() {
                     />
                   </div>
 
-                  <div className="flex-1">
+                  <div className={`flex-1 ${group.compactCards ? "flex flex-col" : ""}`}>
                     <div className="eyebrow mb-3">{s.eyebrow}</div>
 
                     <h4 className={`font-serif ${group.compactCards ? "text-2xl" : "text-2xl lg:text-3xl"} text-[#0A2A57] leading-tight`}>
@@ -348,7 +350,7 @@ export default function Services() {
                     )}
 
                     {s.partnerCta && (
-                      <div className="mt-6 pt-5 border-t border-[#E7E2D8]">
+                      <div className="mt-auto pt-5 border-t border-[#E7E2D8]">
                         <p className="eyebrow mb-3">Atendimento em parceria com RB Tecnologias</p>
                         <a
                           href={certificatePartnerUrl}
@@ -361,20 +363,35 @@ export default function Services() {
                       </div>
                     )}
 
+                    {s.internalCta && (
+                      <div className="mt-auto pt-5 border-t border-[#E7E2D8]">
+                        <Link to={s.href} className="btn-outline-blue justify-center">
+                          {s.internalCta} <ArrowRight size={16} strokeWidth={1.5} />
+                        </Link>
+                      </div>
+                    )}
+
                   </div>
                 </div>
               </div>
                   ))}
                 </div>
-                <a
-                  href={whatsappUrl(group.whatsappMessage)}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-gold mt-6 justify-center"
-                >
-                  {group.cta}
-                  <ArrowRight size={14} strokeWidth={1.5} />
-                </a>
+                {group.showGroupCta !== false && group.href ? (
+                  <Link to={group.href} className="btn-gold mt-6 justify-center">
+                    {group.cta}
+                    <ArrowRight size={14} strokeWidth={1.5} />
+                  </Link>
+                ) : group.showGroupCta !== false ? (
+                  <a
+                    href={whatsappUrl(group.whatsappMessage)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-gold mt-6 justify-center"
+                  >
+                    {group.cta}
+                    <ArrowRight size={14} strokeWidth={1.5} />
+                  </a>
+                ) : null}
               </div>
             ))}
           </div>
