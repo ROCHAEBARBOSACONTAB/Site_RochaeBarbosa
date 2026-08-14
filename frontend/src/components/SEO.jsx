@@ -6,6 +6,7 @@ const SITE_URL = "https://www.rochaebarbosa.com.br";
 const BRAND = "Rocha & Barbosa Assessoria Contabil";
 const SOCIAL_IMAGE = `${SITE_URL}/og-rocha-barbosa.png`;
 const LOGO_URL = `${SITE_URL}/rocha-barbosa-logo.png`;
+const MAPS_URL = "https://maps.app.goo.gl/FwjWsxxiHdU2AmcK7";
 
 const pageMetadata = {
   "/": {
@@ -281,14 +282,47 @@ export default function SEO() {
         image: SOCIAL_IMAGE,
         telephone: "+551434351298",
         email: "contabilidade@rochaebarbosa.com.br",
+        description:
+          "Escritorio de contabilidade em Pederneiras para rotinas contabeis e fiscais, abertura e regularizacao empresarial e suporte a sistemas ERP.",
         address: {
           "@type": "PostalAddress",
           streetAddress: "Rua Duque de Caxias, 294",
           addressLocality: "Pederneiras",
           addressRegion: "SP",
+          postalCode: "17280-029",
           addressCountry: "BR",
         },
-        areaServed: ["Pederneiras", "Sao Paulo", "Brasil"],
+        hasMap: MAPS_URL,
+        openingHoursSpecification: [
+          {
+            "@type": "OpeningHoursSpecification",
+            dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            opens: "08:00",
+            closes: "12:00",
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            opens: "13:00",
+            closes: "18:00",
+          },
+        ],
+        contactPoint: {
+          "@type": "ContactPoint",
+          telephone: "+5514991269374",
+          contactType: "customer service",
+          availableLanguage: ["Portuguese", "Spanish"],
+        },
+        sameAs: [
+          "https://www.linkedin.com/in/rochaebarbosa-assessoria-e-contabilidade-227824338",
+          "https://www.instagram.com/rochabarbosa.assessoria/",
+          "https://www.facebook.com/profile.php?id=61567229489343",
+        ],
+        areaServed: [
+          { "@type": "City", name: "Pederneiras" },
+          { "@type": "City", name: "Bauru" },
+          { "@type": "Country", name: "Brasil" },
+        ],
       },
       {
         "@type": "WebSite",
@@ -296,6 +330,7 @@ export default function SEO() {
         url: SITE_URL,
         name: BRAND,
         inLanguage: "pt-BR",
+        publisher: { "@id": `${SITE_URL}/#business` },
       },
       {
         "@type": "WebPage",
