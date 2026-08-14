@@ -44,7 +44,7 @@ export default function Footer() {
               </div>
             </Link>
             <p className="hidden lg:block max-w-sm text-[14px] text-white/72 leading-6">
-              Consultoria fiscal, tributária e empresarial para operações que exigem estrutura, precisão e segurança técnica.
+              Contabilidade, gestão fiscal e apoio empresarial para operações que exigem estrutura, precisão e segurança técnica.
             </p>
             <a
               href={googleReviewsUrl}

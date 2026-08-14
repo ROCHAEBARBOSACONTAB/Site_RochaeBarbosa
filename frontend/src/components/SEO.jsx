@@ -11,18 +11,18 @@ const pageMetadata = {
   "/": {
     title: "Rocha & Barbosa | Inteligência Fiscal e Tributária",
     description:
-      "Contabilidade, abertura e regularizacao de empresas, gestao fiscal e suporte a sistemas ERP. Atendimento em Pederneiras, regiao e remoto.",
+      "Escritorio de contabilidade em Pederneiras para abertura e regularizacao de empresas, rotina fiscal e suporte empresarial. Atendimento em Pederneiras, Bauru, regiao e remoto.",
   },
   "/servicos": {
-    title: "Servicos contabeis, fiscais e empresariais | Rocha & Barbosa",
+    title: "Servicos de contabilidade em Pederneiras | Rocha & Barbosa",
     description:
-      "Abertura e regularizacao de empresas, gestao contabil e fiscal, compliance e suporte a ERP para empresas que precisam operar com seguranca.",
+      "Servicos de contabilidade em Pederneiras: abertura e regularizacao de empresas, gestao contabil e fiscal, compliance e suporte empresarial.",
     service: "Servicos contabeis, fiscais e empresariais",
   },
   "/servicos/abertura-de-empresa": {
-    title: "Abertura e regularizacao de empresa | Rocha & Barbosa",
+    title: "Abertura de empresa em Pederneiras | Rocha & Barbosa",
     description:
-      "Abra, altere ou regularize sua empresa com orientacao contabil, fiscal e societaria desde o inicio. Atendimento em Pederneiras, regiao e remoto.",
+      "Abra, altere ou regularize sua empresa em Pederneiras com orientacao contabil, fiscal e societaria. Atendimento presencial, regional e remoto.",
     service: "Abertura e regularizacao de empresa",
     breadcrumbs: [
       ["Servicos", "/servicos"],
@@ -36,14 +36,14 @@ const pageMetadata = {
     service: "Diagnostico fiscal e de ERP",
   },
   "/sobre": {
-    title: "Sobre a Rocha & Barbosa Assessoria Contabil",
+    title: "Rocha & Barbosa Assessoria Contabil em Pederneiras",
     description:
       "Conheca a Rocha & Barbosa, assessoria contabil que integra rotina contabil, fiscal e operacao para apoiar decisoes empresariais com clareza.",
   },
   "/contato": {
-    title: "Contato | Rocha & Barbosa Assessoria Contabil",
+    title: "Contato | Contabilidade em Pederneiras | Rocha & Barbosa",
     description:
-      "Fale com a Rocha & Barbosa para abertura, regularizacao, contabilidade, fiscal e diagnostico de ERP. Atendimento em Pederneiras, regiao e remoto.",
+      "Entre em contato com a Rocha & Barbosa, escritorio de contabilidade em Pederneiras. Atendimento para abertura, regularizacao, rotinas fiscais e empresariais.",
   },
   "/politica-de-cookies": {
     title: "Politica de Cookies | Rocha & Barbosa",
