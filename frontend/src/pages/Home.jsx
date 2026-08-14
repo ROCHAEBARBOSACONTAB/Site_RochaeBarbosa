@@ -23,7 +23,7 @@ const entryPoints = [
   {
     title: "Revisar ERP, riscos ou créditos",
     description: "Análise técnica para divergências fiscais, Protheus, parametrizações, perdas e oportunidades de recuperação.",
-    to: "/diagnostico",
+    to: "/servicos/consultoria-totvs-protheus",
     cta: "Avaliar meu cenário",
   },
 ];

@@ -39,6 +39,56 @@ const pageMetadata = {
       ["Contabilidade e gestao fiscal", "/servicos/contabilidade-e-gestao-fiscal"],
     ],
   },
+  "/servicos/consultoria-totvs-protheus": {
+    title: "Consultoria TOTVS Protheus e ERP fiscal | Rocha & Barbosa",
+    description:
+      "Consultoria TOTVS Protheus e ERP fiscal para revisar parametrizacao tributaria, integracoes e processos que afetam a rotina fiscal da empresa.",
+    service: "Consultoria TOTVS Protheus e ERP fiscal",
+    breadcrumbs: [
+      ["Servicos", "/servicos"],
+      ["Consultoria TOTVS Protheus", "/servicos/consultoria-totvs-protheus"],
+    ],
+  },
+  "/servicos/implantacao-totvs-protheus": {
+    title: "Implantacao TOTVS Protheus e pre-go-live | Rocha & Barbosa",
+    description:
+      "Acompanhamento de implantacao TOTVS Protheus e pre-go-live para validar parametrizacao fiscal, integracoes e processos antes da entrada em producao.",
+    service: "Implantacao TOTVS Protheus e pre-go-live",
+    breadcrumbs: [
+      ["Servicos", "/servicos"],
+      ["Implantacao TOTVS Protheus", "/servicos/implantacao-totvs-protheus"],
+    ],
+  },
+  "/servicos/recuperacao-de-creditos-tributarios": {
+    title: "Recuperacao de creditos tributarios | Rocha & Barbosa",
+    description:
+      "Recuperacao de creditos tributarios com analise da origem da perda, revisao de apuracoes e orientacao para corrigir processos e sistemas.",
+    service: "Recuperacao de creditos tributarios",
+    breadcrumbs: [
+      ["Servicos", "/servicos"],
+      ["Recuperacao de creditos tributarios", "/servicos/recuperacao-de-creditos-tributarios"],
+    ],
+  },
+  "/servicos/monitoramento-compliance-fiscal": {
+    title: "Monitoramento de compliance fiscal | Rocha & Barbosa",
+    description:
+      "Monitoramento de compliance fiscal para prevenir inconsistencias, acompanhar processos e manter a operacao sob controle.",
+    service: "Monitoramento de compliance fiscal",
+    breadcrumbs: [
+      ["Servicos", "/servicos"],
+      ["Monitoramento de compliance fiscal", "/servicos/monitoramento-compliance-fiscal"],
+    ],
+  },
+  "/servicos/licencas-e-regularizacao-operacional": {
+    title: "Licencas e regularizacao operacional | Rocha & Barbosa",
+    description:
+      "Licencas e regularizacao operacional para empresas que precisam cumprir exigencias municipais, estaduais e setoriais para operar com seguranca.",
+    service: "Licencas e regularizacao operacional",
+    breadcrumbs: [
+      ["Servicos", "/servicos"],
+      ["Licencas e regularizacao operacional", "/servicos/licencas-e-regularizacao-operacional"],
+    ],
+  },
   "/diagnostico": {
     title: "Diagnostico fiscal e de ERP | Rocha & Barbosa",
     description:

@@ -20,6 +20,11 @@ import Home from "./pages/Home";
 const Services = lazy(() => import("./pages/Services"));
 const BusinessRegistration = lazy(() => import("./pages/services/BusinessRegistration"));
 const AccountingManagement = lazy(() => import("./pages/services/AccountingManagement"));
+const ErpCompliance = lazy(() => import("./pages/services/ErpCompliance"));
+const ImplementationProtheus = lazy(() => import("./pages/services/ImplementationProtheus"));
+const TaxCreditRecovery = lazy(() => import("./pages/services/TaxCreditRecovery"));
+const ComplianceMonitoring = lazy(() => import("./pages/services/ComplianceMonitoring"));
+const OperationalRegularization = lazy(() => import("./pages/services/OperationalRegularization"));
 const Diagnostic = lazy(() => import("./pages/Diagnostic"));
 const Resources = lazy(() => import("./pages/Resources"));
 const SimplesHub = lazy(() => import("./pages/resources/simples/SimplesHub"));
@@ -67,6 +72,11 @@ export default function App() {
             <Route path="/servicos" element={<Services />} />
             <Route path="/servicos/abertura-de-empresa" element={<BusinessRegistration />} />
             <Route path="/servicos/contabilidade-e-gestao-fiscal" element={<AccountingManagement />} />
+            <Route path="/servicos/consultoria-totvs-protheus" element={<ErpCompliance />} />
+            <Route path="/servicos/implantacao-totvs-protheus" element={<ImplementationProtheus />} />
+            <Route path="/servicos/recuperacao-de-creditos-tributarios" element={<TaxCreditRecovery />} />
+            <Route path="/servicos/monitoramento-compliance-fiscal" element={<ComplianceMonitoring />} />
+            <Route path="/servicos/licencas-e-regularizacao-operacional" element={<OperationalRegularization />} />
             <Route path="/diagnostico" element={<Diagnostic />} />
             {/* Rotas temporariamente desativadas. Manter os arquivos para reativacao futura. */}
             {/* <Route path="/blog" element={<Blog />} /> */}

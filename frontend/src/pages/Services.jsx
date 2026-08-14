@@ -34,6 +34,8 @@ const coreServices = [
       "ANVISA, CETESB e órgãos reguladores, quando aplicável",
     ],
     cta: "Preciso regularizar minha operação",
+    internalCta: "Conhecer regularização operacional",
+    href: "/servicos/licencas-e-regularizacao-operacional",
     whatsappMessage:
       "Olá, vim pelo site da Rocha & Barbosa e preciso entender a regularização operacional e as licenças necessárias para minha empresa.",
   },
@@ -64,6 +66,8 @@ const coreServices = [
       "Oportunidades financeiras ocultas",
     ],
     cta: "Entender meu cenário",
+    internalCta: "Conhecer diagnóstico fiscal",
+    href: "/diagnostico",
     featured: true,
     whatsappMessage:
       "Olá, vim pelo site da Rocha & Barbosa e quero entender como vocês podem me ajudar com Diagnóstico Fiscal e Operacional.",
@@ -79,21 +83,25 @@ const coreServices = [
       "Ajustes técnicos e customizações",
     ],
     cta: "Quero revisar meu ERP",
+    internalCta: "Conhecer consultoria TOTVS Protheus",
+    href: "/servicos/consultoria-totvs-protheus",
     featured: true,
     whatsappMessage:
       "Olá, vim pelo site da Rocha & Barbosa e quero entender como vocês podem me ajudar com Inteligência em ERP e TOTVS Protheus.",
   },
   {
     icon: ShieldCheck,
-    eyebrow: "Implantação e compliance",
-    title: "Compliance de Implantação Protheus",
-    desc: "Implantações mal conduzidas geram retrabalho, custo e risco. Atuamos como controle técnico para garantir que o projeto seja feito corretamente.",
+    eyebrow: "Implantação TOTVS Protheus",
+    title: "Implantação Protheus com Compliance Pré-Go-Live",
+    desc: "Acompanhamos implantação, parametrização e validações fiscais antes do go-live para reduzir retrabalho, custo e risco.",
     points: [
       "Acompanhamento técnico da implantação",
       "Validação de regras fiscais",
       "Redução de erros e consumo de horas",
     ],
     cta: "Quero garantir uma implantação correta",
+    internalCta: "Conhecer implantação Protheus",
+    href: "/servicos/implantacao-totvs-protheus",
     featured: true,
     whatsappMessage:
       "Olá, vim pelo site da Rocha & Barbosa e quero entender como vocês podem me ajudar com Compliance de Implantação Protheus.",
@@ -109,13 +117,15 @@ const coreServices = [
       "Manutenção do ambiente controlado",
     ],
     cta: "Monitorar operação",
+    internalCta: "Conhecer monitoramento de compliance",
+    href: "/servicos/monitoramento-compliance-fiscal",
     whatsappMessage:
       "Olá, vim pelo site da Rocha & Barbosa e quero entender como vocês podem me ajudar com Monitoramento Contínuo de Compliance.",
   },
   {
     icon: TrendingUp,
     eyebrow: "Recuperação",
-    title: "Recuperação de Créditos com Correção da Origem",
+    title: "Recuperação de Créditos Tributários com Correção da Origem",
     desc: "Recuperar valores sem corrigir a causa é inútil. Atuamos na recuperação e na eliminação do erro que gerou a perda.",
     points: [
       "Levantamento de créditos tributários",
@@ -123,6 +133,8 @@ const coreServices = [
       "Correção sistêmica no ERP",
     ],
     cta: "Avaliar oportunidade",
+    internalCta: "Conhecer recuperação tributária",
+    href: "/servicos/recuperacao-de-creditos-tributarios",
     whatsappMessage:
       "Olá, vim pelo site da Rocha & Barbosa e quero entender como vocês podem me ajudar com Recuperação de Créditos com Correção da Origem.",
   },
@@ -163,9 +175,7 @@ const serviceGroups = [
     desc: "Para empresas que precisam cumprir exigências e manter a atividade regular perante os órgãos aplicáveis.",
     gridClass: "grid-cols-1",
     services: [coreServices[0]],
-    cta: "Quero regularizar minha operação",
-    whatsappMessage:
-      "Olá, vim pelo site da Rocha & Barbosa e preciso entender a regularização operacional e as licenças necessárias para minha empresa.",
+    showGroupCta: false,
   },
   {
     id: "evoluir",
@@ -173,7 +183,7 @@ const serviceGroups = [
     desc: "Para operações que exigem diagnóstico, ERP, compliance de implantação ou recuperação de créditos.",
     gridClass: "lg:grid-cols-2",
     services: [coreServices[2], coreServices[3], coreServices[4], coreServices[6]],
-    cta: "Quero avaliar uma necessidade técnica",
+    showGroupCta: false,
     whatsappMessage:
       "Olá, vim pelo site da Rocha & Barbosa e quero avaliar uma necessidade técnica da minha operação.",
   },
@@ -206,7 +216,7 @@ export default function Services() {
             {[
               { label: "Organizar fiscal e contábil", href: "#organizar" },
               { label: "Abrir ou regularizar empresa", href: "#formalizar" },
-              { label: "Corrigir ERP ou recuperar créditos", href: "#evoluir" },
+              { label: "Revisar Protheus e ERP fiscal", href: "/servicos/consultoria-totvs-protheus" },
             ].map((item) => (
               <a
                 key={item.label}
@@ -307,7 +317,7 @@ export default function Services() {
                     : "border border-[#E7E2D8]"
                 }`}
               >
-                <div className={group.compactCards ? "flex h-full flex-col gap-5" : "flex flex-col gap-5 sm:flex-row sm:items-start"}>
+                <div className={group.compactCards ? "flex h-full flex-col gap-5" : "flex h-full flex-col gap-5 sm:flex-row sm:items-stretch"}>
                   <div className="w-14 h-14 border border-[#D4AF37]/60 flex items-center justify-center shrink-0 group-hover:bg-[#D4AF37]/5 transition-all duration-300">
                     <s.icon
                       size={25}
@@ -316,7 +326,7 @@ export default function Services() {
                     />
                   </div>
 
-                  <div className={`flex-1 ${group.compactCards ? "flex flex-col" : ""}`}>
+                  <div className="flex flex-1 flex-col">
                     <div className="eyebrow mb-3">{s.eyebrow}</div>
 
                     <h4 className={`font-serif ${group.compactCards ? "text-2xl" : "text-2xl lg:text-3xl"} text-[#0A2A57] leading-tight`}>

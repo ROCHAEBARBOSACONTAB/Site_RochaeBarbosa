@@ -10,7 +10,8 @@ const solutionLinks = [
   { to: "/servicos/abertura-de-empresa", label: "Abertura e regularização" },
   { to: "/servicos/contabilidade-e-gestao-fiscal", label: "Gestão contábil e fiscal" },
   { to: "/diagnostico", label: "Diagnóstico fiscal" },
-  { to: "/servicos#evoluir", label: "ERP e compliance" },
+  { to: "/servicos/consultoria-totvs-protheus", label: "Consultoria Protheus" },
+  { to: "/servicos/recuperacao-de-creditos-tributarios", label: "Recuperação tributária" },
 ];
 
 const navigationLinks = [
