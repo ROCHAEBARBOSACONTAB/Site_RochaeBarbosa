@@ -41,7 +41,7 @@ export default function Home() {
         <div className="absolute inset-0 opacity-45">
           <picture className="block h-full w-full">
             <source media="(max-width: 767px)" srcSet="/home-hero-202608-mobile.jpg" />
-            <img src={homeHero} alt="" width="1800" height="1200" fetchPriority="high" className="w-full h-full object-cover" />
+            <img src={homeHero} alt="Ambiente de trabalho para planejamento contabil e empresarial" width="1800" height="1200" fetchPriority="high" className="w-full h-full object-cover" />
           </picture>
         </div>
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(7,30,64,0.96)_0%,rgba(10,42,87,0.91)_43%,rgba(10,42,87,0.67)_74%,rgba(10,42,87,0.68)_100%)]" />

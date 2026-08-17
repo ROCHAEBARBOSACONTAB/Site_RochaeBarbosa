@@ -12,7 +12,7 @@ const pageMetadata = {
   "/": {
     title: "Rocha & Barbosa | Inteligência Fiscal e Tributária",
     description:
-      "Escritorio de contabilidade em Pederneiras para abertura e regularizacao de empresas, rotina fiscal e suporte empresarial. Atendimento em Pederneiras, Bauru, regiao e remoto.",
+      "Escritorio de contabilidade em Pederneiras para abertura e regularizacao de empresas, rotina fiscal e suporte empresarial. Atendimento regional e remoto.",
   },
   "/servicos": {
     title: "Servicos de contabilidade em Pederneiras | Rocha & Barbosa",
