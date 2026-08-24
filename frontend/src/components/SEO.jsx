@@ -202,8 +202,41 @@ function cfopMetadata(pathname) {
   };
 }
 
+const simplesAnnexes = {
+  1: { title: "Anexo I", activity: "atividades de comércio" },
+  2: { title: "Anexo II", activity: "atividades industriais" },
+  3: { title: "Anexo III", activity: "atividades de serviços" },
+  4: { title: "Anexo IV", activity: "serviços sujeitos à contribuição patronal" },
+  5: { title: "Anexo V", activity: "serviços sujeitos ao Fator R" },
+};
+
+function simplesMetadata(pathname) {
+  const match = pathname.match(/^\/recursos\/simples-nacional\/anexo-([1-5])\/(2026|2027|2028|2029|2030|2031|2032|2033)$/);
+  if (!match) return null;
+
+  const [, annexNumber, year] = match;
+  const annex = simplesAnnexes[annexNumber];
+  const period = year === "2026" ? "até 2026" : year === "2033" ? "a partir de 2033" : `em ${year}`;
+
+  return {
+    title: `Tabela do ${annex.title} do Simples Nacional ${period} | Rocha & Barbosa`,
+    description: `Consulte a tabela de alíquotas, faixas e repartição de tributos do ${annex.title} do Simples Nacional ${period}, aplicável a ${annex.activity}.`,
+    breadcrumbs: [
+      ["Materiais técnicos", "/recursos"],
+      ["Simples Nacional", "/recursos/simples-nacional"],
+      [`${annex.title} do Simples Nacional`, `/recursos/simples-nacional/anexo-${annexNumber}/2026`],
+      [`Vigência ${year === "2026" ? "até 2026" : year === "2033" ? "2033+" : year}`, pathname],
+    ],
+  };
+}
+
 function getMetadata(pathname) {
   if (pageMetadata[pathname]) return pageMetadata[pathname];
+  if (pathname.startsWith("/recursos/simples-nacional/anexo-")) return simplesMetadata(pathname) || {
+    title: "Página não encontrada | Rocha & Barbosa",
+    description: "A página solicitada não foi encontrada.",
+    noIndex: true,
+  };
   if (pathname.startsWith("/recursos/cfop/")) return cfopMetadata(pathname);
 
   return {

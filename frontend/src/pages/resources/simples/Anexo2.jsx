@@ -1,6 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
+import SimplesTablesByValidity from "../../../components/SimplesTablesByValidity";
+import SimplesLegalBasis from "../../../components/SimplesLegalBasis";
+import { transitionTables } from "../../../data/simplesTransitionData";
 
 const TABLE_HEAD_BG = "#0A2A57";
 
@@ -99,61 +102,15 @@ export default function Anexo2() {
         </div>
       </section>
 
-      <section className="py-20 bg-white">
-        <div className="max-w-[1000px] mx-auto px-6">
-          <h2 className="font-serif text-3xl text-[#0A2A57] mb-4">
-            Tabela de alíquotas
-          </h2>
-
-          <p className="text-[#555] leading-[1.8] mb-8 max-w-[760px]">
-            Faixas de receita bruta acumulada dos últimos 12 meses, com alíquota
-            nominal e parcela a deduzir aplicáveis ao Anexo II.
-          </p>
-
-          <TableBox
-            columns={[
-              { key: "faixa", label: "Faixa" },
-              { key: "receita", label: "Receita Bruta em 12 meses" },
-              { key: "aliquota", label: "Alíquota" },
-              { key: "deducao", label: "Parcela a deduzir" },
-            ]}
-            rows={aliquotas}
-          />
-        </div>
-      </section>
-
-      <section className="py-20 bg-[#F7F7F4]">
-        <div className="max-w-[1000px] mx-auto px-6">
-          <h2 className="font-serif text-3xl text-[#0A2A57] mb-4">
-            Percentual de repartição dos tributos
-          </h2>
-
-          <p className="text-[#555] leading-[1.8] mb-8 max-w-[760px]">
-            A repartição indica como a arrecadação do DAS é distribuída entre os
-            tributos que compõem o Simples Nacional no Anexo II.
-          </p>
-
-          <TableBox
-            columns={[
-              { key: "faixa", label: "Faixa" },
-              { key: "irpj", label: "IRPJ" },
-              { key: "csll", label: "CSLL" },
-              { key: "cofins", label: "Cofins" },
-              { key: "pis", label: "PIS/Pasep" },
-              { key: "cpp", label: "CPP" },
-              { key: "icms", label: "ICMS" },
-              { key: "ipi", label: "IPI" },
-            ]}
-            rows={reparticao}
-          />
-
-          <p className="mt-5 text-[#666] text-sm leading-[1.7]">
-            Atenção: na 6ª faixa do Anexo II não há repartição para ICMS na tabela
-            acima. A análise prática deve considerar o enquadramento, a
-            segregação de receitas e a operação realizada.
-          </p>
-        </div>
-      </section>
+      <SimplesTablesByValidity
+        annexPath="/recursos/simples-nacional/anexo-2"
+        current={{
+          aliquotas,
+          reparticao,
+          reparticaoColumns: ["faixa", "irpj", "csll", "cofins", "pis", "cpp", "icms", "ipi"],
+        }}
+        periods={transitionTables.anexo2}
+      />
 
       <section className="py-16 bg-white">
         <div className="max-w-[800px] mx-auto px-6">
@@ -227,42 +184,13 @@ export default function Anexo2() {
       </section>
 
       <section className="py-14 bg-white border-t border-[#0A2A57]/10">
-        <div className="max-w-[1000px] mx-auto px-6">
+        <div className="max-w-[1200px] mx-auto px-6">
           <div className="eyebrow text-[#D4AF37] mb-4">Base legal</div>
 
-          <div className="grid md:grid-cols-2 gap-5 text-sm">
-            <a
-              href="https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="border border-[#0A2A57]/10 bg-[#F7F7F4] p-5 hover:shadow-md transition"
-            >
-              <div className="font-serif text-[#0A2A57] text-lg mb-2">
-                Lei Complementar nº 123/2006
-              </div>
-              <p className="text-[#666] leading-[1.6]">
-                Institui o Simples Nacional e define as regras dos anexos.
-              </p>
-            </a>
-
-            <div className="border border-[#0A2A57]/10 bg-[#F7F7F4] p-5">
-              <div className="font-serif text-[#0A2A57] text-lg mb-2">
-                Atualização
-              </div>
-              <p className="text-[#666] leading-[1.6]">
-                Atualização manual conforme alterações normativas.
-              </p>
-            </div>
-          </div>
-
-          <div className="mt-8 grid md:grid-cols-[1fr_260px] gap-8 items-start">
-            <p className="text-[#666] text-sm leading-[1.7]">
-              Esta página é referência de consulta e não substitui a validação
-              técnica da operação. A correta aplicação do Simples Nacional depende
-              da atividade, segregação de receitas, enquadramento tributário,
-              receita acumulada e análise do cenário real.
-            </p>
-          </div>
+          <SimplesLegalBasis
+            annexTitle="Anexo II — Indústria"
+            legalAnnex="Anexo XIX"
+          />
 
           <Link
             to="/recursos/simples-nacional"

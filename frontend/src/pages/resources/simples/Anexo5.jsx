@@ -1,6 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
+import SimplesTablesByValidity from "../../../components/SimplesTablesByValidity";
+import SimplesLegalBasis from "../../../components/SimplesLegalBasis";
+import { transitionTables } from "../../../data/simplesTransitionData";
 
 const TABLE_HEAD_BG = "#0A2A57";
 
@@ -180,8 +183,18 @@ export default function Anexo5() {
       </section>
 
       {/* TABELA DE ALÍQUOTAS */}
-      <section className="py-20 bg-white">
-        <div className="max-w-[1000px] mx-auto px-6">
+      <SimplesTablesByValidity
+        annexPath="/recursos/simples-nacional/anexo-5"
+        current={{
+          aliquotas,
+          reparticao,
+          reparticaoColumns: ["faixa", "irpj", "csll", "cofins", "pis", "cpp", "iss"],
+        }}
+        periods={transitionTables.anexo5}
+      />
+
+      <section className="hidden py-20 bg-white">
+        <div className="max-w-[1200px] mx-auto px-6">
           <h2 className="font-serif text-3xl text-[#0A2A57] mb-4">
             Tabela de alíquotas
           </h2>
@@ -204,7 +217,7 @@ export default function Anexo5() {
       </section>
 
       {/* REPARTIÇÃO DOS TRIBUTOS */}
-      <section className="py-20 bg-[#F7F7F4]">
+      <section className="hidden py-20 bg-[#F7F7F4]">
         <div className="max-w-[1000px] mx-auto px-6">
           <h2 className="font-serif text-3xl text-[#0A2A57] mb-4">
             Percentual de repartição dos tributos
@@ -387,39 +400,11 @@ export default function Anexo5() {
         <div className="max-w-[1000px] mx-auto px-6">
           <div className="eyebrow text-[#D4AF37] mb-4">Base legal</div>
 
-          <div className="grid md:grid-cols-2 gap-5 text-sm">
-            <a
-              href="https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="border border-[#0A2A57]/10 bg-white p-5 hover:shadow-md transition"
-            >
-              <div className="font-serif text-[#0A2A57] text-lg mb-2">
-                Lei Complementar nº 123/2006
-              </div>
-              <p className="text-[#666] leading-[1.6]">
-                Institui o Simples Nacional e define as regras dos anexos.
-              </p>
-            </a>
-
-            <div className="border border-[#0A2A57]/10 bg-white p-5">
-              <div className="font-serif text-[#0A2A57] text-lg mb-2">
-                Atualização
-              </div>
-              <p className="text-[#666] leading-[1.6]">
-                Atualização manual conforme alterações normativas.
-              </p>
-            </div>
-          </div>
-
-          <div className="mt-8 grid md:grid-cols-[1fr_260px] gap-8 items-start">
-            <p className="text-[#666] text-sm leading-[1.7]">
-              Esta página é referência de consulta e não substitui a validação
-              técnica da operação. A correta aplicação do Simples Nacional depende
-              da atividade, enquadramento, Fator R, segregação de receitas, folha
-              de pagamento, receita acumulada e análise do cenário real.
-            </p>
-          </div>
+          <SimplesLegalBasis
+            annexTitle="Anexo V — Serviços sujeitos ao Fator R"
+            legalAnnex="Anexo XXII"
+            surfaceClass="bg-white"
+          />
 
           <Link
             to="/recursos/simples-nacional"

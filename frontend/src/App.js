@@ -1,6 +1,6 @@
 import React, { lazy, Suspense } from "react";
 import "@/index.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Navigate, Routes, Route } from "react-router-dom";
 import { Toaster } from "sonner";
 import { AuthProvider } from "./context/AuthContext";
 import Header from "./components/Header";
@@ -85,11 +85,16 @@ export default function App() {
             <Route path="/recursos/cfop" element={<CfopBrowser />} />
             <Route path="/recursos/cfop/:code" element={<CfopBrowser />} />
             <Route path="/recursos/simples-nacional" element={<SimplesHub />} />
-            <Route path="/recursos/simples-nacional/anexo-1" element={<Anexo1 />} /> 
-            <Route path="/recursos/simples-nacional/anexo-2" element={<Anexo2 />} />
-            <Route path="/recursos/simples-nacional/anexo-3" element={<Anexo3 />} />
-            <Route path="/recursos/simples-nacional/anexo-4" element={<Anexo4 />} />
-            <Route path="/recursos/simples-nacional/anexo-5" element={<Anexo5 />} />
+            <Route path="/recursos/simples-nacional/anexo-1" element={<Navigate replace to="/recursos/simples-nacional/anexo-1/2026" />} />
+            <Route path="/recursos/simples-nacional/anexo-1/:vigencia" element={<Anexo1 />} />
+            <Route path="/recursos/simples-nacional/anexo-2" element={<Navigate replace to="/recursos/simples-nacional/anexo-2/2026" />} />
+            <Route path="/recursos/simples-nacional/anexo-2/:vigencia" element={<Anexo2 />} />
+            <Route path="/recursos/simples-nacional/anexo-3" element={<Navigate replace to="/recursos/simples-nacional/anexo-3/2026" />} />
+            <Route path="/recursos/simples-nacional/anexo-3/:vigencia" element={<Anexo3 />} />
+            <Route path="/recursos/simples-nacional/anexo-4" element={<Navigate replace to="/recursos/simples-nacional/anexo-4/2026" />} />
+            <Route path="/recursos/simples-nacional/anexo-4/:vigencia" element={<Anexo4 />} />
+            <Route path="/recursos/simples-nacional/anexo-5" element={<Navigate replace to="/recursos/simples-nacional/anexo-5/2026" />} />
+            <Route path="/recursos/simples-nacional/anexo-5/:vigencia" element={<Anexo5 />} />
             <Route path="/recursos/tabelas/icms" element={<ICMS />} />
             <Route path="/recursos/tabelas/ipi" element={<IPI />} />
             <Route path="/recursos/tabelas/pis-cofins" element={<PIS_COFINS />} />
