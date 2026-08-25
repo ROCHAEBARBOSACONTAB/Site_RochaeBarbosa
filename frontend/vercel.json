@@ -1,4 +1,16 @@
 {
+  "redirects": [
+    {
+      "source": "/abrir-minha-empresa",
+      "destination": "/servicos/abertura-de-empresa",
+      "permanent": true
+    },
+    {
+      "source": "/trocar-de-contador",
+      "destination": "/servicos/contabilidade-e-gestao-fiscal",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
   ],
