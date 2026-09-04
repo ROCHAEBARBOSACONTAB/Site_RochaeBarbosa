@@ -59,7 +59,7 @@ export default function TabelasHub() {
             <Link
               key={index}
               to={item.to}
-              className="border border-[#0A2A57]/10 p-7 hover:shadow-lg transition group"
+              className="flex min-h-[350px] flex-col border border-[#0A2A57]/10 p-7 hover:shadow-lg transition group"
             >
               <div className="w-12 h-12 border border-[#D4AF37] flex items-center justify-center mb-6 text-[#D4AF37] group-hover:bg-[#0A2A57] transition">
                 {item.featured ? <TableProperties size={22} /> : <FileCheck2 size={22} />}
@@ -73,7 +73,7 @@ export default function TabelasHub() {
                 {item.desc}
               </p>
 
-              <div className="flex items-center gap-2 text-xs uppercase tracking-[0.16em] text-[#0A2A57] group-hover:text-[#D4AF37] transition">
+              <div className="mt-auto flex items-center gap-2 text-xs uppercase tracking-[0.16em] text-[#0A2A57] group-hover:text-[#D4AF37] transition">
                 Acessar tabela <ArrowRight size={13} />
               </div>
             </Link>
