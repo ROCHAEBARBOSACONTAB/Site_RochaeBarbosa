@@ -36,6 +36,7 @@ const Anexo5 = lazy(() => import("./pages/resources/simples/Anexo5"));
 const ICMS = lazy(() => import("./pages/resources/tabelas/ICMS"));
 const IPI = lazy(() => import("./pages/resources/tabelas/IPI"));
 const PIS_COFINS = lazy(() => import("./pages/resources/tabelas/PIS_COFINS"));
+const CClassTrib = lazy(() => import("./pages/resources/tabelas/CClassTrib"));
 const About = lazy(() => import("./pages/About"));
 const Contact = lazy(() => import("./pages/Contact"));
 const CookiePolicy = lazy(() => import("./pages/CookiePolicy"));
@@ -95,9 +96,6 @@ export default function App() {
             <Route path="/recursos/simples-nacional/anexo-4/:vigencia" element={<Anexo4 />} />
             <Route path="/recursos/simples-nacional/anexo-5" element={<Navigate replace to="/recursos/simples-nacional/anexo-5/2026" />} />
             <Route path="/recursos/simples-nacional/anexo-5/:vigencia" element={<Anexo5 />} />
-            <Route path="/recursos/tabelas/icms" element={<ICMS />} />
-            <Route path="/recursos/tabelas/ipi" element={<IPI />} />
-            <Route path="/recursos/tabelas/pis-cofins" element={<PIS_COFINS />} />
             <Route path="/sobre" element={<About />} />
             <Route path="/contato" element={<Contact />} />
             <Route path="/politica-de-cookies" element={<CookiePolicy />} />
@@ -109,6 +107,7 @@ export default function App() {
             <Route path="/recursos/tabelas/icms" element={<ICMS />} />
             <Route path="/recursos/tabelas/ipi" element={<IPI />} />
             <Route path="/recursos/tabelas/pis-cofins" element={<PIS_COFINS />} />
+            <Route path="/recursos/tabelas/cclass-trib" element={<CClassTrib />} />
             </Routes>
           </Suspense>
         </Layout>

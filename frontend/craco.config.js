@@ -1,6 +1,5 @@
 // craco.config.js
 const path = require("path");
-const historyApiFallback = require("connect-history-api-fallback");
 require("dotenv").config();
 
 // Check if we're in development/preview mode (not production build)
@@ -70,20 +69,6 @@ webpackConfig.devServer = (devServerConfig) => {
   devServerConfig.headers = {
     ...devServerConfig.headers,
     "Cache-Control": "no-store",
-  };
-
-  const originalBeforeSetupMiddlewares = devServerConfig.onBeforeSetupMiddleware;
-  devServerConfig.onBeforeSetupMiddleware = (devServer) => {
-    devServer.app.use(
-      historyApiFallback({
-        disableDotRule: true,
-        index: "/index.html",
-      })
-    );
-
-    if (originalBeforeSetupMiddlewares) {
-      originalBeforeSetupMiddlewares(devServer);
-    }
   };
 
   // Add health check endpoints if enabled

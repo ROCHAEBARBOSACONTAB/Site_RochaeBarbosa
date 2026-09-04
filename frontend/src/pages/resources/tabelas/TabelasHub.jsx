@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { ArrowLeft, ArrowRight, FileCheck2 } from "lucide-react";
+import { ArrowLeft, ArrowRight, FileCheck2, TableProperties } from "lucide-react";
 
 const tabelas = [
   {
@@ -17,6 +17,12 @@ const tabelas = [
     title: "PIS/COFINS",
     desc: "CST de PIS e Cofins para entradas, saídas, receitas e operações específicas.",
     to: "/recursos/tabelas/pis-cofins",
+  },
+  {
+    title: "cClassTrib",
+    desc: "Consulta de classificações tributárias IBS/CBS, CST, vigência e referência legal.",
+    to: "/recursos/tabelas/cclass-trib",
+    featured: true,
   },
 ];
 
@@ -48,7 +54,7 @@ export default function TabelasHub() {
       </section>
 
       <section className="py-20 bg-white">
-        <div className="max-w-[1000px] mx-auto px-6 grid md:grid-cols-3 gap-6">
+        <div className="max-w-[1000px] mx-auto px-6 grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {tabelas.map((item, index) => (
             <Link
               key={index}
@@ -56,7 +62,7 @@ export default function TabelasHub() {
               className="border border-[#0A2A57]/10 p-7 hover:shadow-lg transition group"
             >
               <div className="w-12 h-12 border border-[#D4AF37] flex items-center justify-center mb-6 text-[#D4AF37] group-hover:bg-[#0A2A57] transition">
-                <FileCheck2 size={22} />
+                {item.featured ? <TableProperties size={22} /> : <FileCheck2 size={22} />}
               </div>
 
               <h3 className="font-serif text-2xl text-[#0A2A57] mb-3">

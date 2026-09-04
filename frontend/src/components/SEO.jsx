@@ -160,9 +160,9 @@ const pageMetadata = {
       "Consulte as faixas, aliquotas e valores de deducao do Anexo V do Simples Nacional e entenda o fator R nos servicos.",
   },
   "/recursos/tabelas": {
-    title: "Tabelas fiscais: ICMS, IPI e PIS/COFINS | Rocha & Barbosa",
+    title: "Tabelas fiscais: ICMS, IPI, PIS/COFINS e cClassTrib | Rocha & Barbosa",
     description:
-      "Acesse tabelas fiscais de ICMS, IPI e PIS/COFINS para consulta tecnica, classificacao e apoio a rotina tributaria.",
+      "Acesse tabelas fiscais de ICMS, IPI, PIS/COFINS e cClassTrib para consulta tecnica, classificacao e apoio a rotina tributaria.",
     breadcrumbs: [
       ["Materiais tecnicos", "/recursos"],
       ["Tabelas fiscais", "/recursos/tabelas"],
@@ -182,6 +182,16 @@ const pageMetadata = {
     title: "Tabela de PIS e COFINS para consulta | Rocha & Barbosa",
     description:
       "Consulte a tabela de PIS e COFINS para apoiar a classificacao fiscal e a analise tributaria das operacoes da sua empresa.",
+  },
+  "/recursos/tabelas/cclass-trib": {
+    title: "Tabela cClassTrib: consulta de IBS e CBS | Rocha & Barbosa",
+    description:
+      "Consulte codigos cClassTrib, CST IBS/CBS, vigencia e referencias legais com base na planilha publicada pelo Portal Nacional da NF-e.",
+    breadcrumbs: [
+      ["Materiais tecnicos", "/recursos"],
+      ["Tabelas fiscais", "/recursos/tabelas"],
+      ["cClassTrib", "/recursos/tabelas/cclass-trib"],
+    ],
   },
 };
 
