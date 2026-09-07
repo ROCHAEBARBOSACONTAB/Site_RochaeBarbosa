@@ -1,6 +1,7 @@
 import { useEffect, useMemo } from "react";
 import { useLocation } from "react-router-dom";
 import cfopData from "../pages/resources/cfop/cfopData.json";
+import { technicalServices } from "../data/technicalServices";
 
 const SITE_URL = "https://www.rochaebarbosa.com.br";
 const BRAND = "Rocha & Barbosa Assessoria Contabil";
@@ -248,6 +249,20 @@ function getMetadata(pathname) {
     noIndex: true,
   };
   if (pathname.startsWith("/recursos/cfop/")) return cfopMetadata(pathname);
+  const technicalServiceSlug = pathname.match(/^\/servicos\/(configurador-de-tributos-protheus|parametrizacao-fiscal-protheus|diagnostico-fiscal-protheus|reforma-tributaria-protheus|revisao-tes-protheus)$/)?.[1];
+  if (technicalServiceSlug) {
+    const service = technicalServices[technicalServiceSlug];
+    return {
+      title: `${service.title} | Rocha & Barbosa`,
+      description: service.description,
+      service: service.service,
+      faq: service.faq,
+      breadcrumbs: [
+        ["Serviços", "/servicos"],
+        [service.title, pathname],
+      ],
+    };
+  }
 
   return {
     title: "Pagina nao encontrada | Rocha & Barbosa",
@@ -408,6 +423,17 @@ export default function SEO() {
             item: `${SITE_URL}${path}`,
           })),
         ],
+      });
+    }
+
+    if (metadata.faq) {
+      graph.push({
+        "@type": "FAQPage",
+        mainEntity: metadata.faq.map(([name, text]) => ({
+          "@type": "Question",
+          name,
+          acceptedAnswer: { "@type": "Answer", text },
+        })),
       });
     }
 

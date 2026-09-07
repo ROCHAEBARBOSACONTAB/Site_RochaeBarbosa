@@ -25,6 +25,7 @@ const ImplementationProtheus = lazy(() => import("./pages/services/Implementatio
 const TaxCreditRecovery = lazy(() => import("./pages/services/TaxCreditRecovery"));
 const ComplianceMonitoring = lazy(() => import("./pages/services/ComplianceMonitoring"));
 const OperationalRegularization = lazy(() => import("./pages/services/OperationalRegularization"));
+const TechnicalServicePage = lazy(() => import("./pages/services/TechnicalServicePage"));
 const Diagnostic = lazy(() => import("./pages/Diagnostic"));
 const Resources = lazy(() => import("./pages/Resources"));
 const SimplesHub = lazy(() => import("./pages/resources/simples/SimplesHub"));
@@ -50,7 +51,7 @@ function Layout({ children }) {
   return (
     <>
       <Header />
-      <main className="pt-[80px] lg:pt-[96px] min-h-screen bg-white">{children}</main>
+      <main className="pt-[80px] lg:pt-[96px] min-h-[calc(100vh-80px)] lg:min-h-[calc(100vh-96px)] bg-white">{children}</main>
       <Footer />
       <ChatWidget />
     </>
@@ -78,6 +79,7 @@ export default function App() {
             <Route path="/servicos/recuperacao-de-creditos-tributarios" element={<TaxCreditRecovery />} />
             <Route path="/servicos/monitoramento-compliance-fiscal" element={<ComplianceMonitoring />} />
             <Route path="/servicos/licencas-e-regularizacao-operacional" element={<OperationalRegularization />} />
+            <Route path="/servicos/:slug" element={<TechnicalServicePage />} />
             <Route path="/diagnostico" element={<Diagnostic />} />
             {/* Rotas temporariamente desativadas. Manter os arquivos para reativacao futura. */}
             {/* <Route path="/blog" element={<Blog />} /> */}

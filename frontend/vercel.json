@@ -12,6 +12,15 @@
     }
   ],
   "rewrites": [
+    { "source": "/servicos/consultoria-totvs-protheus", "destination": "/seo/consultoria-totvs-protheus.html" },
+    { "source": "/servicos/configurador-de-tributos-protheus", "destination": "/seo/configurador-de-tributos-protheus.html" },
+    { "source": "/servicos/parametrizacao-fiscal-protheus", "destination": "/seo/parametrizacao-fiscal-protheus.html" },
+    { "source": "/servicos/diagnostico-fiscal-protheus", "destination": "/seo/diagnostico-fiscal-protheus.html" },
+    { "source": "/servicos/reforma-tributaria-protheus", "destination": "/seo/reforma-tributaria-protheus.html" },
+    { "source": "/servicos/revisao-tes-protheus", "destination": "/seo/revisao-tes-protheus.html" },
+    { "source": "/diagnostico", "destination": "/seo/diagnostico.html" },
+    { "source": "/recursos/cfop", "destination": "/seo/cfop.html" },
+    { "source": "/recursos/tabelas/cclass-trib", "destination": "/seo/cclass-trib.html" },
     { "source": "/(.*)", "destination": "/index.html" }
   ],
   "headers": [

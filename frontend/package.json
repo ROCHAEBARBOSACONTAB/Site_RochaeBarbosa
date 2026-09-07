@@ -60,7 +60,7 @@
   },
   "scripts": {
     "start": "craco start",
-    "build": "craco build",
+    "build": "craco build && node scripts/generate-seo-shells.cjs",
     "test": "craco test"
   },
   "browserslist": {

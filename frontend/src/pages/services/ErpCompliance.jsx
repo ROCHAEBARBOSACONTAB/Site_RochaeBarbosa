@@ -32,6 +32,29 @@ const pillars = [
   },
 ];
 
+const technicalPaths = [
+  {
+    title: "Diagnóstico Fiscal Protheus",
+    text: "Organize evidências e priorize a origem das divergências antes de alterar regras.",
+    href: "/servicos/diagnostico-fiscal-protheus",
+  },
+  {
+    title: "Configurador de Tributos",
+    text: "Revise regras, cadastros e integrações que sustentam a tributação no ERP.",
+    href: "/servicos/configurador-de-tributos-protheus",
+  },
+  {
+    title: "Reforma Tributária no Protheus",
+    text: "Mapeie dados, processos e critérios de transição para IBS e CBS.",
+    href: "/servicos/reforma-tributaria-protheus",
+  },
+  {
+    title: "TES e regras fiscais",
+    text: "Avalie os reflexos da regra no documento, na escrituração e nas integrações.",
+    href: "/servicos/revisao-tes-protheus",
+  },
+];
+
 export default function ErpCompliance() {
   return (
     <div data-testid="erp-compliance-page" className="bg-white">
@@ -117,6 +140,36 @@ export default function ErpCompliance() {
                 <span>{item}</span>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#FAFAF8] border-y border-[#E7E2D8] py-12 lg:py-16">
+        <div className="max-w-[1200px] mx-auto px-6 lg:px-12">
+          <div className="max-w-[760px]">
+            <div className="eyebrow mb-4">Aprofundamentos técnicos</div>
+            <h2 className="font-serif text-3xl lg:text-[42px] text-[#0A2A57] leading-[1.1]">
+              Quando a dúvida é específica, o próximo passo também precisa ser.
+            </h2>
+            <p className="mt-5 text-[#596678] leading-relaxed">
+              Estas frentes aprofundam pontos recorrentes da operação. Se o cenário ainda não estiver claro, o diagnóstico técnico é o melhor ponto de partida.
+            </p>
+          </div>
+          <div className="mt-8 grid sm:grid-cols-2 gap-4">
+            {technicalPaths.map((path) => (
+              <Link key={path.href} to={path.href} data-analytics={`pilar_protheus_${path.href.split("/").pop().replace(/-/g, "_")}`} className="group border border-[#E1DDD3] bg-white p-6 hover:border-[#D4AF37] transition min-h-[176px] flex flex-col justify-between">
+                <div>
+                  <h3 className="font-serif text-2xl text-[#0A2A57]">{path.title}</h3>
+                  <p className="mt-3 text-sm text-[#596678] leading-relaxed">{path.text}</p>
+                </div>
+                <span className="mt-5 inline-flex items-center gap-2 text-[12px] uppercase tracking-[0.14em] text-[#B48600]">Aprofundar <ArrowRight size={14} /></span>
+              </Link>
+            ))}
+          </div>
+          <div className="mt-7">
+            <Link to="/diagnostico" data-analytics="pilar_protheus_diagnostico" className="inline-flex items-center gap-2 text-[12px] uppercase tracking-[0.14em] text-[#B48600] hover:text-[#0A2A57] transition">
+              Não sabe qual frente se aplica? Comece pelo diagnóstico <ArrowRight size={14} />
+            </Link>
           </div>
         </div>
       </section>
