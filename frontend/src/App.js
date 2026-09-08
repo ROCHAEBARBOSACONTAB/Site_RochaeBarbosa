@@ -46,6 +46,9 @@ const Register = lazy(() => import("./pages/Register"));
 const AdminDashboard = lazy(() => import("./pages/AdminDashboard"));
 const TabelasHub = lazy(() => import("./pages/resources/tabelas/TabelasHub"));
 const CfopBrowser = lazy(() => import("./pages/resources/cfop/CfopBrowser"));
+const MapaStHub = lazy(() => import("./pages/resources/mapa-st/MapaStHub"));
+const MapaStSaoPaulo = lazy(() => import("./pages/resources/mapa-st/MapaSt"));
+const MapaStRioGrandeDoSul = lazy(() => import("./pages/resources/mapa-st/MapaStRioGrandeDoSul"));
 
 function Layout({ children }) {
   return (
@@ -87,6 +90,9 @@ export default function App() {
             <Route path="/recursos" element={<Resources />} />
             <Route path="/recursos/cfop" element={<CfopBrowser />} />
             <Route path="/recursos/cfop/:code" element={<CfopBrowser />} />
+            <Route path="/recursos/mapa-st" element={<MapaStHub />} />
+            <Route path="/recursos/mapa-st/sao-paulo" element={<MapaStSaoPaulo />} />
+            <Route path="/recursos/mapa-st/rio-grande-do-sul" element={<MapaStRioGrandeDoSul />} />
             <Route path="/recursos/simples-nacional" element={<SimplesHub />} />
             <Route path="/recursos/simples-nacional/anexo-1" element={<Navigate replace to="/recursos/simples-nacional/anexo-1/2026" />} />
             <Route path="/recursos/simples-nacional/anexo-1/:vigencia" element={<Anexo1 />} />

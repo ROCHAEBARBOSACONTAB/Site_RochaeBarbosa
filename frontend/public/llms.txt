@@ -14,6 +14,9 @@
 ## Materiais tecnicos
 
 - [Materiais tecnicos](https://www.rochaebarbosa.com.br/recursos): Portal de consulta para apoio a rotinas contabeis e fiscais.
+- [Mapa da Incidencia do ICMS-ST por Estado](https://www.rochaebarbosa.com.br/recursos/mapa-st): Hub para consulta de incidencia interna por unidade federada.
+- [Mapa da Incidencia do ICMS-ST em Sao Paulo](https://www.rochaebarbosa.com.br/recursos/mapa-st/sao-paulo): Anexos, vigencias e atos normativos sobre incidencia interna paulista.
+- [Mapa da Incidencia do ICMS-ST no Rio Grande do Sul](https://www.rochaebarbosa.com.br/recursos/mapa-st/rio-grande-do-sul): Itens do Apendice II do RICMS/RS, vigencias e atos normativos sobre incidencia interna gaucha.
 - [Consulta de CFOP](https://www.rochaebarbosa.com.br/recursos/cfop): Codigos fiscais, descricoes e classificacoes relacionadas.
 - [Simples Nacional](https://www.rochaebarbosa.com.br/recursos/simples-nacional): Anexos, faixas e aliquotas do Simples Nacional.
 - [Tabelas fiscais](https://www.rochaebarbosa.com.br/recursos/tabelas): Consultas de ICMS, IPI e PIS/COFINS.

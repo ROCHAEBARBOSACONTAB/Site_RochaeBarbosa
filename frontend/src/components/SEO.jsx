@@ -184,6 +184,35 @@ const pageMetadata = {
     description:
       "Consulte a tabela de PIS e COFINS para apoiar a classificacao fiscal e a analise tributaria das operacoes da sua empresa.",
   },
+  "/recursos/mapa-st": {
+    title: "Mapa da Incidência do ICMS-ST por Estado | Rocha & Barbosa",
+    description:
+      "Selecione uma unidade federada para consultar a incidência interna do ICMS-ST, vigências e atos normativos mapeados por estado.",
+    breadcrumbs: [
+      ["Materiais técnicos", "/recursos"],
+      ["Mapa da Incidência do ICMS-ST por Estado", "/recursos/mapa-st"],
+    ],
+  },
+  "/recursos/mapa-st/sao-paulo": {
+    title: "Mapa da Incidência do ICMS-ST em São Paulo | Rocha & Barbosa",
+    description:
+      "Consulte a incidência interna do ICMS-ST em São Paulo, com anexos, vigência, atos normativos e alcance das alterações por segmento.",
+    breadcrumbs: [
+      ["Materiais técnicos", "/recursos"],
+      ["Mapa da Incidência do ICMS-ST por Estado", "/recursos/mapa-st"],
+      ["São Paulo", "/recursos/mapa-st/sao-paulo"],
+    ],
+  },
+  "/recursos/mapa-st/rio-grande-do-sul": {
+    title: "Mapa da Incidência do ICMS-ST no Rio Grande do Sul | Rocha & Barbosa",
+    description:
+      "Consulte a incidência interna do ICMS-ST no Rio Grande do Sul, com itens do Apêndice II do RICMS/RS, vigências e atos normativos por segmento.",
+    breadcrumbs: [
+      ["Materiais técnicos", "/recursos"],
+      ["Mapa da Incidência do ICMS-ST por Estado", "/recursos/mapa-st"],
+      ["Rio Grande do Sul", "/recursos/mapa-st/rio-grande-do-sul"],
+    ],
+  },
   "/recursos/tabelas/cclass-trib": {
     title: "Tabela cClassTrib: consulta de IBS e CBS | Rocha & Barbosa",
     description:

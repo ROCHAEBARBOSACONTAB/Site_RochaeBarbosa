@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Layers, TableProperties, FileCheck2 } from "lucide-react";
+import { ArrowRight, Layers, TableProperties, FileCheck2, MapPinned } from "lucide-react";
 
 const RESOURCES_HERO =
   "https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=1200&w=2000";
@@ -20,6 +20,11 @@ const modules = [
     icon: FileCheck2,
     title: "Tabelas Fiscais",
     to: "/recursos/tabelas"
+  },
+  {
+    icon: MapPinned,
+    title: "Mapa de Incidência ST",
+    to: "/recursos/mapa-st",
   },
 ];
 
@@ -50,7 +55,7 @@ export default function Resources() {
 
       {/* MODULES */}
       <section className="py-20 bg-white">
-        <div className="max-w-[900px] mx-auto px-6 grid md:grid-cols-3 gap-6">
+        <div className="max-w-[1100px] mx-auto px-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {modules.map((item, index) => {
             const Icon = item.icon;
 

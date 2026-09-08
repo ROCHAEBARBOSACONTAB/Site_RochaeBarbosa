@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
-import { ArrowRight, ChevronDown, FileCheck2, Layers, Menu, TableProperties, X } from "lucide-react";
+import { ArrowRight, ChevronDown, FileCheck2, Layers, MapPinned, Menu, TableProperties, X } from "lucide-react";
 import { useAuth } from "../context/AuthContext";
 import logogold from "../assets/logogold-160.png";
 
@@ -15,6 +15,7 @@ const resourceLinks = [
   { to: "/recursos/simples-nacional", label: "Simples Nacional", icon: Layers },
   { to: "/recursos/cfop", label: "CFOP", icon: TableProperties },
   { to: "/recursos/tabelas", label: "Tabelas Fiscais", icon: FileCheck2 },
+  { to: "/recursos/mapa-st", label: "Mapa de Incidência ST", icon: MapPinned },
 ];
 
 export default function Header() {

@@ -91,6 +91,30 @@ const pages = [
     h1: "Consulta de CFOP e códigos fiscais",
     lead: "Material técnico para consulta de códigos e apoio à correta identificação das operações fiscais.",
   },
+  {
+    route: "/recursos/mapa-st",
+    file: "mapa-st",
+    title: "Mapa da Incidência do ICMS-ST por Estado | Rocha & Barbosa",
+    description: "Selecione uma unidade federada para consultar a incidência interna do ICMS-ST, vigências e atos normativos mapeados por estado.",
+    h1: "Mapa da Incidência do ICMS-ST por Estado",
+    lead: "Consulta organizada por unidade federada, com foco na incidência interna e nas respectivas bases legais.",
+  },
+  {
+    route: "/recursos/mapa-st/sao-paulo",
+    file: "mapa-st-sao-paulo",
+    title: "Mapa da Incidência do ICMS-ST em São Paulo | Rocha & Barbosa",
+    description: "Consulte a incidência interna do ICMS-ST em São Paulo, com anexos, vigência, atos normativos e alcance das alterações por segmento.",
+    h1: "Mapa da Incidência do ICMS-ST em São Paulo",
+    lead: "Consulta de anexos, vigências e atos normativos relativos à incidência interna do ICMS-ST em São Paulo.",
+  },
+  {
+    route: "/recursos/mapa-st/rio-grande-do-sul",
+    file: "mapa-st-rio-grande-do-sul",
+    title: "Mapa da Incidência do ICMS-ST no Rio Grande do Sul | Rocha & Barbosa",
+    description: "Consulte a incidência interna do ICMS-ST no Rio Grande do Sul, com itens do Apêndice II do RICMS/RS, vigências e atos normativos por segmento.",
+    h1: "Mapa da Incidência do ICMS-ST no Rio Grande do Sul",
+    lead: "Consulta de itens do Apêndice II do RICMS/RS, vigências e atos normativos relativos à incidência interna do ICMS-ST no Rio Grande do Sul.",
+  },
 ];
 
 function escapeHtml(value) {
