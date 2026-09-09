@@ -213,6 +213,16 @@ const pageMetadata = {
       ["Rio Grande do Sul", "/recursos/mapa-st/rio-grande-do-sul"],
     ],
   },
+  "/recursos/mapa-st/minas-gerais": {
+    title: "Mapa da Incidência do ICMS-ST em Minas Gerais | Rocha & Barbosa",
+    description:
+      "Consulte os capítulos da Parte 2 do Anexo VII do RICMS/2023 de Minas Gerais, com foco na incidência interna, NCM, CEST e âmbito de aplicação.",
+    breadcrumbs: [
+      ["Materiais técnicos", "/recursos"],
+      ["Mapa da Incidência do ICMS-ST por Estado", "/recursos/mapa-st"],
+      ["Minas Gerais", "/recursos/mapa-st/minas-gerais"],
+    ],
+  },
   "/recursos/tabelas/cclass-trib": {
     title: "Tabela cClassTrib: consulta de IBS e CBS | Rocha & Barbosa",
     description:

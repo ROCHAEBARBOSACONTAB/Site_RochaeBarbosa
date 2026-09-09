@@ -115,6 +115,14 @@ const pages = [
     h1: "Mapa da Incidência do ICMS-ST no Rio Grande do Sul",
     lead: "Consulta de itens do Apêndice II do RICMS/RS, vigências e atos normativos relativos à incidência interna do ICMS-ST no Rio Grande do Sul.",
   },
+  {
+    route: "/recursos/mapa-st/minas-gerais",
+    file: "mapa-st-minas-gerais",
+    title: "Mapa da Incidência do ICMS-ST em Minas Gerais | Rocha & Barbosa",
+    description: "Consulte os capítulos da Parte 2 do Anexo VII do RICMS/2023 de Minas Gerais, com foco na incidência interna, NCM, CEST e âmbito de aplicação.",
+    h1: "Mapa da Incidência do ICMS-ST em Minas Gerais",
+    lead: "Consulta dos capítulos da Parte 2 do Anexo VII do RICMS/2023, com foco na incidência interna do ICMS-ST em Minas Gerais.",
+  },
 ];
 
 function escapeHtml(value) {

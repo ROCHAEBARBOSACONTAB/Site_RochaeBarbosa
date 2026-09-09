@@ -16,6 +16,12 @@ const availableStates = {
     summary: "31 itens catalogados",
     details: ["11 vigentes", "11 revogados", "3 com revogação programada", "5 com alterações por itens e 1 inclusão"],
   },
+  mg: {
+    name: "Minas Gerais",
+    href: "/recursos/mapa-st/minas-gerais",
+    summary: "28 capítulos catalogados",
+    details: ["14 capítulos com alterações registradas", "14 relações vigentes sem movimentação material catalogada", "Consulta por NCM e CEST", "Âmbito interno destacado"],
+  },
 };
 
 export default function MapaStHub() {
