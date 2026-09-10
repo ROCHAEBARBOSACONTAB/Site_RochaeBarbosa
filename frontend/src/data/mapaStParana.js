@@ -50,7 +50,7 @@ const revocations = {
   XXVI: ["Decreto nº 8.404/2024 · Alteração 1.132ª", "01/02/2025", "decreto8404"],
 };
 
-const changedSections = new Set(["I", "XI", "XVI", "XXII", "XXIV", "XXVIII"]);
+const changedSections = new Set(["XI", "XVI", "XXII", "XXIV", "XXVIII"]);
 
 export const paranaStSections = sections.map(([id, title]) => ({
   id,

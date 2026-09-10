@@ -139,6 +139,14 @@ const pages = [
     h1: "Mapa da Incidência do ICMS-ST no Paraná",
     lead: "Consulta de seções materialmente auditadas do Anexo IX do RICMS/PR, com foco na incidência interna, vigências, revogações e alterações por item.",
   },
+  {
+    route: "/recursos/mapa-st/mato-grosso-do-sul",
+    file: "mapa-st-mato-grosso-do-sul",
+    title: "Mapa da Incidência do ICMS-ST em Mato Grosso do Sul | Rocha & Barbosa",
+    description: "Consulte os segmentos do Subanexo I do Anexo III do RICMS/MS, com vigências, revogações e alterações relevantes do ICMS-ST.",
+    h1: "Mapa da Incidência do ICMS-ST em Mato Grosso do Sul",
+    lead: "Consulta dos segmentos do Subanexo I do Anexo III do RICMS/MS, com foco na incidência interna, vigências, revogações e alterações por item.",
+  },
 ];
 
 function escapeHtml(value) {

@@ -26,6 +26,7 @@
     { "source": "/recursos/mapa-st/minas-gerais", "destination": "/seo/mapa-st-minas-gerais.html" },
     { "source": "/recursos/mapa-st/santa-catarina", "destination": "/seo/mapa-st-santa-catarina.html" },
     { "source": "/recursos/mapa-st/parana", "destination": "/seo/mapa-st-parana.html" },
+    { "source": "/recursos/mapa-st/mato-grosso-do-sul", "destination": "/seo/mapa-st-mato-grosso-do-sul.html" },
     { "source": "/(.*)", "destination": "/index.html" }
   ],
   "headers": [

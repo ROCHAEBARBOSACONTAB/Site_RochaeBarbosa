@@ -243,6 +243,15 @@ const pageMetadata = {
       ["Paraná", "/recursos/mapa-st/parana"],
     ],
   },
+  "/recursos/mapa-st/mato-grosso-do-sul": {
+    title: "Mapa da Incidência do ICMS-ST em Mato Grosso do Sul | Rocha & Barbosa",
+    description: "Consulte os segmentos do Subanexo I do Anexo III do RICMS/MS, com vigências, revogações e alterações relevantes do ICMS-ST.",
+    breadcrumbs: [
+      ["Materiais técnicos", "/recursos"],
+      ["Mapa da Incidência do ICMS-ST por Estado", "/recursos/mapa-st"],
+      ["Mato Grosso do Sul", "/recursos/mapa-st/mato-grosso-do-sul"],
+    ],
+  },
   "/recursos/tabelas/cclass-trib": {
     title: "Tabela cClassTrib: consulta de IBS e CBS | Rocha & Barbosa",
     description:

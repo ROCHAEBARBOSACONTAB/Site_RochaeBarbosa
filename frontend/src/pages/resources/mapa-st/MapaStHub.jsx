@@ -14,25 +14,31 @@ const availableStates = {
     name: "Rio Grande do Sul",
     href: "/recursos/mapa-st/rio-grande-do-sul",
     summary: "31 itens catalogados",
-    details: ["11 vigentes", "11 revogados", "3 com revogação programada", "5 com alterações por itens e 1 inclusão"],
+    details: ["11 vigentes", "11 revogados", "3 com revogação programada", "6 com alterações por itens"],
   },
   mg: {
     name: "Minas Gerais",
     href: "/recursos/mapa-st/minas-gerais",
     summary: "28 capítulos catalogados",
-    details: ["14 capítulos com alterações registradas", "14 relações vigentes sem movimentação material catalogada", "Consulta por NCM e CEST", "Âmbito interno destacado"],
+    details: ["14 vigentes", "0 revogados", "0 com revogação programada", "14 com alterações por itens"],
   },
   sc: {
     name: "Santa Catarina",
     href: "/recursos/mapa-st/santa-catarina",
     summary: "26 seções catalogadas",
-    details: ["10 vigentes e 16 revogadas", "Consulta por NCM e CEST", "PMPF de bebidas frias referenciado", "Âmbito interno destacado"],
+    details: ["5 vigentes", "16 revogados", "0 com revogação programada", "5 com alterações por itens"],
   },
   pr: {
     name: "Paraná",
     href: "/recursos/mapa-st/parana",
     summary: "29 entradas catalogadas",
-    details: ["23 vigentes e 6 integralmente revogadas", "6 entradas com alterações por itens", "Revogação parcial de medicamentos", "Consulta por NCM e CEST"],
+    details: ["18 vigentes", "6 revogados", "0 com revogação programada", "5 com alterações por itens"],
+  },
+  ms: {
+    name: "Mato Grosso do Sul",
+    href: "/recursos/mapa-st/mato-grosso-do-sul",
+    summary: "28 segmentos catalogados",
+    details: ["20 vigentes", "4 revogados", "0 com revogação programada", "4 com alterações por itens"],
   },
 };
 
