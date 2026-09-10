@@ -23,6 +23,7 @@
     { "source": "/recursos/tabelas/cclass-trib", "destination": "/seo/cclass-trib.html" },
     { "source": "/recursos/mapa-st/sao-paulo", "destination": "/seo/mapa-st-sao-paulo.html" },
     { "source": "/recursos/mapa-st/rio-grande-do-sul", "destination": "/seo/mapa-st-rio-grande-do-sul.html" },
+    { "source": "/recursos/mapa-st/minas-gerais", "destination": "/seo/mapa-st-minas-gerais.html" },
     { "source": "/recursos/mapa-st/santa-catarina", "destination": "/seo/mapa-st-santa-catarina.html" },
     { "source": "/recursos/mapa-st/parana", "destination": "/seo/mapa-st-parana.html" },
     { "source": "/(.*)", "destination": "/index.html" }
