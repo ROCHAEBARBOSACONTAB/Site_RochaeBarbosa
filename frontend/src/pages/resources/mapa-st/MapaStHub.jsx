@@ -22,6 +22,18 @@ const availableStates = {
     summary: "28 capítulos catalogados",
     details: ["14 capítulos com alterações registradas", "14 relações vigentes sem movimentação material catalogada", "Consulta por NCM e CEST", "Âmbito interno destacado"],
   },
+  sc: {
+    name: "Santa Catarina",
+    href: "/recursos/mapa-st/santa-catarina",
+    summary: "26 seções catalogadas",
+    details: ["10 vigentes e 16 revogadas", "Consulta por NCM e CEST", "PMPF de bebidas frias referenciado", "Âmbito interno destacado"],
+  },
+  pr: {
+    name: "Paraná",
+    href: "/recursos/mapa-st/parana",
+    summary: "29 entradas catalogadas",
+    details: ["23 vigentes e 6 integralmente revogadas", "6 entradas com alterações por itens", "Revogação parcial de medicamentos", "Consulta por NCM e CEST"],
+  },
 };
 
 export default function MapaStHub() {

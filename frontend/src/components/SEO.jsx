@@ -223,6 +223,26 @@ const pageMetadata = {
       ["Minas Gerais", "/recursos/mapa-st/minas-gerais"],
     ],
   },
+  "/recursos/mapa-st/santa-catarina": {
+    title: "Mapa da Incidência do ICMS-ST em Santa Catarina | Rocha & Barbosa",
+    description:
+      "Consulte as seções vigentes do Anexo 1-A do RICMS/SC para incidência interna do ICMS-ST, com NCM, CEST e referências operacionais.",
+    breadcrumbs: [
+      ["Materiais técnicos", "/recursos"],
+      ["Mapa da Incidência do ICMS-ST por Estado", "/recursos/mapa-st"],
+      ["Santa Catarina", "/recursos/mapa-st/santa-catarina"],
+    ],
+  },
+  "/recursos/mapa-st/parana": {
+    title: "Mapa da Incidência do ICMS-ST no Paraná | Rocha & Barbosa",
+    description:
+      "Consulte seções materialmente auditadas do Anexo IX do RICMS/PR, com vigências, revogações e alterações relevantes do ICMS-ST.",
+    breadcrumbs: [
+      ["Materiais técnicos", "/recursos"],
+      ["Mapa da Incidência do ICMS-ST por Estado", "/recursos/mapa-st"],
+      ["Paraná", "/recursos/mapa-st/parana"],
+    ],
+  },
   "/recursos/tabelas/cclass-trib": {
     title: "Tabela cClassTrib: consulta de IBS e CBS | Rocha & Barbosa",
     description:

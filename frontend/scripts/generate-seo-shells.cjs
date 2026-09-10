@@ -123,6 +123,22 @@ const pages = [
     h1: "Mapa da Incidência do ICMS-ST em Minas Gerais",
     lead: "Consulta dos capítulos da Parte 2 do Anexo VII do RICMS/2023, com foco na incidência interna do ICMS-ST em Minas Gerais.",
   },
+  {
+    route: "/recursos/mapa-st/santa-catarina",
+    file: "mapa-st-santa-catarina",
+    title: "Mapa da Incidência do ICMS-ST em Santa Catarina | Rocha & Barbosa",
+    description: "Consulte as seções vigentes do Anexo 1-A do RICMS/SC para incidência interna do ICMS-ST, com NCM, CEST e referências operacionais.",
+    h1: "Mapa da Incidência do ICMS-ST em Santa Catarina",
+    lead: "Consulta das seções vigentes do Anexo 1-A do RICMS/SC, com foco na incidência interna, NCM, CEST e regras operacionais.",
+  },
+  {
+    route: "/recursos/mapa-st/parana",
+    file: "mapa-st-parana",
+    title: "Mapa da Incidência do ICMS-ST no Paraná | Rocha & Barbosa",
+    description: "Consulte seções materialmente auditadas do Anexo IX do RICMS/PR, com vigências, revogações e alterações relevantes do ICMS-ST.",
+    h1: "Mapa da Incidência do ICMS-ST no Paraná",
+    lead: "Consulta de seções materialmente auditadas do Anexo IX do RICMS/PR, com foco na incidência interna, vigências, revogações e alterações por item.",
+  },
 ];
 
 function escapeHtml(value) {

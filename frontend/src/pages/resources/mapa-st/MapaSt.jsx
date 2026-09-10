@@ -5,6 +5,7 @@ import { mapaStSources, saoPauloStAnnexes, saoPauloStSegments } from "../../../d
 
 const statusStyles = {
   "Anexo revogado": "border-rose-200 bg-rose-50 text-rose-800",
+  "Seção revogada": "border-rose-200 bg-rose-50 text-rose-800",
   "Itens revogados": "border-amber-200 bg-amber-50 text-amber-800",
   "Item revogado": "border-amber-200 bg-amber-50 text-amber-800",
   "Item incluído": "border-emerald-200 bg-emerald-50 text-emerald-800",
@@ -62,7 +63,7 @@ export default function MapaSt({ config = { state: "São Paulo", stateSlug: "sao
               </select>
               <select value={selectedStatus} onChange={(event) => setSelectedStatus(event.target.value)} className="min-h-11 border border-[#0A2A57]/20 bg-white px-3 text-sm font-medium text-[#0A2A57] outline-none transition focus:border-[#D4AF37]" aria-label="Filtrar por status">
                 <option value="">Todos os status</option>
-                {["Vigente", "Item incluído", "Alterações por itens", "Anexo revogado", "Item revogado", "Revogação programada"].map((status) => <option key={status} value={status}>{status}</option>)}
+                {["Vigente", "Item incluído", "Alterações por itens", "Anexo revogado", "Seção revogada", "Item revogado", "Revogação programada"].map((status) => <option key={status} value={status}>{status}</option>)}
               </select>
             </div>
           </div>
