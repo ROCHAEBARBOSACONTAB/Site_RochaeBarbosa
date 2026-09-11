@@ -40,6 +40,12 @@ const availableStates = {
     summary: "28 segmentos catalogados",
     details: ["20 vigentes", "4 revogados", "0 com revogação programada", "4 com alterações por itens"],
   },
+  mt: {
+    name: "Mato Grosso",
+    href: "/recursos/mapa-st/mato-grosso",
+    summary: "25 segmentos catalogados",
+    details: ["21 vigentes", "0 revogados", "0 com revogação programada", "4 com alterações por itens"],
+  },
 };
 
 export default function MapaStHub() {

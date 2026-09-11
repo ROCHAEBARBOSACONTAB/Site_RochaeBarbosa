@@ -252,6 +252,15 @@ const pageMetadata = {
       ["Mato Grosso do Sul", "/recursos/mapa-st/mato-grosso-do-sul"],
     ],
   },
+  "/recursos/mapa-st/mato-grosso": {
+    title: "Mapa da Incidência do ICMS-ST em Mato Grosso | Rocha & Barbosa",
+    description: "Consulte os segmentos da Tabela I do Apêndice do Anexo X do RICMS/MT, com vigências e alterações relevantes por item do ICMS-ST.",
+    breadcrumbs: [
+      ["Materiais técnicos", "/recursos"],
+      ["Mapa da Incidência do ICMS-ST por Estado", "/recursos/mapa-st"],
+      ["Mato Grosso", "/recursos/mapa-st/mato-grosso"],
+    ],
+  },
   "/recursos/tabelas/cclass-trib": {
     title: "Tabela cClassTrib: consulta de IBS e CBS | Rocha & Barbosa",
     description:

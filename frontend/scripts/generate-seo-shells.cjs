@@ -147,6 +147,14 @@ const pages = [
     h1: "Mapa da Incidência do ICMS-ST em Mato Grosso do Sul",
     lead: "Consulta dos segmentos do Subanexo I do Anexo III do RICMS/MS, com foco na incidência interna, vigências, revogações e alterações por item.",
   },
+  {
+    route: "/recursos/mapa-st/mato-grosso",
+    file: "mapa-st-mato-grosso",
+    title: "Mapa da Incidência do ICMS-ST em Mato Grosso | Rocha & Barbosa",
+    description: "Consulte os segmentos da Tabela I do Apêndice do Anexo X do RICMS/MT, com vigências e alterações relevantes por item do ICMS-ST.",
+    h1: "Mapa da Incidência do ICMS-ST em Mato Grosso",
+    lead: "Consulta dos segmentos da Tabela I do Apêndice do Anexo X do RICMS/MT, com foco na incidência interna, vigências e alterações por item.",
+  },
 ];
 
 function escapeHtml(value) {
