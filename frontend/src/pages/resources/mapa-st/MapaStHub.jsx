@@ -49,8 +49,8 @@ const availableStates = {
   go: {
     name: "Goiás",
     href: "/recursos/mapa-st/goias",
-    summary: "18 incisos catalogados",
-    details: ["8 vigentes", "6 revogados", "0 com revogação programada", "4 com alterações por itens"],
+    summary: "32 registros catalogados",
+    details: ["8 vigentes", "20 revogados", "0 com revogação programada", "4 com alterações por itens"],
   },
 };
 

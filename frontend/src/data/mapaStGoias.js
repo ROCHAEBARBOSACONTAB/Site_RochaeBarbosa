@@ -2,6 +2,7 @@ export const goiasStSources = {
   rcte: "https://appasp.economia.go.gov.br/legislacao/arquivos/Rcte/RCTE.htm",
   consulta: "https://orientacaotributaria.economia.go.gov.br/spo-web/perguntasfrequentes/perguntafrequente/21321",
   decreto8567: "https://appasp.economia.go.gov.br/legislacao/arquivos/decretos/D_08567.htm",
+  decreto6663: "https://appasp.economia.go.gov.br/legislacao/arquivos/decretos/D_06663.htm",
   decreto9108: "https://appasp.economia.go.gov.br/legislacao/arquivos/Decretos/D_09108.htm",
   decreto9147: "https://appasp.economia.go.gov.br/legislacao/arquivos/Decretos/D_09147.htm",
   decreto9813: "https://appasp.economia.go.gov.br/legislacao/arquivos/Decretos/D_09813.htm",
@@ -31,6 +32,22 @@ const entries = [
   ["XVIII", "Sorvetes e preparados para fabricação de sorvete em máquinas", "Vigente"],
 ];
 
+const appendixOneHistorical = [
+  ["I", "Cimento"],
+  ["II", "Produtos alimentícios"],
+  ["III", "Pneumáticos usados procedentes do exterior ou de outra unidade da Federação"],
+  ["IV", "Papel e palha cortados para cigarro"],
+  ["V", "Calçados"],
+  ["VI", "Autopeças e peças novas de uso em veículos, máquinas e implementos agrícolas"],
+  ["VII", "Bebidas"],
+  ["VIII", "Produtos farmacêuticos e assemelhados"],
+  ["IX", "Tecidos, vestuário, roupas de cama, mesa e banho"],
+  ["X", "Produtos da construção civil"],
+  ["XI", "Arames e telas"],
+  ["XII", "Produtos diversos"],
+  ["XIII", "Álcool não carburante"],
+];
+
 const revoked = {
   II: ["decreto9813", "Decreto nº 9.813/2021", "Exclusão integral do inciso II; efeitos no primeiro dia do segundo mês subsequente à publicação"],
   X: ["decreto8567", "Decreto nº 8.567/2016", "Mercadorias do inciso excluídas do Anexo VIII a partir de 01/01/2016"],
@@ -49,6 +66,20 @@ const changes = {
 
 export const goiasStSections = entries.map(([id, title, status]) => ({ id, label: `Inciso ${id}`, title, status }));
 
+goiasStSections.push(...appendixOneHistorical.map(([id, title]) => ({
+  id: `apendice-i-${id}`,
+  label: `Apêndice I · Inciso ${id}`,
+  title,
+  status: "Seção revogada",
+})));
+
+goiasStSections.push({
+  id: "apendice-x",
+  label: "Apêndice X",
+  title: "Substituição tributária para contribuinte do regime tributário simplificado",
+  status: "Seção revogada",
+});
+
 export const goiasStSegments = entries.map(([id, title, status]) => {
   const historical = revoked[id];
   const change = changes[id];
@@ -65,4 +96,24 @@ export const goiasStSegments = entries.map(([id, title, status]) => {
       ? [["Exclusão integral", historical[1], historical[2]]]
       : [["Relação vigente", "RCTE/GO · Anexo VIII · Apêndice II", "Lista oficial de mercadorias sujeitas à ST por convênio ou protocolo"], ...(change ? [["Alteração material", change[1], change[2]]] : [])],
   };
+});
+
+goiasStSegments.push(...appendixOneHistorical.map(([id, title]) => ({
+  id: `go-apendice-i-${id.toLowerCase()}`,
+  annex: `apendice-i-${id}`,
+  title,
+  status: "Seção revogada",
+  source: "decreto6663",
+  scope: "Referência histórica do Apêndice I, mantida para auditoria. O Decreto nº 6.663/2007 excluiu integralmente as mercadorias desse apêndice da substituição tributária pelas operações posteriores e do pagamento antecipado do ICMS.",
+  events: [["Exclusão integral", "Decreto nº 6.663/2007 · art. 1º", "Efeitos a partir de 01/09/2007"]],
+})));
+
+goiasStSegments.push({
+  id: "go-apendice-x",
+  annex: "apendice-x",
+  title: "Substituição tributária para contribuinte do regime tributário simplificado",
+  status: "Seção revogada",
+  source: "rcte",
+  scope: "Referência histórica. O inciso III do § 1º do art. 32, que atribuía o regime às mercadorias do Apêndice X, foi revogado em decorrência da Lei Complementar nº 123/2006.",
+  events: [["Revogação", "RCTE/GO · Anexo VIII · art. 32, § 1º, III", "Efeitos a partir de 01/07/2007"]],
 });
