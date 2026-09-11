@@ -270,6 +270,16 @@ const pageMetadata = {
       ["Goiás", "/recursos/mapa-st/goias"],
     ],
   },
+  "/recursos/mapa-st/distrito-federal": {
+    title: "Mapa da Incidência do ICMS-ST no Distrito Federal | Rocha & Barbosa",
+    description:
+      "Consulte os Cadernos do Anexo IV do RICMS/DF, com vigências, revogações e alterações relevantes do ICMS-ST por regime.",
+    breadcrumbs: [
+      ["Materiais técnicos", "/recursos"],
+      ["Mapa da Incidência do ICMS-ST por Estado", "/recursos/mapa-st"],
+      ["Distrito Federal", "/recursos/mapa-st/distrito-federal"],
+    ],
+  },
   "/recursos/tabelas/cclass-trib": {
     title: "Tabela cClassTrib: consulta de IBS e CBS | Rocha & Barbosa",
     description:

@@ -163,6 +163,14 @@ const pages = [
     h1: "Mapa da Incidência do ICMS-ST em Goiás",
     lead: "Consulta dos registros dos Apêndices I e II do Anexo VIII do RCTE/GO, com foco na incidência interna, vigências, exclusões e alterações por item.",
   },
+  {
+    route: "/recursos/mapa-st/distrito-federal",
+    file: "mapa-st-distrito-federal",
+    title: "Mapa da Incidência do ICMS-ST no Distrito Federal | Rocha & Barbosa",
+    description: "Consulte os Cadernos do Anexo IV do RICMS/DF, com vigências, revogações e alterações relevantes do ICMS-ST por regime.",
+    h1: "Mapa da Incidência do ICMS-ST no Distrito Federal",
+    lead: "Consulta dos Cadernos do Anexo IV do RICMS/DF, com separação entre mercadorias, operações antecedentes e serviços.",
+  },
 ];
 
 function escapeHtml(value) {

@@ -52,6 +52,12 @@ const availableStates = {
     summary: "32 registros catalogados",
     details: ["8 vigentes", "20 revogados", "0 com revogação programada", "4 com alterações por itens"],
   },
+  df: {
+    name: "Distrito Federal",
+    href: "/recursos/mapa-st/distrito-federal",
+    summary: "69 registros catalogados",
+    details: ["41 vigentes", "18 revogados", "0 com revogação programada", "10 com alterações por itens"],
+  },
 };
 
 export default function MapaStHub() {

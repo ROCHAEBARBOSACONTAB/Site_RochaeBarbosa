@@ -29,6 +29,7 @@
     { "source": "/recursos/mapa-st/mato-grosso-do-sul", "destination": "/seo/mapa-st-mato-grosso-do-sul.html" },
     { "source": "/recursos/mapa-st/mato-grosso", "destination": "/seo/mapa-st-mato-grosso.html" },
     { "source": "/recursos/mapa-st/goias", "destination": "/seo/mapa-st-goias.html" },
+    { "source": "/recursos/mapa-st/distrito-federal", "destination": "/seo/mapa-st-distrito-federal.html" },
     { "source": "/(.*)", "destination": "/index.html" }
   ],
   "headers": [
