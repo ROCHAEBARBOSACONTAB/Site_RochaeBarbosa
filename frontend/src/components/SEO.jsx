@@ -261,6 +261,15 @@ const pageMetadata = {
       ["Mato Grosso", "/recursos/mapa-st/mato-grosso"],
     ],
   },
+  "/recursos/mapa-st/goias": {
+    title: "Mapa da Incidência do ICMS-ST em Goiás | Rocha & Barbosa",
+    description: "Consulte os incisos do Apêndice II do Anexo VIII do RCTE/GO, com vigências, exclusões e alterações relevantes do ICMS-ST.",
+    breadcrumbs: [
+      ["Materiais técnicos", "/recursos"],
+      ["Mapa da Incidência do ICMS-ST por Estado", "/recursos/mapa-st"],
+      ["Goiás", "/recursos/mapa-st/goias"],
+    ],
+  },
   "/recursos/tabelas/cclass-trib": {
     title: "Tabela cClassTrib: consulta de IBS e CBS | Rocha & Barbosa",
     description:

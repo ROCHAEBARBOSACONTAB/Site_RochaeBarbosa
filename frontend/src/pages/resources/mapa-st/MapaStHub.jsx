@@ -46,6 +46,12 @@ const availableStates = {
     summary: "25 segmentos catalogados",
     details: ["21 vigentes", "0 revogados", "0 com revogação programada", "4 com alterações por itens"],
   },
+  go: {
+    name: "Goiás",
+    href: "/recursos/mapa-st/goias",
+    summary: "18 incisos catalogados",
+    details: ["8 vigentes", "6 revogados", "0 com revogação programada", "4 com alterações por itens"],
+  },
 };
 
 export default function MapaStHub() {

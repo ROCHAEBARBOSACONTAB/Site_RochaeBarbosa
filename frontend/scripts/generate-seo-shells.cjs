@@ -155,6 +155,14 @@ const pages = [
     h1: "Mapa da Incidência do ICMS-ST em Mato Grosso",
     lead: "Consulta dos segmentos da Tabela I do Apêndice do Anexo X do RICMS/MT, com foco na incidência interna, vigências e alterações por item.",
   },
+  {
+    route: "/recursos/mapa-st/goias",
+    file: "mapa-st-goias",
+    title: "Mapa da Incidência do ICMS-ST em Goiás | Rocha & Barbosa",
+    description: "Consulte os incisos do Apêndice II do Anexo VIII do RCTE/GO, com vigências, exclusões e alterações relevantes do ICMS-ST.",
+    h1: "Mapa da Incidência do ICMS-ST em Goiás",
+    lead: "Consulta dos incisos do Apêndice II do Anexo VIII do RCTE/GO, com foco na incidência interna, vigências, exclusões e alterações por item.",
+  },
 ];
 
 function escapeHtml(value) {
