@@ -30,6 +30,7 @@
     { "source": "/recursos/mapa-st/mato-grosso", "destination": "/seo/mapa-st-mato-grosso.html" },
     { "source": "/recursos/mapa-st/goias", "destination": "/seo/mapa-st-goias.html" },
     { "source": "/recursos/mapa-st/distrito-federal", "destination": "/seo/mapa-st-distrito-federal.html" },
+    { "source": "/recursos/mapa-st/rio-de-janeiro", "destination": "/seo/mapa-st-rio-de-janeiro.html" },
     { "source": "/(.*)", "destination": "/index.html" }
   ],
   "headers": [

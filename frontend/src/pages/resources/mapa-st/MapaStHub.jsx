@@ -58,6 +58,12 @@ const availableStates = {
     summary: "69 registros catalogados",
     details: ["41 vigentes", "18 revogados", "0 com revogação programada", "10 com alterações por itens"],
   },
+  rj: {
+    name: "Rio de Janeiro",
+    href: "/recursos/mapa-st/rio-de-janeiro",
+    summary: "31 registros auditados",
+    details: ["15 vigentes", "2 itens revogados", "4 com aplicação suspensa", "10 com alterações por itens"],
+  },
 };
 
 export default function MapaStHub() {

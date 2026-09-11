@@ -171,6 +171,14 @@ const pages = [
     h1: "Mapa da Incidência do ICMS-ST no Distrito Federal",
     lead: "Consulta dos Cadernos do Anexo IV do RICMS/DF, com separação entre mercadorias, operações antecedentes e serviços.",
   },
+  {
+    route: "/recursos/mapa-st/rio-de-janeiro",
+    file: "mapa-st-rio-de-janeiro",
+    title: "Mapa da Incidência do ICMS-ST no Rio de Janeiro | Rocha & Barbosa",
+    description: "Consulte os itens do Anexo I do Livro II do RICMS/RJ, com vigências, revogações parciais, suspensões de aplicação e alterações relevantes do ICMS-ST.",
+    h1: "Mapa da Incidência do ICMS-ST no Rio de Janeiro",
+    lead: "Consulta dos itens do Anexo I do Livro II do RICMS/RJ, com separação entre vigência, revogação parcial, suspensão de aplicação e alterações materiais.",
+  },
 ];
 
 function escapeHtml(value) {

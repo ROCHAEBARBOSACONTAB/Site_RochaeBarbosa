@@ -11,6 +11,7 @@ const statusStyles = {
   "Item incluído": "border-emerald-200 bg-emerald-50 text-emerald-800",
   "Vigente": "border-emerald-200 bg-emerald-50 text-emerald-800",
   "Alterações por itens": "border-amber-200 bg-amber-50 text-amber-800",
+  "Aplicação suspensa": "border-sky-200 bg-sky-50 text-sky-800",
   "Revogação programada": "border-sky-200 bg-sky-50 text-sky-800",
 };
 
@@ -63,7 +64,7 @@ export default function MapaSt({ config = { state: "São Paulo", stateSlug: "sao
               </select>
               <select value={selectedStatus} onChange={(event) => setSelectedStatus(event.target.value)} className="min-h-11 border border-[#0A2A57]/20 bg-white px-3 text-sm font-medium text-[#0A2A57] outline-none transition focus:border-[#D4AF37]" aria-label="Filtrar por status">
                 <option value="">Todos os status</option>
-                {["Vigente", "Item incluído", "Alterações por itens", "Anexo revogado", "Seção revogada", "Item revogado", "Revogação programada"].map((status) => <option key={status} value={status}>{status}</option>)}
+                {["Vigente", "Item incluído", "Alterações por itens", "Aplicação suspensa", "Anexo revogado", "Seção revogada", "Item revogado", "Itens revogados", "Revogação programada"].map((status) => <option key={status} value={status}>{status}</option>)}
               </select>
             </div>
           </div>
