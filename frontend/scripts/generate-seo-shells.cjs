@@ -179,6 +179,14 @@ const pages = [
     h1: "Mapa da Incidência do ICMS-ST no Rio de Janeiro",
     lead: "Consulta dos itens do Anexo I do Livro II do RICMS/RJ, com separação entre vigência, revogação parcial, suspensão de aplicação e alterações materiais.",
   },
+  {
+    route: "/recursos/mapa-st/espirito-santo",
+    file: "mapa-st-espirito-santo",
+    title: "Mapa da Incidência do ICMS-ST no Espírito Santo | Rocha & Barbosa",
+    description: "Consulte os grupos regulados pelo RICMS/ES e pela Portaria 16-R, com vigências, revogações, mudança de regime e alterações materiais do ICMS-ST.",
+    h1: "Mapa da Incidência do ICMS-ST no Espírito Santo",
+    lead: "Consulta dos grupos regulados no Espírito Santo, com separação entre vigência, revogação, mudança de regime e alterações materiais.",
+  },
 ];
 
 function escapeHtml(value) {

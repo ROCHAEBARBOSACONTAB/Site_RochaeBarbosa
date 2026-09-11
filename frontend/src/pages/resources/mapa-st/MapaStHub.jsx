@@ -64,6 +64,12 @@ const availableStates = {
     summary: "31 registros auditados",
     details: ["15 vigentes", "2 itens revogados", "4 com aplicação suspensa", "10 com alterações por itens"],
   },
+  es: {
+    name: "Espírito Santo",
+    href: "/recursos/mapa-st/espirito-santo",
+    summary: "32 registros auditados",
+    details: ["18 vigentes", "8 referências revogadas", "1 com regime substituído", "5 com alterações por itens"],
+  },
 };
 
 export default function MapaStHub() {

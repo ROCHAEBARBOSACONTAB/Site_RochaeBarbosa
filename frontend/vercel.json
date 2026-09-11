@@ -31,6 +31,7 @@
     { "source": "/recursos/mapa-st/goias", "destination": "/seo/mapa-st-goias.html" },
     { "source": "/recursos/mapa-st/distrito-federal", "destination": "/seo/mapa-st-distrito-federal.html" },
     { "source": "/recursos/mapa-st/rio-de-janeiro", "destination": "/seo/mapa-st-rio-de-janeiro.html" },
+    { "source": "/recursos/mapa-st/espirito-santo", "destination": "/seo/mapa-st-espirito-santo.html" },
     { "source": "/(.*)", "destination": "/index.html" }
   ],
   "headers": [

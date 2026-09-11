@@ -57,6 +57,7 @@ const MapaStMatoGrosso = lazy(() => import("./pages/resources/mapa-st/MapaStMato
 const MapaStGoias = lazy(() => import("./pages/resources/mapa-st/MapaStGoias"));
 const MapaStDistritoFederal = lazy(() => import("./pages/resources/mapa-st/MapaStDistritoFederal"));
 const MapaStRioDeJaneiro = lazy(() => import("./pages/resources/mapa-st/MapaStRioDeJaneiro"));
+const MapaStEspiritoSanto = lazy(() => import("./pages/resources/mapa-st/MapaStEspiritoSanto"));
 
 function Layout({ children }) {
   return (
@@ -109,6 +110,7 @@ export default function App() {
             <Route path="/recursos/mapa-st/goias" element={<MapaStGoias />} />
             <Route path="/recursos/mapa-st/distrito-federal" element={<MapaStDistritoFederal />} />
             <Route path="/recursos/mapa-st/rio-de-janeiro" element={<MapaStRioDeJaneiro />} />
+            <Route path="/recursos/mapa-st/espirito-santo" element={<MapaStEspiritoSanto />} />
             <Route path="/recursos/simples-nacional" element={<SimplesHub />} />
             <Route path="/recursos/simples-nacional/anexo-1" element={<Navigate replace to="/recursos/simples-nacional/anexo-1/2026" />} />
             <Route path="/recursos/simples-nacional/anexo-1/:vigencia" element={<Anexo1 />} />
